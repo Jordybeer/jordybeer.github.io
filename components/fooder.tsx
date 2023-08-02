@@ -75,9 +75,7 @@ const Fooder=()=> {
     </SocialButton>
     
   </Stack>
-  <Stack>
-    <Box >Made with 💜 by <Text as='a' href='https://jordy.lol'>Jordy B.</Text></Box>
-</Stack>
+
 </Container>
     </Box>
     </Flex>

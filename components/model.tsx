@@ -83,7 +83,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
       requestAnimationFrame(animate);
 
       // Step 12: Rotate the model.
-      
+
       const delta = clock.getDelta();
 
       // Step 13: Update the mixer and controls.
@@ -119,7 +119,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
   }, []);
 
   return (
-    <Flex  position={'relative'} height={'400px'} width={'full'} overflow={'hidden'} >
+    <Flex  position={'relative'} height={'400px'} width={'500px'} >
       <div ref={containerRef} />
     </Flex>
   );
