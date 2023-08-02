@@ -5,6 +5,7 @@ import Model3D from '../components/model'
 export default function Home() {
   return (
     <>
+    <Model3D />
      <Carousel />
     </>
   );
