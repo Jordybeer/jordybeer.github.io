@@ -38,6 +38,7 @@ import { IconType } from 'react-icons'
 
 import Home from '../pages/home'
 import Fooder from '../components/fooder'
+import Login from '../components/login'
 import { FaLightbulb, FaRegLightbulb } from 'react-icons/fa'
 
 
@@ -79,7 +80,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+        <Text fontSize="1xl" fontFamily="monospace" fontWeight="bold">
           Raw. industrial
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
@@ -160,10 +161,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
 
       <HStack spacing={{ base: '0', md: '6' }} >
 
-        <Flex onClick={toggleColorMode} alignItems={'left'} >
-                  <Text>Dark Mode
-        <IconButton size="lg" variant="outlined" aria-label="open menu" icon={<FaRegLightbulb size="24"/>} /></Text>
-        </Flex>
+        <IconButton  onClick={toggleColorMode} size="lg" variant="outlined" aria-label="open menu" icon={<FaRegLightbulb size="24"/>} />
+
         <Flex alignItems={'center'}>
           <Menu>
             <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: 'none' }}>
@@ -224,10 +223,12 @@ const SidebarWithHeader = () => {
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
+      <Box ml={{ base: 0, md: 60 }} p="4">
 
 <Home />
       </Box>
-
+<Fooder />
+    </Box>
   )
 }
 

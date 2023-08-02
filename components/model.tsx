@@ -42,7 +42,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
     controls.update();
     controls.enablePan = true;
     controls.enableDamping = true;
-    controls.autoRotate = false; // Disable automatic rotation
+    controls.autoRotate = true; // Disable automatic rotation
 
     // Step 5: Create a new instance of the DRACOLoader and set its decoder path.
     const dracoLoader = new DRACOLoader();
@@ -66,7 +66,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
 
             // Step 8: Set the position and scale of the model and add it to the scene.
             model.position.set(0, 0, 0);
-            model.scale.set(1, 1, 1);
+            model.scale.set(0.5, 0.5, 0.5);
             scene.add(model);
 
             // Step 9: Create a new instance of the AnimationMixer and play the first animation clip, if any.
@@ -83,7 +83,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
       requestAnimationFrame(animate);
 
       // Step 12: Rotate the model.
-
+      
       const delta = clock.getDelta();
 
       // Step 13: Update the mixer and controls.
@@ -119,7 +119,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
   }, []);
 
   return (
-    <Flex boxShadow='outline' p='6' rounded='md' position={'relative'} height={'50%'} width={'50%'} >
+    <Flex  position={'relative'} height={'400px'} width={'full'} overflow={'hidden'} >
       <div ref={containerRef} />
     </Flex>
   );

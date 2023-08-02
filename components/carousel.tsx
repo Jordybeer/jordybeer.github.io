@@ -108,6 +108,7 @@ export default function Carousel() {
             backgroundPosition="scale"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
+            rounded="md"
             backgroundImage={`url(${card.image})`}>
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="300px" position="relative">
