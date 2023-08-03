@@ -168,7 +168,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
          display={{ base: 'flex', md: 'none' }}
          bgGradient='linear(to-l, #7928CA, #FF0080)'
          bgClip='text'
-        fontSize="3xl" 
+        fontSize="2xl" 
         fontFamily="Raleway Variable" sans-serif 
         fontWeight="700">
           Raw. industrial
