@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   IconButton,
@@ -23,8 +23,8 @@ import {
   MenuItem,
   MenuList,
   Button,
-  Card
-} from '@chakra-ui/react'
+  Card,
+} from "@chakra-ui/react";
 import {
   FiHome,
   FiTrendingUp,
@@ -33,67 +33,68 @@ import {
   FiSettings,
   FiMenu,
   FiChevronDown,
-} from 'react-icons/fi'
-import { IconType } from 'react-icons';
+} from "react-icons/fi";
+import { IconType } from "react-icons";
 
-import Home from '../pages/home';
-import { FaRegLightbulb } from 'react-icons/fa';
+import Home from "../pages/home";
+import { FaRegLightbulb } from "react-icons/fa";
 
 // Supports weights 100-900
-import '@fontsource-variable/raleway';
-import Fooder from '../components/fooder';
+import "@fontsource-variable/raleway";
+import Fooder from "../components/fooder";
 
 interface LinkItemProps {
-  name: string
-  icon: IconType
+  name: string;
+  icon: IconType;
 }
 
 interface NavItemProps extends FlexProps {
-  icon: IconType
-  children: React.ReactNode
+  icon: IconType;
+  children: React.ReactNode;
 }
 
 interface MobileProps extends FlexProps {
-  onOpen: () => void
+  onOpen: () => void;
 }
 
 interface SidebarProps extends BoxProps {
-  onClose: () => void
+  onClose: () => void;
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Design op maat', icon: FiHome },
-  { name: 'Portfolio', icon: FiTrendingUp },
-  { name: 'Te koop', icon: FiCompass },
-  { name: 'Contacteer', icon: FiStar },
-  { name: 'Over ons', icon: FiSettings },
-]
+  { name: "Design op maat", icon: FiHome },
+  { name: "Portfolio", icon: FiTrendingUp },
+  { name: "Te koop", icon: FiCompass },
+  { name: "Contacteer", icon: FiStar },
+  { name: "Over ons", icon: FiSettings },
+];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     // left navbar
     <Flex
-       transition="3s ease"
-       bg={useColorModeValue('white', '#262956')}
+    h="full" 
+    flexDirection={{ base: "column", md: "row" }}
+      transition="3s ease"
+      bg={useColorModeValue("white", "#262956")}
       borderRight="1x"
       borderRightColor="##BDBDBD"
-
-      w={{ base: 'null', md: 60 }}
+      w={{ base: "null", md: 60 }}
       pos="fixed"
-      h="full"
-      {...rest}>
+      {...rest}
+    >
       <Flex h="20" alignItems="center" mx="70" justifyContent="space-start">
-
-        <Text 
-        textAlign={{ base: 'start', md: 'left' }}
-        fontSize="2xl" 
-        fontFamily="Raleway Variable" sans-serif 
-        fontWeight="700"
-        letterSpacing={'0.10em'}>
+        <Text
+          textAlign={{ base: "start", md: "left" }}
+          fontSize="2xl"
+          fontFamily="Raleway Variable"
+          fontWeight="700"
+          letterSpacing={"0.10em"}
+        >
           Raw. industrial
         </Text>
 
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
         <NavItem key={link.name} icon={link.icon}>
@@ -101,18 +102,18 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </NavItem>
       ))}
       <Fooder />
-
     </Flex>
-  )
-}
+  );
+};
 
 const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (
     <Box
       as="a"
       href="#"
-      style={{ textDecoration: 'none' }}
-      _focus={{ boxShadow: 'none' }}>
+      style={{ textDecoration: "none" }}
+      _focus={{ boxShadow: "none" }}
+    >
       <Flex
         align="center"
         p="4"
@@ -121,17 +122,18 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: '#536DFE',
-          color: 'white',
-          fontWeight: 'bold',
+          bg: "#536DFE",
+          color: "white",
+          fontWeight: "bold",
         }}
-        {...rest}>
+        {...rest}
+      >
         {icon && (
           <Icon
             mr="4"
             fontSize="16"
             _groupHover={{
-              color: 'white',
+              color: "white",
             }}
             as={icon}
           />
@@ -139,72 +141,86 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         {children}
       </Flex>
     </Box>
-  )
-}
+  );
+};
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const { toggleColorMode } = useColorMode();
   return (
     <Flex
-    // top navbar
+      // top navbar
       ml={{ base: 0, md: 60 }}
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-       bg={useColorModeValue('white', '#3B217A ')}
+      bg={useColorModeValue("white", "#3B217A ")}
       borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue('white', '#BDBDBD')}
-      justifyContent={{ base: 'space-between', md: 'flex-end' }}
-      {...rest}>
+      borderBottomColor={useColorModeValue("white", "#BDBDBD")}
+      justifyContent={{ base: "space-between", md: "flex-end" }}
+      {...rest}
+    >
       <IconButton
-        display={{ base: 'flex', md: 'none' }}
+        display={{ base: "flex", md: "none" }}
         onClick={onOpen}
         variant="outline"
         aria-label="open menu"
         icon={<FiMenu />}
       />
 
- <Text 
-         display={{ base: 'flex', md: 'none' }}
-         bgGradient='linear(to-l, #7928CA, #FF0080)'
-         bgClip='text'
-        fontSize="2xl" 
-        fontFamily="Raleway Variable" sans-serif 
-        fontWeight="700">
-          Raw. industrial
-        </Text>
-      <HStack spacing={{ base: '0', md: '2' }} >
+      <Text
+        display={{ base: "flex", md: "none" }}
+        bgGradient="linear(to-l, #7928CA, #FF0080)"
+        bgClip="text"
+        fontSize="2xl"
+        fontFamily="Raleway Variable"
+        fontWeight="700"
+      >
+        Raw. industrial
+      </Text>
+      <HStack spacing={{ base: "0", md: "2" }}>
+        <IconButton
+          onClick={toggleColorMode}
+          size="lg"
+          mr={4}
+          variant="outline"
+          aria-label="open menu"
+          icon={<FaRegLightbulb size="24" />}
+        />
 
-        <IconButton  onClick={toggleColorMode} size="lg" mr={4} variant="outline" aria-label="open menu" icon={<FaRegLightbulb size="24"/>} />
-
-        <Flex alignItems={'center'}>
+        <Flex alignItems={"center"}>
           <Menu>
-            <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: 'none' }}>
+            <MenuButton
+              py={2}
+              transition="all 0.3s"
+              _focus={{ boxShadow: "none" }}
+            >
               <HStack>
                 <Avatar
-                  size={'md'}
+                  size={"md"}
                   src={
-                    'https://cn.i.cdn.ti-platform.com/cnapac/content/701/showpage/we-bare-bears/sa/showicon.png'
+                    "https://cn.i.cdn.ti-platform.com/cnapac/content/701/showpage/we-bare-bears/sa/showicon.png"
                   }
                 />
                 <VStack
-                  display={{ base: 'none', md: 'flex' }}
+                  display={{ base: "none", md: "flex" }}
                   alignItems="flex-start"
                   spacing="1px"
-                  ml="2">
+                  ml="2"
+                >
                   <Text fontSize="sm">Jordybeer</Text>
                   <Text fontSize="xs" color="gray.200">
                     Admin
                   </Text>
                 </VStack>
-                <Box display={{ base: 'none', md: 'flex' }}>
+                <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
                 </Box>
               </HStack>
             </MenuButton>
             <MenuList
-              bg={useColorModeValue('white', '#red.900')}
-              borderColor={useColorModeValue('#16181A', '#121314')}>
+              bg={useColorModeValue("white", "#red.900")}
+              borderColor={useColorModeValue("#16181A", "#121314")}
+            >
               <MenuItem>Profiel</MenuItem>
               <MenuItem>Album beheren</MenuItem>
               <MenuItem>Instellingen</MenuItem>
@@ -214,35 +230,38 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         </Flex>
       </HStack>
     </Flex>
-  )
-}
+  );
+};
 
 const SidebarWithHeader = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box >
-      <SidebarContent onClose={() => onClose} display={{ base: 'none', md: 'block' }} />
+    <Box>
+      <SidebarContent
+        onClose={() => onClose}
+        display={{ base: "none", md: "block" }}
+      />
       <Drawer
         isOpen={isOpen}
         placement="left"
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full">
+        size="full"
+      >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      
-      <Box ml={{ base: 0, md: 60 }} p="4">
 
-<Home />
+      <Box ml={{ base: 0, md: 60 }} p="4">
+        <Home />
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default SidebarWithHeader
+export default SidebarWithHeader;

@@ -18,8 +18,8 @@ dependencies:
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@17.0.62)(react@18.2.0)
   '@fontsource-variable/raleway':
-    specifier: ^5.0.7
-    version: 5.0.7
+    specifier: ^5.0.8
+    version: 5.0.8
   '@react-icons/all-files':
     specifier: ^4.1.0
     version: 4.1.0(react@18.2.0)
@@ -1413,8 +1413,8 @@ packages:
     resolution: {integrity: sha512-EsBwpc7hBUJWAsNPBmJy4hxWx12v6bshQsldrVmjxJoc3isbxhOrF2IcCpaXxfvq03NwkI7sbsOLXbYuqF/8Ww==}
     dev: false
 
-  /@fontsource-variable/raleway@5.0.7:
-    resolution: {integrity: sha512-RwRX8Tg6sNMZ6L8ECXaC4gmVT9Ppe9pCDGqnDi9o+XVtBBOgzTK/xTHvZcxp2oQS9823g9jEWX5ES+yBi37ttg==}
+  /@fontsource-variable/raleway@5.0.8:
+    resolution: {integrity: sha512-1sT6Is9aeoBNjnAKJm4LUvtGjCriGJ87vubbZYGWgrBbk+v3VhvDNYhSEFxYI3FkOTndqY9DxzbDRfUMnL1SuQ==}
     dev: false
 
   /@graphql-typed-document-node/core@3.2.0(graphql@16.7.1):
