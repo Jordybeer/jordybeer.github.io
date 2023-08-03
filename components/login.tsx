@@ -13,7 +13,7 @@ import { FaLightbulb } from 'react-icons/fa'
 
 export default function Login() {
     const { toggleColorMode } = useColorMode();
-    const formBackground = useColorModeValue("gray.100", "gray.900");
+    const formBackground = useColorModeValue("red.100", "#red");
 return (  
 <Flex alignItems="center" justifyContent="center">
 

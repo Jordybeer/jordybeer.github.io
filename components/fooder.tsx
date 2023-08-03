@@ -49,10 +49,10 @@ const Fooder=()=> {
   return (
     <Flex>
     <Box 
-      bg={useColorModeValue('white', 'gray.900')}
-      borderBottomColor={useColorModeValue('white', 'gray.900')}>
+      bg={useColorModeValue('transparent', 'transparent')}
+      borderBottomColor={useColorModeValue('white', '#232e4a')}>
      <Container
-  position='absolute' // Set to absolute
+  position='absolute'
   bottom = '0'
   width={'full'}
   as={Stack}
@@ -63,7 +63,7 @@ const Fooder=()=> {
   justify='center' // Set justify to 'center'
   align='center' // Set align to 'center'
 >
-  <Stack direction='row' spacing={3}>
+  <Stack direction='row' spacing={'6'}>
     <SocialButton label={'Twitter'} href={'#'}>
       <FaTwitter />
     </SocialButton>

@@ -4,14 +4,15 @@ import SidebarWithHeader from '../components/sidebarwithheader'
 const Layout = ({ children }) => {
   return (
 
-    <Box minHeight="100vh" display="flex" flexDirection="column">
-      <SidebarWithHeader />
+//main
+
+    <Box minHeight="100vh" display="flex" bgColor={'#482B94'} flexDirection="column">
+<SidebarWithHeader />
       {/* Footer / Fooder CSS */}
-      <Container as="main" flex="1" pb={12}>
-        {children}
-      </Container>
+
     </Box>
   );
 };
 
 export default Layout;
+

@@ -1,26 +1,29 @@
 import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import { Card, Stack, CardBody,CardHeader, Heading } from "@chakra-ui/react";
+import { Card, Stack, CardBody,CardHeader,Flex} from "@chakra-ui/react";
 
 export default class NextJsCarousel extends Component {
   render() {
     return (
       <Card
+      bgColor={'#493B98'}
+      color='#fbebe3'
       direction={{base: 'column', sm: 'row'}}
-      maxW='lg'
-      maxH='lg'
+      maxW='xl'
+      maxH='xl'
         position="relative"
         height={"100%"}
         width={"100%"}
         overflow={"hidden"}        
-        variant='outline'
+        variant='elevated'
         zIndex={2} // Set a higher z-index value
-      >  <CardBody>
+      >  
 
         
-            <Heading size='md' display="flex" textAlign="left" justifyContent="center" >Onze producten</Heading>
-            </CardBody>
+            <CardHeader  display='flex' fontWeight={'bold'}>Uniek & handgemaakt </CardHeader>
+            
+      
             <Stack>
         <Carousel
           showArrows={true}

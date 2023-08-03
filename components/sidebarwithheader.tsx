@@ -22,7 +22,8 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
-  Button
+  Button,
+  Card
 } from '@chakra-ui/react'
 import {
   FiHome,
@@ -31,16 +32,16 @@ import {
   FiStar,
   FiSettings,
   FiMenu,
-  FiBell,
   FiChevronDown,
 } from 'react-icons/fi'
-import { IconType } from 'react-icons'
+import { IconType } from 'react-icons';
 
-import Home from '../pages/home'
-import Fooder from '../components/fooder'
-import Login from '../components/login'
-import { FaLightbulb, FaRegLightbulb } from 'react-icons/fa'
+import Home from '../pages/home';
+import { FaRegLightbulb } from 'react-icons/fa';
 
+// Supports weights 100-900
+import '@fontsource-variable/raleway';
+import Fooder from '../components/fooder';
 
 interface LinkItemProps {
   name: string
@@ -70,19 +71,28 @@ const LinkItems: Array<LinkItemProps> = [
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
-    <Box
-      transition="3s ease"
-      bg={useColorModeValue('white', 'gray.900')}
-      borderRight="1px"
-      borderRightColor={useColorModeValue('white', 'gray.700')}
-      w={{ base: 'full', md: 60 }}
+    // left navbar
+    <Flex
+       transition="3s ease"
+       bg={useColorModeValue('white', '#262956')}
+      borderRight="1x"
+      borderRightColor="##BDBDBD"
+
+      w={{ base: 'null', md: 60 }}
       pos="fixed"
       h="full"
       {...rest}>
-      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="1xl" fontFamily="monospace" fontWeight="bold">
+      <Flex h="20" alignItems="center" mx="70" justifyContent="space-start">
+
+        <Text 
+        textAlign={{ base: 'start', md: 'left' }}
+        fontSize="2xl" 
+        fontFamily="Raleway Variable" sans-serif 
+        fontWeight="700"
+        letterSpacing={'0.10em'}>
           Raw. industrial
         </Text>
+
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
@@ -90,7 +100,9 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           {link.name}
         </NavItem>
       ))}
-    </Box>
+      <Fooder />
+
+    </Flex>
   )
 }
 
@@ -109,8 +121,9 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: 'cyan.400',
+          bg: '#536DFE',
           color: 'white',
+          fontWeight: 'bold',
         }}
         {...rest}>
         {icon && (
@@ -131,16 +144,16 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const { toggleColorMode } = useColorMode();
-  const formBackground = useColorModeValue("white", "gray.900");
   return (
     <Flex
+    // top navbar
       ml={{ base: 0, md: 60 }}
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue('white', 'gray.900')}
+       bg={useColorModeValue('white', '#3B217A ')}
       borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue('white', 'gray.900')}
+      borderBottomColor={useColorModeValue('white', '#BDBDBD')}
       justifyContent={{ base: 'space-between', md: 'flex-end' }}
       {...rest}>
       <IconButton
@@ -151,17 +164,18 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         icon={<FiMenu />}
       />
 
-      <Text
-        display={{ base: 'flex', md: 'none' }}
-        fontSize="2xl"
-        fontFamily="monospace"
-        fontWeight="bold">
-        Raw. industrial
-      </Text>
+ <Text 
+         display={{ base: 'flex', md: 'none' }}
+         bgGradient='linear(to-l, #7928CA, #FF0080)'
+         bgClip='text'
+        fontSize="3xl" 
+        fontFamily="Raleway Variable" sans-serif 
+        fontWeight="700">
+          Raw. industrial
+        </Text>
+      <HStack spacing={{ base: '0', md: '2' }} >
 
-      <HStack spacing={{ base: '0', md: '6' }} >
-
-        <IconButton  onClick={toggleColorMode} size="lg" variant="outlined" aria-label="open menu" icon={<FaRegLightbulb size="24"/>} />
+        <IconButton  onClick={toggleColorMode} size="lg" mr={4} variant="outline" aria-label="open menu" icon={<FaRegLightbulb size="24"/>} />
 
         <Flex alignItems={'center'}>
           <Menu>
@@ -179,7 +193,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   spacing="1px"
                   ml="2">
                   <Text fontSize="sm">Jordybeer</Text>
-                  <Text fontSize="xs" color="gray.600">
+                  <Text fontSize="xs" color="gray.200">
                     Admin
                   </Text>
                 </VStack>
@@ -189,12 +203,11 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               </HStack>
             </MenuButton>
             <MenuList
-              bg={useColorModeValue('white', 'gray.900')}
-              borderColor={useColorModeValue('gray.200', 'gray.700')}>
+              bg={useColorModeValue('white', '#red.900')}
+              borderColor={useColorModeValue('#16181A', '#121314')}>
               <MenuItem>Profiel</MenuItem>
               <MenuItem>Album beheren</MenuItem>
               <MenuItem>Instellingen</MenuItem>
-              <MenuDivider />
               <MenuItem>Afmelden</MenuItem>
             </MenuList>
           </Menu>
@@ -208,7 +221,7 @@ const SidebarWithHeader = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+    <Box >
       <SidebarContent onClose={() => onClose} display={{ base: 'none', md: 'block' }} />
       <Drawer
         isOpen={isOpen}
@@ -223,11 +236,11 @@ const SidebarWithHeader = () => {
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
+      
       <Box ml={{ base: 0, md: 60 }} p="4">
 
 <Home />
       </Box>
-<Fooder />
     </Box>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Card} from '@chakra-ui/react';
+import { Box} from '@chakra-ui/react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -121,9 +121,9 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
   }, []);
 
   return (
-<Card
+<Box
       bg="transparent"
-     // variant="outline"
+      size={'lg'}
       maxW='lg'
       maxH='xs'
         position="relative"
@@ -133,13 +133,11 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
         display="flex"
         justifyContent="center"
         alignItems="center"
-        zIndex={1} // Set a higher z-index value
 
       >      <div ref={containerRef} 
-      style={{ rotate: '0deg' }} // Add this line to prevent rotation
       />
       
-    </Card>
+    </Box>
   );
 };
 
