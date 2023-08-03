@@ -6,7 +6,8 @@ const Layout = ({ children }) => {
 
     <Box minHeight="100vh" display="flex" flexDirection="column">
       <SidebarWithHeader />
-      <Container as="main" flex="1" pb={8}>
+      {/* Footer / Fooder CSS */}
+      <Container as="main" flex="1" pb={12}>
         {children}
       </Container>
     </Box>

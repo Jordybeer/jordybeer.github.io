@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Flex } from '@chakra-ui/react';
+import { Card} from '@chakra-ui/react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -19,9 +19,9 @@ const Model3D = () => {
 
     // Step 1: Create a new instance of the WebGLRenderer and set its pixel ratio and size.
     const width = 800; // Set the width of the window
-    const height = 400; // Set the height of the window
+    const height = 200; // Set the height of the window
     const aspectRatio = width / height; // Calculate the aspect ratio
-    const renderer = new THREE.WebGLRenderer({ alpha: true }); // Set alpha to true for transparent background
+    const renderer = new THREE.WebGLRenderer({ alpha: true , antialias: true}); // Set alpha to true for transparent background
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
     container.appendChild(renderer.domElement);
@@ -39,10 +39,12 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
     // Step 4: Create a new instance of the OrbitControls and set its target, update, and enable properties.
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.target.set(0, 0, 0);
-    controls.update();
     controls.enablePan = true;
     controls.enableDamping = true;
-    controls.autoRotate = true; // Disable automatic rotation
+    controls.autoRotate = true;
+    controls.rotateSpeed= 1;
+    controls.autoRotateSpeed = 5
+    controls.update();
 
     // Step 5: Create a new instance of the DRACOLoader and set its decoder path.
     const dracoLoader = new DRACOLoader();
@@ -66,7 +68,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
 
             // Step 8: Set the position and scale of the model and add it to the scene.
             model.position.set(0, 0, 0);
-            model.scale.set(0.5, 0.5, 0.5);
+            model.scale.set(3, 3, 3);
             scene.add(model);
 
             // Step 9: Create a new instance of the AnimationMixer and play the first animation clip, if any.
@@ -119,9 +121,25 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
   }, []);
 
   return (
-    <Flex  position={'relative'} height={'400px'} width={'500px'} >
-      <div ref={containerRef} />
-    </Flex>
+<Card
+      bg="transparent"
+     // variant="outline"
+      maxW='lg'
+      maxH='xs'
+        position="relative"
+        height="100%"
+        width="100%"
+        overflow="hidden"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        zIndex={1} // Set a higher z-index value
+
+      >      <div ref={containerRef} 
+      style={{ rotate: '0deg' }} // Add this line to prevent rotation
+      />
+      
+    </Card>
   );
 };
 
