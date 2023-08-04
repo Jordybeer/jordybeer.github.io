@@ -1,21 +1,20 @@
-import Head from 'next/head'
-import { ChakraProvider } from '@chakra-ui/react'
-import Layout from "../components/layout"
+import Head from "next/head";
+import { ChakraProvider } from "@chakra-ui/react";
+import Layout from "../components/layout";
 function App({ Component, pageProps }) {
-    return (
-        <>
-        <Head>
+  return (
+    <>
+      <Head>
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-        <ChakraProvider>
-
-            <Layout>
-        <Component {...pageProps} />
+      <ChakraProvider>
+        <Layout>
+          <Component {...pageProps} />
         </Layout>
-        </ChakraProvider>
+      </ChakraProvider>
     </>
-    )
-    }
+  );
+}
 
 export default App;

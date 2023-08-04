@@ -1,16 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import { Box} from '@chakra-ui/react';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
-import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment';
+import React, { useEffect, useRef } from "react";
+import { Box } from "@chakra-ui/react";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment";
 
 const Model3D = () => {
-    const containerRef = useRef(null);
-    const mixerRef = useRef(null);
-    
-  
+  const containerRef = useRef(null);
+  const mixerRef = useRef(null);
+
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -21,7 +20,7 @@ const Model3D = () => {
     const width = 800; // Set the width of the window
     const height = 200; // Set the height of the window
     const aspectRatio = width / height; // Calculate the aspect ratio
-    const renderer = new THREE.WebGLRenderer({ alpha: true , antialias: true}); // Set alpha to true for transparent background
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // Set alpha to true for transparent background
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
     container.appendChild(renderer.domElement);
@@ -30,11 +29,14 @@ const Model3D = () => {
     const pmremGenerator = new THREE.PMREMGenerator(renderer);
     const scene = new THREE.Scene();
     scene.background = null; // Set background to null for transparent background
-    scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.environment = pmremGenerator.fromScene(
+      new RoomEnvironment(),
+      0.04
+    ).texture;
 
-// Step 3: Create a new instance of the PerspectiveCamera and set its position and aspect ratio.
-const camera = new THREE.PerspectiveCamera(40, aspectRatio, 1, 100);
-camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to move it closer to the origin
+    // Step 3: Create a new instance of the PerspectiveCamera and set its position and aspect ratio.
+    const camera = new THREE.PerspectiveCamera(40, aspectRatio, 1, 100);
+    camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to move it closer to the origin
 
     // Step 4: Create a new instance of the OrbitControls and set its target, update, and enable properties.
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -42,43 +44,48 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
     controls.enablePan = true;
     controls.enableDamping = true;
     controls.autoRotate = true;
-    controls.rotateSpeed= 1;
-    controls.autoRotateSpeed = 5
+    controls.rotateSpeed = 1;
+    controls.autoRotateSpeed = 5;
     controls.update();
 
     // Step 5: Create a new instance of the DRACOLoader and set its decoder path.
     const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath('jsm/libs/draco/gltf/');
+    dracoLoader.setDecoderPath("jsm/libs/draco/gltf/");
 
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new  THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
-    const mesh = new THREE.Mesh( geometry, material );
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const mesh = new THREE.Mesh(geometry, material);
 
     // Step 6: Create a new instance of the GLTFLoader and set its DRACOLoader.
     const loader = new GLTFLoader();
     loader.setDRACOLoader(dracoLoader);
-    
+
     // Step 7: Load the 3D model using the GLTFLoader and add it to the scene.
-    loader.load('/models/scene.gltf', (gltf: any) => {
-            const model = gltf.scene;
-            const box = new THREE.Box3().setFromObject(model);
-            const center = box.getCenter(new THREE.Vector3());
+    loader.load(
+      "/models/scene.gltf",
+      (gltf: any) => {
+        const model = gltf.scene;
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
 
-            camera.lookAt(center)
+        camera.lookAt(center);
 
-            // Step 8: Set the position and scale of the model and add it to the scene.
-            model.position.set(0, 0, 0);
-            model.scale.set(3, 3, 3);
-            scene.add(model);
+        // Step 8: Set the position and scale of the model and add it to the scene.
+        model.position.set(0, 0, 0);
+        model.scale.set(3, 3, 3);
+        scene.add(model);
 
-            // Step 9: Create a new instance of the AnimationMixer and play the first animation clip, if any.
-            mixerRef.current = new THREE.AnimationMixer(model);
-            if (gltf.animations.length > 0) {
-                mixerRef.current.clipAction(gltf.animations[0]).play();
-            }
-    }, undefined, (e: any) => {
-      console.error(e);
-    });
+        // Step 9: Create a new instance of the AnimationMixer and play the first animation clip, if any.
+        mixerRef.current = new THREE.AnimationMixer(model);
+        if (gltf.animations.length > 0) {
+          mixerRef.current.clipAction(gltf.animations[0]).play();
+        }
+      },
+      undefined,
+      (e: any) => {
+        console.error(e);
+      }
+    );
 
     // Step 11: Define an animate function that updates the scene and renderer on each frame.
     const animate = () => {
@@ -99,7 +106,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
     };
 
     // Step 15: Add an event listener for the window resize event and update the camera and renderer accordingly.
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
 
@@ -111,7 +118,7 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
 
     // Step 17: Remove the event listener when the component unmounts.
     return () => {
-      window.removeEventListener('resize', () => {
+      window.removeEventListener("resize", () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
 
@@ -121,22 +128,21 @@ camera.position.set(0, 0, 10); // Change the camera's position to (0, 0, 10) to 
   }, []);
 
   return (
-<Box
+    <Box
       bg="transparent"
-      size={'lg'}
-      maxW='lg'
-      maxH='xs'
-        position="relative"
-        height="100%"
-        width="100%"
-        overflow="hidden"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-
-      >      <div ref={containerRef} 
-      />
-      
+      size="lg"
+      maxW="lg"
+      maxH="xs"
+      position="relative"
+      height="100%"
+      width="100%"
+      overflow="hidden"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+    >
+      {" "}
+      <div ref={containerRef} />
     </Box>
   );
 };
