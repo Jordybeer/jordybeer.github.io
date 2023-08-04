@@ -12,17 +12,19 @@ export default class NextJsCarousel extends Component {
       direction={{base: 'column', sm: 'row'}}
       maxW='xl'
       maxH='xl'
-        position="relative"
         height={"100%"}
         width={"100%"}
-        overflow={"hidden"}        
+        display='flex'
         variant='elevated'
-        zIndex={2} // Set a higher z-index value
+        pb={10}
+        pt={10}
+        zIndex={1} // Set a higher z-index value
       >  
 
         
-            <CardHeader  display='flex' fontWeight={'bold'}>Uniek & handgemaakt </CardHeader>
-            
+        
+            <CardHeader pb={10} display='flex' fontWeight={'bold'}>Album is swipe friendly
+            </CardHeader>    
       
             <Stack>
         <Carousel
@@ -40,21 +42,21 @@ export default class NextJsCarousel extends Component {
               src="https://wood-create.com/wp-content/uploads/2019/03/img_9067-1.jpg"
               alt="image1"
             />
-            <p className="legend">Tafel met X poten</p>
+            <p className="legend">Tafel met X poten gemaakt van hout en metaal</p>
           </div>
           <div>
             <img
               src="https://5.imimg.com/data5/ANDROID/Default/2020/8/ZC/OP/YS/28175546/product-jpeg-500x500.jpg"
               alt="image2"
             />
-            <p className="legend">Lage zitbank voor buiten</p>
+            <p className="legend">Moderne tuinset met meerdere toepasselijke stoelen en tafel</p>
           </div>
           <div>
             <img
               src="https://i.pinimg.com/1200x/23/00/b8/2300b87a8a1530b4d6bb095d9cd82562.jpg"
               alt="image3"
             />
-            <p className="legend">Image 3</p>
+            <p className="legend">Unieke kast gemaakt voor mijn vrouw</p>
           </div>
         </Carousel>
         </Stack>

@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Divider } from "@chakra-ui/react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment";
 
+
 const Model3D = () => {
-  const containerRef = useRef(null);
-  const mixerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mixerRef = useRef<THREE.AnimationMixer | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -45,16 +46,12 @@ const Model3D = () => {
     controls.enableDamping = true;
     controls.autoRotate = true;
     controls.rotateSpeed = 1;
-    controls.autoRotateSpeed = 5;
+    controls.autoRotateSpeed = 1;
     controls.update();
 
     // Step 5: Create a new instance of the DRACOLoader and set its decoder path.
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("jsm/libs/draco/gltf/");
-
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const mesh = new THREE.Mesh(geometry, material);
 
     // Step 6: Create a new instance of the GLTFLoader and set its DRACOLoader.
     const loader = new GLTFLoader();
@@ -130,19 +127,22 @@ const Model3D = () => {
   return (
     <Box
       bg="transparent"
-      size="lg"
-      maxW="lg"
-      maxH="xs"
       position="relative"
+      maxW='md'
+      maxH='md'
       height="100%"
       width="100%"
       overflow="hidden"
       display="flex"
+      pt={10}
+      pb={10}
       justifyContent="center"
-      alignItems="center"
+      alignContent="center"
+      m={2}
+
     >
-      {" "}
-      <div ref={containerRef} />
+            <div ref={containerRef} 
+      />
     </Box>
   );
 };

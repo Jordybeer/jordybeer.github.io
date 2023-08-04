@@ -1,15 +1,20 @@
 import React from "react";
-import Carousel from "../components/carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import IconList from "../components/list";
 import Model3D from "../components/model";
+import Nuke from "../components/toast";
+
 import NextJsCarousel from "../components/mobcar";
 
 export default function Home() {
   return (
     <>
-      <Model3D />
+    
       <NextJsCarousel />
+      <IconList />
+      <Nuke />
+      <Model3D />
+
     </>
   );
 }

@@ -19,11 +19,8 @@ import {
   FlexProps,
   Menu,
   MenuButton,
-  MenuDivider,
   MenuItem,
   MenuList,
-  Button,
-  Card,
 } from "@chakra-ui/react";
 import {
   FiHome,
@@ -74,11 +71,11 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     // left navbar
     <Flex
     h="full" 
-    flexDirection={{ base: "column", md: "row" }}
+    flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
       bg={useColorModeValue("white", "#262956")}
       borderRight="1x"
-      borderRightColor="##BDBDBD"
+      borderRightColor="#BDBDBD"
       w={{ base: "null", md: 60 }}
       pos="fixed"
       {...rest}
@@ -172,9 +169,11 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         bgGradient="linear(to-l, #7928CA, #FF0080)"
         bgClip="text"
         fontSize="2xl"
+        // letterSpacing={"0.050em"}
         fontFamily="Raleway Variable"
-        fontWeight="700"
-      >
+        fontWeight="900"
+        backgroundClip="text"
+              >
         Raw. industrial
       </Text>
       <HStack spacing={{ base: "0", md: "2" }}>
@@ -218,8 +217,11 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               </HStack>
             </MenuButton>
             <MenuList
-              bg={useColorModeValue("white", "#red.900")}
-              borderColor={useColorModeValue("#16181A", "#121314")}
+            
+        bg={useColorModeValue("white", "#262956")} // Change this line to set the background color of the menu list
+        borderColor={useColorModeValue("#16181A", "#16181A")}
+        p={0}
+        m={0}
             >
               <MenuItem>Profiel</MenuItem>
               <MenuItem>Album beheren</MenuItem>
@@ -248,7 +250,7 @@ const SidebarWithHeader = () => {
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full"
+        size="xs"
       >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
@@ -257,7 +259,7 @@ const SidebarWithHeader = () => {
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
 
-      <Box ml={{ base: 0, md: 60 }} p="4">
+      <Box ml={{ base: 0, md: 60 }} p="3">
         <Home />
       </Box>
     </Box>

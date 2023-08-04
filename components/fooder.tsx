@@ -5,13 +5,13 @@ import {
   chakra,
   Container,
   Stack,
-  Text,
-  Link,
-  useColorModeValue,
+Tag,
+Tooltip,
+useColorModeValue,
   VisuallyHidden,
   Flex
 } from '@chakra-ui/react'
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaInstagram, FaTwitter, FaYoutube,FaPaw } from 'react-icons/fa'
 import { ReactNode } from 'react'
 
 const SocialButton = ({
@@ -63,7 +63,7 @@ const Fooder=()=> {
   justify='center' // Set justify to 'center'
   align='center' // Set align to 'center'
 >
-  <Stack direction='row' spacing={'6'}>
+  <Stack direction='row' spacing={'4'}>
     <SocialButton label={'Twitter'} href={'#'}>
       <FaTwitter />
     </SocialButton>
@@ -73,10 +73,18 @@ const Fooder=()=> {
     <SocialButton label={'Instagram'} href={'#'}>
       <FaInstagram />
     </SocialButton>
-    
-  </Stack>
+<SocialButton label={'Design'} href={'https://jordy.lol'}>
+    <Tooltip hasArrow
+    // hasArrow arrowSize={15}
+    label='Made with 💜 by Jordy B.' 
+    placement="bottom"
+    >
+      <FaPaw />
+    </Tooltip>
+    </SocialButton>    
 
-</Container>
+ </Stack>
+    </Container>
     </Box>
     </Flex>
   )

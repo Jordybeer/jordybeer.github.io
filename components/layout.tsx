@@ -10,6 +10,8 @@ const Layout = ({ children }) => {
       display="flex"
       bgColor={"#482B94"}
       flexDirection="column"
+
+
     >
       <SidebarWithHeader />
       {/* Footer / Fooder CSS */}
