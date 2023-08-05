@@ -73,11 +73,12 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     h="full" 
     flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
-      bg={useColorModeValue("white", "#262956")}
+      bg={useColorModeValue("#0051a8", "#262956")}
       borderRight="1x"
       borderRightColor="#BDBDBD"
       w={{ base: "null", md: 60 }}
       pos="fixed"
+      color={useColorModeValue("white", "white")}
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="70" justifyContent="space-start">
@@ -150,7 +151,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue("white", "#3B217A ")}
+      bg={useColorModeValue("#005ec4", "#2A2D58 ")}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("white", "#BDBDBD")}
       justifyContent={{ base: "space-between", md: "flex-end" }}
@@ -160,19 +161,21 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         display={{ base: "flex", md: "none" }}
         onClick={onOpen}
         variant="outline"
+        color={useColorModeValue("white", "white")}
         aria-label="open menu"
         icon={<FiMenu />}
       />
 
       <Text
         display={{ base: "flex", md: "none" }}
-        bgGradient="linear(to-l, #7928CA, #FF0080)"
-        bgClip="text"
+        // bgGradient="linear(to-l, #7928CA, #FF0080)"
+        // bgClip="text"
         fontSize="2xl"
+        color={useColorModeValue("white", "white")}
         // letterSpacing={"0.050em"}
         fontFamily="Raleway Variable"
         fontWeight="900"
-        backgroundClip="text"
+        // backgroundClip="text"
               >
         Raw. industrial
       </Text>
@@ -181,9 +184,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           onClick={toggleColorMode}
           size="lg"
           mr={4}
-          variant="outline"
+          variant="filled"
           aria-label="open menu"
-          icon={<FaRegLightbulb size="24" />}
+          icon={<FaRegLightbulb size="24" color="white" />}
         />
 
         <Flex alignItems={"center"}>

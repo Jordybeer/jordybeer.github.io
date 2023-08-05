@@ -136,8 +136,12 @@ const Model3D = () => {
       display="flex"
       pt={10}
       pb={10}
+      pl={2}
+      pr={2}
+      border="2px solid white"
+      borderRadius="lg"
       justifyContent="center"
-      alignContent="center"
+      alignContent="stretch"
       m={2}
 
     >

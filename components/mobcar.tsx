@@ -7,7 +7,7 @@ export default class NextJsCarousel extends Component {
   render() {
     return (
       <Card
-      bgColor={'#493B98'}
+      bgColor={'#0051a8'}
       color='#fbebe3'
       direction={{base: 'column', sm: 'row'}}
       maxW='xl'
@@ -15,7 +15,7 @@ export default class NextJsCarousel extends Component {
         height={"100%"}
         width={"100%"}
         display='flex'
-        variant='elevated'
+        variant='outline'
         pb={10}
         pt={10}
         zIndex={1} // Set a higher z-index value
@@ -23,8 +23,8 @@ export default class NextJsCarousel extends Component {
 
         
         
-            <CardHeader pb={10} display='flex' fontWeight={'bold'}>Album is swipe friendly
-            </CardHeader>    
+            {/* <CardHeader pb={10} display='flex' fontWeight={'bold'}>Album is swipe friendly
+            </CardHeader>     */}
       
             <Stack>
         <Carousel
