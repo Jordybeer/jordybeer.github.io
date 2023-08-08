@@ -32,7 +32,7 @@ export default class NextJsCarousel extends Component {
           autoPlay={true}
           infiniteLoop={true}
           showStatus={false}
-          interval = '6000'
+          interval = {6000}
           showThumbs={false}
           emulateTouch={true}
           
