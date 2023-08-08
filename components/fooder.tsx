@@ -11,7 +11,7 @@ useColorModeValue,
   VisuallyHidden,
   Flex
 } from '@chakra-ui/react'
-import { FaInstagram, FaTwitter, FaYoutube,FaPaw } from 'react-icons/fa'
+import { FaInstagram, FaFacebook, FaYoutube,FaPaw } from 'react-icons/fa'
 import { ReactNode } from 'react'
 
 const SocialButton = ({
@@ -64,24 +64,16 @@ const Fooder=()=> {
   align='center' // Set align to 'center'
 >
   <Stack direction='row' spacing={'4'}>
-    <SocialButton label={'Twitter'} href={'#'}>
-      <FaTwitter />
-    </SocialButton>
-    <SocialButton label={'YouTube'} href={'#'}>
-      <FaYoutube />
-    </SocialButton>
     <SocialButton label={'Instagram'} href={'#'}>
       <FaInstagram />
     </SocialButton>
-<SocialButton label={'Design'} href={'https://jordy.lol'}>
-    <Tooltip hasArrow
-    // hasArrow arrowSize={15}
-    label='Made with 💜 by Jordy B.' 
-    placement="bottom"
-    >
-      <FaPaw />
-    </Tooltip>
-    </SocialButton>    
+    <SocialButton label={'Facebook'} href={'#'}>
+      <FaFacebook />
+    </SocialButton>
+    <SocialButton label={'Youtube'} href={'#'}>
+      <FaYoutube />
+    </SocialButton>
+
 
  </Stack>
     </Container>

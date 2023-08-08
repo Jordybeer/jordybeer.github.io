@@ -59,11 +59,11 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Design op maat", icon: FiHome },
   { name: "Portfolio", icon: FiTrendingUp },
+  { name: "Over mij", icon: FiSettings },
   { name: "Te koop", icon: FiCompass },
-  { name: "Contacteer", icon: FiStar },
-  { name: "Over ons", icon: FiSettings },
+  { name: "Home", icon: FiHome },
+  { name: "Contact", icon: FiStar },
 ];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
@@ -73,7 +73,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     h="full" 
     flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
-      bg={useColorModeValue("#0051a8", "#262956")}
+      bg={useColorModeValue("#0051a8", "#022636")}
       borderRight="1x"
       borderRightColor="#BDBDBD"
       w={{ base: "null", md: 60 }}
@@ -151,9 +151,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue("#005ec4", "#2A2D58 ")}
-      borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue("white", "#BDBDBD")}
+      bg={useColorModeValue("#0051a8", "#022636")}
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >

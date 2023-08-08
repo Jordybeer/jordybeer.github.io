@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <Box
       minHeight="100vh"
       display="flex"
-      bgColor={useColorModeValue("#0074D9", "#043663  ")}
+      bgColor={useColorModeValue("#242424", "#242424  ")}
       flexDirection="column"
       color={useColorModeValue("white", "white")}
       borderRight= " solid lightblue"
