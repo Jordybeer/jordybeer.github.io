@@ -75,7 +75,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       transition="3s ease"
       bg={useColorModeValue("#022636", "#022636")}
       borderRight="1x"
-      borderRightColor="#BDBDBD"
+      borderRightColor="#03435f"
       w={{ base: "null", md: 60 }}
       pos="fixed"
       color={useColorModeValue("white", "white")}

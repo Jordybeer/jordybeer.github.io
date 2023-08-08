@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       bgColor={useColorModeValue("#242424", "#242424  ")}
       flexDirection="column"
       color={useColorModeValue("white", "white")}
-      borderRight= " solid lightblue"
+      borderRight= " solid ##03435f"
       scrollBehavior="smooth"
       borderRadius="xs"
 

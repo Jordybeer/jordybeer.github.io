@@ -7,9 +7,9 @@ export default class NextJsCarousel extends Component {
   render() {
     return (
       <Card
-      bgColor={'#023a51'}
+      bgColor={'#0D5166'}
       color='#fbebe3'
-      direction={{base: 'column', sm: 'row'}}
+      direction={{base: 'row', sm: 'row'}}
       maxW='6xl'
       maxH='6xl'
         height={"100%"}
@@ -18,6 +18,7 @@ export default class NextJsCarousel extends Component {
         variant='outline'
         pb={10}
         pt={10}
+        
         zIndex={1} // Set a higher z-index value
       >  
 

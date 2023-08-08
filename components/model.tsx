@@ -138,7 +138,7 @@ const Model3D = () => {
       pb={10}
       pl={2}
       pr={2}
-      border="2px solid white"
+      border="2px ##03435f"
       borderRadius="lg"
       justifyContent="center"
       alignContent="stretch"
