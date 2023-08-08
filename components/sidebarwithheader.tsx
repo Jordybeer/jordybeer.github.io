@@ -73,7 +73,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     h="full" 
     flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
-      bg={useColorModeValue("#0051a8", "#022636")}
+      bg={useColorModeValue("#022636", "#022636")}
       borderRight="1x"
       borderRightColor="#BDBDBD"
       w={{ base: "null", md: 60 }}
@@ -151,7 +151,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue("#0051a8", "#022636")}
+      bg={useColorModeValue("#022636", "#022636")}
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >
