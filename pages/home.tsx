@@ -5,15 +5,14 @@ import Model3D from "../components/model";
 import NextJsCarousel from "../components/mobcar";
 import { Divider } from "@chakra-ui/react";
 
-
 export default function Home() {
   return (
     <>
+    
       <NextJsCarousel />
       <IconList />
+      <Divider />   <Model3D />
    <Divider />
-      <Model3D />
-      <Divider />
    
     </>
   );
