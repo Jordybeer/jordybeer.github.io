@@ -7,15 +7,14 @@ export default class NextJsCarousel extends Component {
   render() {
     return (
       <Card
-      bgColor={'#0D5166'}
+      bgColor={'#1b3c4a'}
       color='#fbebe3'
       direction={{base: 'row', sm: 'row'}}
-      maxW='6xl'
-      maxH='6xl'
+      maxW='3xl'
+      maxH='3xl'
         height={"100%"}
         width={"100%"}
         display='flex'
-        variant='outline'
         pb={10}
         pt={10}
         
@@ -44,7 +43,7 @@ export default class NextJsCarousel extends Component {
               src="https://wood-create.com/wp-content/uploads/2019/03/img_9067-1.jpg"
               alt="image1"
             />
-            <p className="legend">Tafel met X poten gemaakt van hout en metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal  metaal metaal metaal </p>
+            <p className="legend">Tafel met X poten gemaakt van hout en metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal metaal </p>
           </div>
           <div>
             <img

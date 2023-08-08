@@ -73,12 +73,13 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     h="full" 
     flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
-      bg={useColorModeValue("#022636", "#022636")}
+      bg="#022636"
+
       borderRight="1x"
       borderRightColor="#03435f"
       w={{ base: "null", md: 60 }}
       pos="fixed"
-      color={useColorModeValue("white", "white")}
+      color='white'
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="70" justifyContent="space-start">
@@ -89,7 +90,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           fontWeight="700"
           letterSpacing={"0.10em"}
         >
-          Raw. industrial
+          Raw. Brand
         </Text>
 
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
@@ -120,8 +121,8 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: "#536DFE",
-          color: "white",
+          bg: "#1b3c4a",
+          color: "white.200",
           fontWeight: "bold",
         }}
         {...rest}
@@ -131,7 +132,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
             mr="4"
             fontSize="16"
             _groupHover={{
-              color: "white",
+              color: "blue",
             }}
             as={icon}
           />
@@ -158,8 +159,9 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       <IconButton
         display={{ base: "flex", md: "none" }}
         onClick={onOpen}
-        variant="outline"
-        color={useColorModeValue("white", "white")}
+        bgColor='transparent'
+        borderColor='white.400'
+        color="white.200"
         aria-label="open menu"
         icon={<FiMenu />}
       />
@@ -169,23 +171,16 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         // bgGradient="linear(to-l, #7928CA, #FF0080)"
         // bgClip="text"
         fontSize="2xl"
-        color={useColorModeValue("white", "white")}
+        color="white.200"
         // letterSpacing={"0.050em"}
         fontFamily="Raleway Variable"
-        fontWeight="900"
+        fontWeight="700"
         // backgroundClip="text"
               >
-        Raw. industrial
+        R. Brand
       </Text>
       <HStack spacing={{ base: "0", md: "2" }}>
-        <IconButton
-          onClick={toggleColorMode}
-          size="lg"
-          mr={4}
-          variant="filled"
-          aria-label="open menu"
-          icon={<FaRegLightbulb size="24" color="white" />}
-        />
+
 
         <Flex alignItems={"center"}>
           <Menu>
@@ -219,7 +214,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             </MenuButton>
             <MenuList
             
-        bg={useColorModeValue("white", "#262956")} // Change this line to set the background color of the menu list
+        bg={useColorModeValue("#262956", "#262956")} // Change this line to set the background color of the menu list
         borderColor={useColorModeValue("#16181A", "#16181A")}
         p={0}
         m={0}

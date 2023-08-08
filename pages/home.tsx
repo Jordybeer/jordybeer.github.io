@@ -13,7 +13,6 @@ export default function Home() {
       <NextJsCarousel />
       <IconList />
       <Nuke />
-      <Model3D />
 
     </>
   );
