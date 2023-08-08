@@ -126,21 +126,23 @@ const Model3D = () => {
 
   return (
     <Box
-      bg="transparent"
+      bg="#03435f"
       position="relative"
-      maxW='md'
-      maxH='md'
+  
+      borderRadius='lg'
+      borderWidth='2px'
+      borderColor='#007170'
+      maxW='3xl'
+      maxH='lg'
       height="100%"
       width="100%"
       overflow="hidden"
       display="flex"
       pt={10}
       pb={10}
-      pl={2}
-      pr={2}
-      border="2px ##03435f"
-      borderRadius="lg"
-      justifyContent="center"
+
+      p="4"
+      mx="4"      justifyContent="center"
       alignContent="stretch"
       m={2}
 

@@ -7,9 +7,12 @@ export default class NextJsCarousel extends Component {
   render() {
     return (
       <Card
-      bgColor={'#1b3c4a'}
-      color='#fbebe3'
-      direction={{base: 'row', sm: 'row'}}
+      bgColor={'#03435f'}
+      position="relative"
+      borderRadius='lg'
+      borderWidth='3px'
+      color='#007170'
+      direction={{base: 'column', sm: 'row'}}
       maxW='3xl'
       maxH='3xl'
         height={"100%"}

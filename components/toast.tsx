@@ -12,7 +12,10 @@ function Nuke() {
       <Button
             bgColor={'#0051a8'}
             color='#fbebe3'
-            border='1px lightblue'
+            
+      position="relative"
+    border="2px"
+            borderColor='#007170'
             _hover={{
               bgColor: '#0051a8',
               transform: 'scale(1.25)',

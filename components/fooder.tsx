@@ -7,7 +7,6 @@ import {
   Stack,
 Tag,
 Tooltip,
-useColorModeValue,
   VisuallyHidden,
   Flex
 } from '@chakra-ui/react'

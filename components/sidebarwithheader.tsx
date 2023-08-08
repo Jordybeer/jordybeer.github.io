@@ -8,10 +8,8 @@ import {
   Flex,
   HStack,
   VStack,
-  Icon,
-  useColorModeValue,
-  useColorMode,
   Text,
+  Icon,
   Drawer,
   DrawerContent,
   useDisclosure,
@@ -34,11 +32,13 @@ import {
 import { IconType } from "react-icons";
 
 import Home from "../pages/home";
-import { FaRegLightbulb } from "react-icons/fa";
+
 
 // Supports weights 100-900
 import "@fontsource-variable/raleway";
 import Fooder from "../components/fooder";
+
+
 
 interface LinkItemProps {
   name: string;
@@ -57,7 +57,6 @@ interface MobileProps extends FlexProps {
 interface SidebarProps extends BoxProps {
   onClose: () => void;
 }
-
 const LinkItems: Array<LinkItemProps> = [
   { name: "Portfolio", icon: FiTrendingUp },
   { name: "Over mij", icon: FiSettings },
@@ -105,6 +104,42 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   );
 };
 
+
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" },
+}
+// const Icon = (props) => {
+//   return (
+//     <motion.div
+//       variants={variants}
+//       whileHover={{ scale: 1.1 }}
+//       whileTap={{ scale: 0.95 }}
+//       >
+//       <FiMenu />
+//     </motion.div>
+//       )
+//     }
+//     export const NavAnimation = () => {
+//       const x = useMotionValue(0)
+//       const background = useTransform(
+//         x,
+//         [-100, 0, 100],
+//         ["#ff008c", "#7700ff", "rgb(230, 255, 0)"]
+// //       )
+
+//   return (
+//     <motion.div style={{ background }}>
+//       <motion.div
+//         drag="x"
+//         dragConstraints={{ left: 0, right: 0 }}
+//         style={{ x }}
+//       >
+//         <Icon x={x} />
+//       </motion.div>
+//     </motion.div>
+//   )
+// }
 const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (
     <Box
@@ -132,7 +167,8 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
             mr="4"
             fontSize="16"
             _groupHover={{
-              color: "blue",
+              color: "white.200",
+              fontWeight: "bold"
             }}
             as={icon}
           />
@@ -144,7 +180,6 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
-  const { toggleColorMode } = useColorMode();
   return (
     <Flex
       // top navbar
@@ -152,7 +187,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue("#022636", "#022636")}
+      bg="#022636"
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >
@@ -214,8 +249,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             </MenuButton>
             <MenuList
             
-        bg={useColorModeValue("#262956", "#262956")} // Change this line to set the background color of the menu list
-        borderColor={useColorModeValue("#16181A", "#16181A")}
+        bg="#262956"
+        borderColor="16181A" 
         p={0}
         m={0}
             >
