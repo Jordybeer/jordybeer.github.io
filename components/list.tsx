@@ -1,5 +1,5 @@
 import { List, ListItem, ListIcon} from "@chakra-ui/react";
-import { MdCheckCircle, MdRepeatIcon } from "react-icons/md";
+import { MdCheckCircle } from "react-icons/md";
 import { Spinner, Stack } from '@chakra-ui/react'
 import motion from 'framer-motion'
 
