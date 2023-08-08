@@ -89,7 +89,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           fontWeight="700"
           letterSpacing={"0.10em"}
         >
-          Raw. Brand
+          RAW Brands
         </Text>
 
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
@@ -212,7 +212,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontWeight="700"
         // backgroundClip="text"
               >
-        R. Brand
+          RAW Brands
       </Text>
       <HStack spacing={{ base: "0", md: "2" }}>
 

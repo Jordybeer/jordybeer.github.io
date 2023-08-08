@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Card, Stack, CardBody,CardHeader,Flex} from "@chakra-ui/react";
+import Nuke from "./toast";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { FiMenu } from "react-icons/fi";
 
 export default class NextJsCarousel extends Component {
   render() {
@@ -12,13 +15,13 @@ export default class NextJsCarousel extends Component {
       borderRadius='lg'
       borderWidth='3px'
       color='#007170'
+      overflow='hidden'
       direction={{base: 'column', sm: 'row'}}
       maxW='3xl'
       maxH='3xl'
         height={"100%"}
         width={"100%"}
         display='flex'
-        pb={10}
         pt={10}
         
         zIndex={1} // Set a higher z-index value
@@ -63,7 +66,18 @@ export default class NextJsCarousel extends Component {
             <p className="legend">Unieke kast gemaakt voor mijn vrouw</p>
           </div>
         </Carousel>
+        <Flex
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              // pt={10}
+              pt={2}
+              pb={2}
+            >
+              <Nuke />
+              </Flex>
         </Stack>
+      
       </Card>
     );
   }
