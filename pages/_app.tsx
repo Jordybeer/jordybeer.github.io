@@ -6,12 +6,12 @@ import theme from "../components/theme";
 function App({ Component, pageProps }) {
   return (
     <>
-      <Head children={undefined}>
+      <Head>
         <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <ChakraProvider theme={theme}>
-        <Layout children={undefined}>
+        <Layout >
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>
