@@ -231,7 +231,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontWeight="700"
         // backgroundClip="text"
               >
-          RAW Brands
+          RAW Brands 👨‍🏭
       </Text>
       </motion.div>
       <HStack spacing={{ base: "0", md: "2" }}>
