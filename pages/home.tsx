@@ -42,7 +42,7 @@ export default function Home() {
     query={['Unieke', 'passie']}
     styles={{ pt: '4',px: '2', py: '1', rounded: 'full', bg: 'green.200',  justifyContent: 'right', alignContent: 'right' }}
       >
-gemaakt met passie 👨‍🏭  </Highlight>
+gemaakt met passie   </Highlight>
 </Heading>
 
 </Box>
