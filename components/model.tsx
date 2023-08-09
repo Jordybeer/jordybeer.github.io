@@ -5,7 +5,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment";
-
+import { Box3 } from "three";
 
 const Model3D = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -46,7 +46,7 @@ const Model3D = () => {
     controls.enableDamping = true;
     controls.autoRotate = true;
     controls.rotateSpeed = 1;
-    controls.autoRotateSpeed = 1;
+    controls.autoRotateSpeed = 2;
     controls.update();
 
     // Step 5: Create a new instance of the DRACOLoader and set its decoder path.
@@ -126,23 +126,23 @@ const Model3D = () => {
 
   return (
     <Box
-      bg="transparent"
+      bg="#03435f"
       position="relative"
+  
+      borderRadius='lg'
+      borderWidth='2px'
+      borderColor='#007170'
       maxW='md'
       maxH='md'
       height="100%"
       width="100%"
       overflow="hidden"
       display="flex"
-      pt={10}
-      pb={10}
-      pl={2}
-      pr={2}
-      border="2px solid white"
-      borderRadius="lg"
-      justifyContent="center"
-      alignContent="stretch"
-      m={2}
+      
+
+      mx="4"      justifyContent="center"
+      alignContent="center"
+      m={3}
 
     >
             <div ref={containerRef} 

@@ -8,10 +8,8 @@ import {
   Flex,
   HStack,
   VStack,
-  Icon,
-  useColorModeValue,
-  useColorMode,
   Text,
+  Icon,
   Drawer,
   DrawerContent,
   useDisclosure,
@@ -32,13 +30,15 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import { IconType } from "react-icons";
-
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import Home from "../pages/home";
-import { FaRegLightbulb } from "react-icons/fa";
+
 
 // Supports weights 100-900
 import "@fontsource-variable/raleway";
 import Fooder from "../components/fooder";
+
+
 
 interface LinkItemProps {
   name: string;
@@ -57,31 +57,33 @@ interface MobileProps extends FlexProps {
 interface SidebarProps extends BoxProps {
   onClose: () => void;
 }
-
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Design op maat", icon: FiHome },
   { name: "Portfolio", icon: FiTrendingUp },
+  { name: "Over mij", icon: FiSettings },
   { name: "Te koop", icon: FiCompass },
-  { name: "Contacteer", icon: FiStar },
-  { name: "Over ons", icon: FiSettings },
+  { name: "Home", icon: FiHome },
+  { name: "Contact", icon: FiStar },
 ];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     // left navbar
+    
     <Flex
     h="full" 
     flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
-      bg={useColorModeValue("#0051a8", "#262956")}
+      bg="#022636"
+
       borderRight="1x"
-      borderRightColor="#BDBDBD"
+      borderRightColor="#03435f"
       w={{ base: "null", md: 60 }}
       pos="fixed"
-      color={useColorModeValue("white", "white")}
+      color='white'
       {...rest}
     >
-      <Flex h="20" alignItems="center" mx="70" justifyContent="space-start">
+      
+      <Flex h="20" alignItems="center" mx="70" justifyContent="space-start"> 
         <Text
           textAlign={{ base: "start", md: "left" }}
           fontSize="2xl"
@@ -89,7 +91,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           fontWeight="700"
           letterSpacing={"0.10em"}
         >
-          Raw. industrial
+          RAW Brands
         </Text>
 
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
@@ -104,6 +106,42 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   );
 };
 
+
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" },
+}
+// const Icon = (props) => {
+//   return (
+//     <motion.div
+//       variants={variants}
+//       whileHover={{ scale: 1.1 }}
+//       whileTap={{ scale: 0.95 }}
+//       >
+//       <FiMenu />
+//     </motion.div>
+//       )
+//     }
+//     export const NavAnimation = () => {
+//       const x = useMotionValue(0)
+//       const background = useTransform(
+//         x,
+//         [-100, 0, 100],
+//         ["#ff008c", "#7700ff", "rgb(230, 255, 0)"]
+// //       )
+
+//   return (
+//     <motion.div style={{ background }}>
+//       <motion.div
+//         drag="x"
+//         dragConstraints={{ left: 0, right: 0 }}
+//         style={{ x }}
+//       >
+//         <Icon x={x} />
+//       </motion.div>
+//     </motion.div>
+//   )
+// }
 const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (
     <Box
@@ -120,8 +158,8 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         role="group"
         cursor="pointer"
         _hover={{
-          bg: "#536DFE",
-          color: "white",
+          bg: "#1b3c4a",
+          color: "white.200",
           fontWeight: "bold",
         }}
         {...rest}
@@ -131,7 +169,8 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
             mr="4"
             fontSize="16"
             _groupHover={{
-              color: "white",
+              color: "white.200",
+              fontWeight: "bold"
             }}
             as={icon}
           />
@@ -143,59 +182,68 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 };
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
-  const { toggleColorMode } = useColorMode();
   return (
+
     <Flex
       // top navbar
       ml={{ base: 0, md: 60 }}
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg={useColorModeValue("#005ec4", "#2A2D58 ")}
-      borderBottomWidth="1px"
-      borderBottomColor={useColorModeValue("white", "#BDBDBD")}
+      bg="#022636"
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >
       <IconButton
         display={{ base: "flex", md: "none" }}
         onClick={onOpen}
+        bgColor='transparent'
+        borderColor='white.400'
         variant="outline"
-        color={useColorModeValue("white", "white")}
+        color="white.200"
         aria-label="open menu"
         icon={<FiMenu />}
       />
-
+    <motion.div initial="hidden" animate="visible" variants={{
+      hidden: {
+        scale:0.01,
+        opacity: 1
+      },
+      visible: {
+        scale: 1,
+        opacity: 1,
+        
+        transition: {
+          ease: "easeOut",
+          delay: .3,
+          duration: 0.4,
+        }
+      },
+    }}>
       <Text
         display={{ base: "flex", md: "none" }}
         // bgGradient="linear(to-l, #7928CA, #FF0080)"
         // bgClip="text"
         fontSize="2xl"
-        color={useColorModeValue("white", "white")}
+        color="white.200"
         // letterSpacing={"0.050em"}
         fontFamily="Raleway Variable"
-        fontWeight="900"
+        fontWeight="700"
         // backgroundClip="text"
               >
-        Raw. industrial
+          RAW Brands
       </Text>
+      </motion.div>
       <HStack spacing={{ base: "0", md: "2" }}>
-        <IconButton
-          onClick={toggleColorMode}
-          size="lg"
-          mr={4}
-          variant="filled"
-          aria-label="open menu"
-          icon={<FaRegLightbulb size="24" color="white" />}
-        />
 
-        <Flex alignItems={"center"}>
+
+        {/* <Flex alignItems={"center"}>
           <Menu>
-            <MenuButton
-              py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: "none" }}
-            >
+          <MenuButton
+          py={2}
+          transition="all 0.3s"
+          _focus={{ boxShadow: "none" }}
+          >
               <HStack>
                 <Avatar
                   size={"md"}
@@ -204,12 +252,12 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   }
                 />
                 <VStack
-                  display={{ base: "none", md: "flex" }}
-                  alignItems="flex-start"
-                  spacing="1px"
-                  ml="2"
+                display={{ base: "none", md: "flex" }}
+                alignItems="flex-start"
+                spacing="1px"
+                ml="2"
                 >
-                  <Text fontSize="sm">Jordybeer</Text>
+                <Text fontSize="sm">Jordybeer</Text>
                   <Text fontSize="xs" color="gray.200">
                     Admin
                   </Text>
@@ -221,10 +269,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             </MenuButton>
             <MenuList
             
-        bg={useColorModeValue("white", "#262956")} // Change this line to set the background color of the menu list
-        borderColor={useColorModeValue("#16181A", "#16181A")}
-        p={0}
-        m={0}
+            bg="#262956"
+            borderColor="16181A" 
+            p={0}
+            m={0}
             >
               <MenuItem>Profiel</MenuItem>
               <MenuItem>Album beheren</MenuItem>
@@ -232,7 +280,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Afmelden</MenuItem>
             </MenuList>
           </Menu>
-        </Flex>
+        </Flex> */}
       </HStack>
     </Flex>
   );
@@ -245,6 +293,7 @@ const SidebarWithHeader = () => {
     <Box>
       <SidebarContent
         onClose={() => onClose}
+        
         display={{ base: "none", md: "block" }}
       />
       <Drawer

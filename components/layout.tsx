@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import SidebarWithHeader from "../components/sidebarwithheader";
 const Layout = ({ children }) => {
   return (
@@ -8,10 +8,10 @@ const Layout = ({ children }) => {
     <Box
       minHeight="100vh"
       display="flex"
-      bgColor={useColorModeValue("#0074D9", "#043663  ")}
+      bgColor='#242424'
       flexDirection="column"
-      color={useColorModeValue("white", "white")}
-      borderRight= " solid lightblue"
+      color='white'
+      borderRight= " solid #03435f"
       scrollBehavior="smooth"
       borderRadius="xs"
 
