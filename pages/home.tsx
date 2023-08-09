@@ -19,7 +19,6 @@ export default function Home() {
       visible: {
         scale: 1,
         opacity: 1,
-        animate: { rotate: 360 },
         transition: {
           delay: .7,
           duration: .8,
