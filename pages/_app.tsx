@@ -1,9 +1,18 @@
 import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
-import Layout from "../components/layout";
+import Layout, { LayoutProps } from "../components/layout";
 import theme from "../components/theme";
 
-function App({ Component, pageProps }) {
+interface MyAppProps {
+  Component: React.ElementType;
+  pageProps: any;
+}
+
+interface LayoutPropsWithChildren extends LayoutProps {
+  children: React.ReactNode;
+}
+
+function App({ Component, pageProps }: MyAppProps) {
   return (
     <>
       <Head>
