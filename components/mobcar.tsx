@@ -9,6 +9,22 @@ import { FiMenu } from "react-icons/fi";
 export default class NextJsCarousel extends Component {
   render() {
     return (
+      <motion.div initial="hidden" animate="visible" variants={{
+        hidden: {
+          scale:0.01,
+          opacity: 0
+        },
+        visible: {
+          scale: 1,
+          opacity: 1,
+          
+          transition: {
+            ease: "easeIn",
+            delay: 1,
+            duration: 1,
+          }
+        },
+      }}>
       <Card
       bgColor={'#03435f'}
       position="relative"
@@ -79,6 +95,7 @@ export default class NextJsCarousel extends Component {
         </Stack>
       
       </Card>
+      </motion.div>
     );
   }
 }

@@ -30,7 +30,7 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 import { IconType } from "react-icons";
-
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import Home from "../pages/home";
 
 
@@ -68,6 +68,7 @@ const LinkItems: Array<LinkItemProps> = [
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     // left navbar
+    
     <Flex
     h="full" 
     flexDirection={{ base: "column", md: "column" }}
@@ -81,7 +82,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       color='white'
       {...rest}
     >
-      <Flex h="20" alignItems="center" mx="70" justifyContent="space-start">
+      
+      <Flex h="20" alignItems="center" mx="70" justifyContent="space-start"> 
         <Text
           textAlign={{ base: "start", md: "left" }}
           fontSize="2xl"
@@ -181,6 +183,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
+
     <Flex
       // top navbar
       ml={{ base: 0, md: 60 }}
@@ -196,11 +199,27 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         onClick={onOpen}
         bgColor='transparent'
         borderColor='white.400'
+        variant="outline"
         color="white.200"
         aria-label="open menu"
         icon={<FiMenu />}
       />
-
+    <motion.div initial="hidden" animate="visible" variants={{
+      hidden: {
+        scale:0.01,
+        opacity: 1
+      },
+      visible: {
+        scale: 1,
+        opacity: 1,
+        
+        transition: {
+          ease: "easeOut",
+          delay: .3,
+          duration: 0.4,
+        }
+      },
+    }}>
       <Text
         display={{ base: "flex", md: "none" }}
         // bgGradient="linear(to-l, #7928CA, #FF0080)"
@@ -214,16 +233,17 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               >
           RAW Brands
       </Text>
+      </motion.div>
       <HStack spacing={{ base: "0", md: "2" }}>
 
 
-        <Flex alignItems={"center"}>
+        {/* <Flex alignItems={"center"}>
           <Menu>
-            <MenuButton
-              py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: "none" }}
-            >
+          <MenuButton
+          py={2}
+          transition="all 0.3s"
+          _focus={{ boxShadow: "none" }}
+          >
               <HStack>
                 <Avatar
                   size={"md"}
@@ -232,12 +252,12 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
                   }
                 />
                 <VStack
-                  display={{ base: "none", md: "flex" }}
-                  alignItems="flex-start"
-                  spacing="1px"
-                  ml="2"
+                display={{ base: "none", md: "flex" }}
+                alignItems="flex-start"
+                spacing="1px"
+                ml="2"
                 >
-                  <Text fontSize="sm">Jordybeer</Text>
+                <Text fontSize="sm">Jordybeer</Text>
                   <Text fontSize="xs" color="gray.200">
                     Admin
                   </Text>
@@ -249,10 +269,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             </MenuButton>
             <MenuList
             
-        bg="#262956"
-        borderColor="16181A" 
-        p={0}
-        m={0}
+            bg="#262956"
+            borderColor="16181A" 
+            p={0}
+            m={0}
             >
               <MenuItem>Profiel</MenuItem>
               <MenuItem>Album beheren</MenuItem>
@@ -260,7 +280,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Afmelden</MenuItem>
             </MenuList>
           </Menu>
-        </Flex>
+        </Flex> */}
       </HStack>
     </Flex>
   );
@@ -273,6 +293,7 @@ const SidebarWithHeader = () => {
     <Box>
       <SidebarContent
         onClose={() => onClose}
+        
         display={{ base: "none", md: "block" }}
       />
       <Drawer
