@@ -91,7 +91,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           fontWeight="700"
           letterSpacing={"0.10em"}
         >
-          RAW Brands
+          RAW Brands 👨‍🏭
         </Text>
 
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
