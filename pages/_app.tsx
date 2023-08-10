@@ -1,3 +1,5 @@
+"use client"
+
 import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "../components/layout";
