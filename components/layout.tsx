@@ -10,8 +10,9 @@ const Layout = ({ children }) => {
       display="flex"
       // bgColor='#242424'
       flexDirection="column"
-      bgGradient=
-      'linear(to-br, #320850 , #2E51BB)'
+
+      bgGradient="linear(to bottom right, #5c3c6d, #2e51bb)"
+
       color='white'
       borderRight= " solid #03435f"
       scrollBehavior="smooth"

@@ -70,13 +70,15 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     // left navbar
     
     <Flex
+
+    borderRight="1px solid #ccc"    bg="white"
+    zIndex="sticky"
+
     h="full" 
     flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
-      bg="#022636"
-
-      borderRight="1x"
-      borderRightColor="#03435f"
+      // bg="#022636"
+bgGradient="linear(to bottom right, #4c2a57, #2e51bb)"
       w={{ base: "null", md: 60 }}
       pos="fixed"
       color='white'
@@ -186,12 +188,16 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
 
     <Flex
       // top navbar
+      borderBottom="1px solid #ccc"
+      bg="white"
+      zIndex="sticky"
+
+
       ml={{ base: 0, md: 60 }}
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-      bg="#022636"
-      justifyContent={{ base: "space-between", md: "flex-end" }}
+bgGradient="linear(to bottom right, #4c2a57, #2e51bb)"      justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >
       <IconButton

@@ -30,7 +30,7 @@ export default function Home() {
       <Box m={3} pb={5}><Heading lineHeight='tall'>
   <Highlight
     query={['Unieke', 'passie']}
-    styles={{ px: '2', py: '1', rounded: 'full', bg: 'green.200', justifyContent: 'center', alignContent: 'center' }}
+    styles={{ px: '2', py: '1', rounded: 'full', bg: 'orange.200', justifyContent: 'center', alignContent: 'center' }}
       >
   Unieke designs 
   </Highlight>
@@ -42,7 +42,7 @@ export default function Home() {
 
   <Highlight
     query={['Unieke', 'passie']}
-    styles={{ pt: '4',px: '2', py: '1', rounded: 'full', bg: 'green.200',  justifyContent: 'right', alignContent: 'right' }}
+    styles={{ pt: '4',px: '2', py: '1', rounded: 'full', bg: 'orange.200',  justifyContent: 'right', alignContent: 'right' }}
       >
 gemaakt met passie   </Highlight>
 </Heading>
