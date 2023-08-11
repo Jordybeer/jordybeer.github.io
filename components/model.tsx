@@ -126,7 +126,7 @@ const Model3D = () => {
 
   return (
     <Box
-      bg="#03435f"
+      bg="#0C0AA1"
       position="relative"
   
       borderRadius='lg'

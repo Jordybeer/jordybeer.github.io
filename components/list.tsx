@@ -16,7 +16,7 @@ return(
       maxH={{base: '100%', sm:'xl'}}
       pr={2}
       pl={2}
-      color="white.800"
+      color="blue.800"
       pb={10}
       width="100%"
       height="100%"
