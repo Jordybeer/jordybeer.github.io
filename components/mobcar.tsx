@@ -26,9 +26,9 @@ export default class NextJsCarousel extends Component {
         },
       }}>
       <Card
-bgGradient="linear(to left, #BA90EE9B, #2E51BBB7, )"  borderRadius='lg'
-      borderWidth='3px'
-      color='#007170'
+bgGradient="linear(to bottom left, #BA90EE9B, #2E51BBB7, )"  borderRadius='lg'
+      borderWidth='2px'
+      color='#0C0AA1'
       overflow='hidden'
       direction={{base: 'column', sm: 'row'}}
       maxW='3xl'

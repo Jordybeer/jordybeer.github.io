@@ -16,19 +16,19 @@ return(
       maxH={{base: '100%', sm:'xl'}}
       pr={2}
       pl={2}
-      color="white.200"
+      color="white.800"
       pb={10}
       width="100%"
       height="100%"
       position="relative"
-      fontSize="100%"
+      fontSize="110%"
       justifyContent='center'
       alignContent={'center'}
       >
 
   <ListItem>
     <ListIcon as={MdCheckCircle} color='green.500' />
-    Backend gecombineerd met Next.js en Node
+    Backend gecombineerd met Next.js 
   </ListItem>
 
   <ListItem>

@@ -131,7 +131,6 @@ const Model3D = () => {
   
       borderRadius='lg'
       borderWidth='2px'
-      borderColor='#007170'
       maxW='md'
       maxH='md'
       height="100%"
