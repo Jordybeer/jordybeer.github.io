@@ -8,8 +8,10 @@ const Layout = ({ children }) => {
     <Box
       minHeight="100vh"
       display="flex"
-      bgColor='#242424'
+      // bgColor='#242424'
       flexDirection="column"
+      bgGradient=
+      'linear(to-br, #320850 , #2E51BB)'
       color='white'
       borderRight= " solid #03435f"
       scrollBehavior="smooth"
