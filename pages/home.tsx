@@ -28,7 +28,7 @@ export default function Home() {
         }
       },
     }}>
-   <Box m={3} pb={10}>
+   <Box m={3} pb={5}>
   <Heading lineHeight='tall' fontFamily='Open Sans'>
     <Highlight
       query={['Unieke', 'passie']}
@@ -36,7 +36,7 @@ export default function Home() {
         px: '3',
         py: '1',
         rounded: 'full',
-        bg: '#18FF08',
+        bg: 'blue.300',
         color: '#007170',
         letterSpacing: 'wide',
       }}
@@ -54,7 +54,7 @@ export default function Home() {
         px: '3',
         py: '1',
         rounded: 'full',
-        bg: '#18FF08',
+        bg: 'blue.300',
         color: '#007170',
         letterSpacing: 'wide',
       }}
