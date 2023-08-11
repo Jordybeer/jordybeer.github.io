@@ -5,7 +5,7 @@ function Nuke() {
   return (
     <Box pl={8} pr={6} pt={4} pb={4}>
       <Button
-        bgColor={'#0051a8'}
+        bgColor={'#0C447F'}
         color='#fbebe3'
         position="relative"
         border="2px"

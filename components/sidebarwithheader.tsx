@@ -78,7 +78,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
       // bg="#022636"
-bgGradient="linear(to bottom right, #4c2a57, #2e51bb)"
+bgGradient="linear(to top right, #4A23579B, #2e51bb)"
       w={{ base: "null", md: 60 }}
       pos="fixed"
       color='white'
@@ -87,13 +87,13 @@ bgGradient="linear(to bottom right, #4c2a57, #2e51bb)"
       
       <Flex h="20" alignItems="center" mx="70" justifyContent="space-start"> 
         <Text
-          textAlign={{ base: "start", md: "left" }}
+          textAlign={{ base: "left", md: "left" }}
           fontSize="2xl"
           fontFamily="Raleway Variable"
           fontWeight="700"
           letterSpacing={"0.10em"}
         >
-          RAW Brands 👨‍🏭
+          RAW Brands 
         </Text>
 
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
@@ -197,7 +197,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       px={{ base: 4, md: 4 }}
       height="20"
       alignItems="center"
-bgGradient="linear(to bottom right, #4c2a57, #2e51bb)"      justifyContent={{ base: "space-between", md: "flex-end" }}
+      bgGradient="linear-gradient(to bottom right, #2e51bb, #1E3A8ECA)"
+      justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
     >
       <IconButton

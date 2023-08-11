@@ -26,9 +26,7 @@ export default class NextJsCarousel extends Component {
         },
       }}>
       <Card
-      bgColor={'#03435f'}
-      position="relative"
-      borderRadius='lg'
+bgGradient="linear(to left, #BA90EE9B, #2E51BBB7, )"  borderRadius='lg'
       borderWidth='3px'
       color='#007170'
       overflow='hidden'

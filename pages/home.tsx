@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <>
+
     <motion.div initial="hidden" animate="visible" variants={{
       hidden: {
         scale:0.01,
@@ -27,31 +28,48 @@ export default function Home() {
         }
       },
     }}>
-      <Box m={3} pb={5}><Heading lineHeight='tall'>
-  <Highlight
-    query={['Unieke', 'passie']}
-    styles={{ px: '2', py: '1', rounded: 'full', bg: 'orange.200', justifyContent: 'center', alignContent: 'center' }}
-      >
-  Unieke designs 
-  </Highlight>
-</Heading>
+   <Box m={3} pb={10}>
+  <Heading lineHeight='tall' fontFamily='Open Sans'>
+    <Highlight
+      query={['Unieke', 'passie']}
+      styles={{
+        px: '3',
+        py: '1',
+        rounded: 'full',
+        bg: '#18FF08',
+        color: '#007170',
+        letterSpacing: 'wide',
+      }}
+    >
+      Unieke designs
+          </Highlight>
+  </Heading>
 </Box>
 
-<Box m={3} pb={10}><Heading lineHeight='tall'>
-
-
-  <Highlight
-    query={['Unieke', 'passie']}
-    styles={{ pt: '4',px: '2', py: '1', rounded: 'full', bg: 'orange.200',  justifyContent: 'right', alignContent: 'right' }}
-      >
-gemaakt met passie   </Highlight>
-</Heading>
-
+<Box m={3} pb={10}>
+  <Heading lineHeight='tall' fontFamily='Open Sans'>
+    <Highlight
+      query={['Unieke', 'passie']}
+      styles={{
+        px: '3',
+        py: '1',
+        rounded: 'full',
+        bg: '#18FF08',
+        color: '#007170',
+        letterSpacing: 'wide',
+      }}
+    >
+      Gemaakt met passie
+    </Highlight>
+  </Heading>
 </Box>
   </motion.div>
       <NextJsCarousel />
       <IconList />
-      <Divider />   <Model3D />
+      <Divider />  
+      
+       {/* <Model3D /> */}
+   
    <Divider />
    
     </>
