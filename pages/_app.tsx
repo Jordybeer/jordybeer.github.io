@@ -7,8 +7,7 @@ import React from "react";
 import type { AppProps } from "next/app";
 import type { Session } from "next-auth";
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-
+import Fooder from "../components/fooder";
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps<{ session: Session }>) {
   const [isMounted, setIsMounted] = useState(false);
 

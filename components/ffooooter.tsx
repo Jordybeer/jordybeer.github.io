@@ -1,6 +1,7 @@
 import Link from "next/link"
 import styles from "./footer.module.css"
 import packageJSON from "../package.json"
+import React from "react"
 
 export default function Footer() {
   return (

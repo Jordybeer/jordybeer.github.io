@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import IconList from "../components/list";
 import Model3D from "../components/mm";
 import NextJsCarousel from "../components/mobcar";
-import { Divider, Box, Heading, Highlight, Text, Button } from "@chakra-ui/react";
+import { Divider, Box, Heading, Highlight, SlideFade, Slide } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import LayoutHome from "../components/layouthome"
 
@@ -12,8 +12,8 @@ import LayoutHome from "../components/layouthome"
 export default function Home() {
   return (
     <>
+<Box m={3} pb={10} position="fixed">
 
-   <Box m={3} pb={5}>
   <Heading lineHeight='tall' fontFamily='Open Sans'>
     <Highlight
       query={['Unieke', 'passie']}
@@ -31,7 +31,7 @@ export default function Home() {
   </Heading>
 </Box>
 
-<Box m={3} pb={10}>
+<Box m={3} pt={20} pb={10} position="absolute">
   <Heading lineHeight='tall' fontFamily='Open Sans'>
     <Highlight
       query={['Unieke', 'passie']}
@@ -48,12 +48,10 @@ export default function Home() {
     </Highlight>
   </Heading>
 </Box>
-  </motion.div>
       <IconList />
       <Divider />  
       
        {/* <Model3D /> */}
-   
    <Divider />
    
     </>

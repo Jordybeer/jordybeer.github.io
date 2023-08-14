@@ -8,10 +8,10 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
-
-import React from "react"
+import React from 'react';
 
 export const NewNavbarLeft = () => {
+  
   const [display, changeDisplay] = useState('none')
   return (
     <Flex>
@@ -23,7 +23,7 @@ export const NewNavbarLeft = () => {
       >
         {/* Desktop */}
         <Flex
-          display={['none', 'none', 'flex','flex']}
+          display={['flex', 'flex', 'flex','flex']}
         >
           <NextLink href="/" passHref>
             <Button
@@ -31,119 +31,24 @@ export const NewNavbarLeft = () => {
               variant="ghost"
               aria-label="Home"
               my={5}
-              w="100%"
             >
               Home
-                    </Button>
-          </NextLink>
-
-          <NextLink href="/about" passHref>
-            <Button
-              as="a"
-              variant="ghost"
-              aria-label="About"
-              my={5}
-              w="100%"
-            >
-              About
-                    </Button>
-          </NextLink>
-
-          <NextLink href="/contact" passHref>
-            <Button
-              as="a"
-              variant="ghost"
-              aria-label="Contact"
-              my={5}
-              w="100%"
-            >
-              Contact
-                    </Button>
+            </Button>
           </NextLink>
         </Flex>
 
         {/* Mobile */}
-        <IconButton
-          aria-label="Open Menu"
-          size="lg"
-          mr={2}
-          icon={
-            <HamburgerIcon />
-          }
-          onClick={() => changeDisplay('flex')}
-          display={['flex', 'flex', 'none', 'none']}
-        />
-      </Flex>
-
-      {/* Mobile Content */}
-      <Flex
-        w='100vw'
-        display={display}
-        bgColor="gray.50"
-        zIndex={20}
-        h="100vh"
-        pos="fixed"
-        top="0"
-        left="0"
-        overflowY="auto"
-        flexDir="column"
-      >
-        <Flex justify="flex-end">
-          <IconButton
-            mt={2}
-            mr={2}
-            aria-label="Open Menu"
-            size="lg"
-            icon={
-              <CloseIcon />
-            }
-            onClick={() => changeDisplay('none')}
-          />
-        </Flex>
-
         <Flex
-          flexDir="column"
-          align="center"
+          display={['none', 'none', 'flex', 'flex']}
         >
-          <NextLink href="/" passHref>
-            <Button
-              as="a"
-              variant="ghost"
-              aria-label="Home"
-              my={5}
-              w="100%"
-            >
-              Home
-                    </Button>
-          </NextLink>
-
-          <NextLink href="/about" passHref>
-            <Button
-              as="a"
-              variant="ghost"
-              aria-label="About"
-              my={5}
-              w="100%"
-            >
-              About
-                    </Button>
-          </NextLink>
-
-          <NextLink href="/contact" passHref>
-            <Button
-              as="a"
-              variant="ghost"
-              aria-label="Contact"
-              my={5}
-              w="100%"
-            >
-              Contact
-            </Button>
-          </NextLink>
+          <IconButton
+            aria-label="Open menu"
+            icon={display === 'none' ? <HamburgerIcon /> : <CloseIcon />}
+            onClick={() => changeDisplay(display === 'none' ? 'block' : 'none')}
+            mr={2}
+          />
         </Flex>
       </Flex>
     </Flex>
   )
 }
-
-export default NewNavbarLeft
