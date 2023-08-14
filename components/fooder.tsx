@@ -1,8 +1,8 @@
-'use client'
-
+import React from 'react'
 import {
   Box,
   chakra,
+  Button,
   Container,
   Stack,
 Tag,

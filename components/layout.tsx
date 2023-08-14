@@ -1,28 +1,34 @@
-import React from "react";
-import { Box } from "@chakra-ui/react";
-import SidebarWithHeader from "../components/sidebarwithheader";
-const Layout = ({ children }) => {
-  return (
-    //main
-    
-    <Box
-      minHeight="100vh"
-      display="flex"
-      // bgColor='#242424'
-      flexDirection="column"
+import React, { ReactNode } from "react";
+import { Box , Container} from "@chakra-ui/react";
+import Header from "./header";
+import Footer from "./footer";
+import Home from "../pages/home";
+import NewNavbarLeft from "./newnavbarleft";
 
-      bgGradient="linear(to top right, #ffcba4, #2e51bb)"      color='white'
-      borderRight= " solid #03435f"
-      scrollBehavior="smooth"
-      borderRadius="xs"
+type LayoutProps = {
+  children: ReactNode;
 
-
-
-    >
-      <SidebarWithHeader />
-      {/* Footer / Fooder CSS */}
-    </Box>
-  );
 };
 
-export default Layout;
+export default function Layout({ children }: LayoutProps): JSX.Element {
+  return (
+    <>
+      <NewNavbarLeft />
+      <Container
+        minHeight="100vh"
+        display="flex"
+        bgGradient="linear(to top right, #ffcba4, #2e51bb)"
+        color="white"
+        borderRight="solid #03435f"
+        scrollBehavior="smooth"
+        borderRadius="xs"
+      >
+        <NewNavbarLeft />
+      <div>
+        <Home />
+      </div>
+      </Container>
+      <Footer />
+    </>
+  );
+};
