@@ -15,7 +15,7 @@ export default function Header() {
       <noscript>
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
-      <div className={styles.signedInStatus}>
+      <div className={styles.signedInStatus} align="center">
         <p
           className={`nojs-show ${
             !session && loading ? styles.loading : styles.loaded
@@ -65,31 +65,20 @@ export default function Header() {
           )}
         </p>
       </div>
-      <nav>
+      <div align="center">
+      <nav >
         <ul className={styles.navItems}>
           <li className={styles.navItem}>
             <Link href="/">Home</Link>
           </li>
+
           <li className={styles.navItem}>
-            <Link href="/client">Client</Link>
+            <Link href="/api/auth/examples/protected">Admin</Link>
           </li>
-          <li className={styles.navItem}>
-            <Link href="/server">Server</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/protected">Protected</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/api-example">API</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/admin">Admin</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link href="/me">Me</Link>
-          </li>
+
         </ul>
       </nav>
+      </div>
     </header>
   )
 }

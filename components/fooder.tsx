@@ -51,12 +51,13 @@ const Fooder=()=> {
 bg='transparent'
   borderBottomColor='#232e4a'>
      <Container
-  position='absolute'
+  position='fixed'
   bottom = '0'
   width={'full'}
   as={Stack}
   maxW={'6xl'}
   py={2}
+  pt={10}
   direction={{ base: 'column', md: 'row' }}
   spacing={4}
   justify='center' // Set justify to 'center'

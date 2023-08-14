@@ -1,22 +1,22 @@
-import { Box } from "@chakra-ui/react";
-import React from "react"
+// LayoutHome.tsx
+import React from "react";
+import { Flex } from "@chakra-ui/react";
 
-function LayoutHome() {
+const LayoutHome = ({ children }) => {
   return (
-    <Box 
-    minHeight="100vh"
-    display="flex"
-    bgGradient="linear(to top right, #ffcba4, #2e51bb)"
-    color="white"
-    borderRight="solid #03435f"
-    scrollBehavior="smooth"
-    borderRadius="xs"
+    <Flex
+      position="relative"
+      justifyContent={{ base: "center", md: "space-around", xl: "space-between" }}
+      direction="column"
+      align="center"
+      justify="center"
+      minH="100vh"
+      bg="#F7F7F7"
+      pb={10}
     >
-
-        </Box>
-        
+      {children}
+    </Flex>
   );
-}
+};
 
 export default LayoutHome;
-

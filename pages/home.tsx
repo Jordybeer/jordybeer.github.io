@@ -1,59 +1,95 @@
-
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import IconList from "../components/list";
 import Model3D from "../components/mm";
 import NextJsCarousel from "../components/mobcar";
-import { Divider, Box, Heading, Highlight, SlideFade, Slide } from "@chakra-ui/react";
+import { Divider, Box, Heading, Highlight, SlideFade, Slide, Flex } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import LayoutHome from "../components/layouthome"
-
+import IconList from "../components/list"
+import Fooder from "../components/fooder";
 
 export default function Home() {
   return (
     <>
-<Box m={3} pb={10} position="fixed">
+      <Flex
+      direction="column"
+      justify="center"
+      align="center"
+    pt={10} 
+      maxW={{base: '100%', sm:'100%'}}
+      maxH={{base: '100%', sm:'100%'}}
+      pr={2}
+      pl={2}
+      color="darkblue"
+      pb={10}
+      width="100%"
+      height="100%"
+      position="relative"
+      fontSize="110%">
+      <motion.div initial="hidden" animate="visible" variants={{
+        hidden: {
+          scale:0.01,
+          opacity: 0
+        },
+        visible: {
+          scale: 1,
+          opacity: 1,
+          
+          transition: {
+            ease: "easeIn",
+            delay: 1,
+            duration: 1,
+          }
+        },
+      }}>
+          <Box m={3} >
+          <Heading lineHeight="tall" fontFamily="Open Sans">
+            <Highlight
+              query={["Unieke", "passie"]}
+              styles={{
+                px: "3",
+                py: "1",
+                rounded: "full",
+                bg: "yellow.300",
+                letterSpacing: "wide",
+              }}
+            >
+              Unieke designs
+            </Highlight>
+          </Heading>
+        </Box>
 
-  <Heading lineHeight='tall' fontFamily='Open Sans'>
-    <Highlight
-      query={['Unieke', 'passie']}
-      styles={{
-        px: '3',
-        py: '1',
-        rounded: 'full',
-        bg: 'blue.300',
-        color: '#007170',
-        letterSpacing: 'wide',
-      }}
-    >
-      Unieke designs
-          </Highlight>
-  </Heading>
-</Box>
+        <Box m={3}>
+          <Heading lineHeight="tall" fontFamily="Open Sans">
+            <Highlight
+              query={["Unieke", "passie"]}
+              styles={{
+                px: "3",
+                py: "1",
+                rounded: "full",
+                bg: "yellow.400",
+                letterSpacing: "wide",
+              }}
+            >
+              Gemaakt met passie
+            </Highlight>
+          </Heading>
+        </Box>
+        </motion.div>
+        <Divider />
 
-<Box m={3} pt={20} pb={10} position="absolute">
-  <Heading lineHeight='tall' fontFamily='Open Sans'>
-    <Highlight
-      query={['Unieke', 'passie']}
-      styles={{
-        px: '3',
-        py: '1',
-        rounded: 'full',
-        bg: 'blue.300',
-        color: '#007170',
-        letterSpacing: 'wide',
-      }}
-    >
-      Gemaakt met passie
-    </Highlight>
-  </Heading>
-</Box>
-      <IconList />
-      <Divider />  
-      
-       {/* <Model3D /> */}
-   <Divider />
-   
+<NextJsCarousel />
+        <IconList />
+
+
+          
+  <Divider />
+
+                     <Model3D />
+      <Divider />
+      </Flex>
+
+
+
     </>
   );
 }
