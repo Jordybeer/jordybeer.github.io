@@ -29,19 +29,25 @@ export const authOptions: NextAuthOptions = {
     */
 
     GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
-    }),
+          clientId: process.env.GOOGLE_ID,
+          clientSecret: process.env.GOOGLE_SECRET,
+        }),
+        
+
+        
 
 
   ],
-  secret: "ok dan hier is het",
   theme: {
     colorScheme: "dark",
+    brandColor: "#7F00FF",
+    buttonText: "#7F00FF",
+    logo: "https://i.imgur.com/UfNPoEK.png"
   },
   callbacks: {
     async jwt({ token }) {
       token.userRole = "admin"
+      secure:false
       return token
     },
   },
