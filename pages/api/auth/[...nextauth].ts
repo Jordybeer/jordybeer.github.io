@@ -35,6 +35,7 @@ export const authOptions: NextAuthOptions = {
 
 
   ],
+  secret: "ok dan hier is het",
   theme: {
     colorScheme: "dark",
   },
@@ -43,7 +44,6 @@ export const authOptions: NextAuthOptions = {
       token.userRole = "admin"
       return token
     },
-    secret:"ok dan hier is het",
   },
 }
 
