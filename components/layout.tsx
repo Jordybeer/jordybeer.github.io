@@ -1,39 +1,34 @@
-import React, { ReactNode } from "react";
-import { Divider , Container} from "@chakra-ui/react";
-import Header from "./header";
+import React from "react";
+import { Divider, Container } from "@chakra-ui/react";
+import Header from "../components/header";
 import Fooder from "../components/fooder";
 import Home from "../pages/home";
-import { NewNavbarLeft } from './newnavbarleft';
-import  IconList  from './list';
+import LeftNavbarBackb from "../components/leftnavbarback";
 
-type LayoutProps = {
-  children: ReactNode;
+import Nuke from "./toast";
+import IconList from "./list";
+import NewNavbarLeft from "../components/newnavbarleft";
 
-};
-
-export default function Layout({ children }: LayoutProps): JSX.Element {
+export default function Layout(): JSX.Element {
   return (
-    <>
-      <Header />
-      
-<Container
-  maxW="100%"
-  minH="100vh"
-  display="flex"
-  justifyContent="center"
-  alignItems="center"
-  bgGradient="linear(to top right, #ffcba4, #2e51bb)"
-  color="white"
-  borderRight="solid #03435f"
-  scrollBehavior="smooth"
-  borderRadius="xs"
->
-  <Home />
-</Container>
-  {/* <NewNavbarLeft /> */}
-
+    <> 
+      <Container
+        maxW="100%"
+        minH="100vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        bgGradient="linear(to top right, #ffcba4, #2e51bb)"
+        color="white"
+        borderRight="solid #03435f"
+        scrollBehavior="smooth"
+        borderRadius="xs"
+      >
+        <Home />
+        <NewNavbarLeft />
+      </Container>
+      {/* hier kan footer content */}
       <Fooder />
     </>
   );
-};
-
+}

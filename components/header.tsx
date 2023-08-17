@@ -2,40 +2,39 @@ import Link from "next/link"
 import { signIn, signOut, useSession } from "next-auth/react"
 import styles from "./header.module.css"
 import React from "react"
+import SignInButton from "../components/signin"
 
-// The approach used in this component shows how to build a sign in and sign out
-// component that works on pages which support both client and server side
-// rendering, and avoids any flash incorrect content on initial page load.
 export default function Header() {
   const { data: session, status } = useSession()
   const loading = status === "loading"
 
   return (
-    <header>
+    <header style={{ position: "absolute", top: 0, left: 0, right: 0 }}>
       <noscript>
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
-      <div className={styles.signedInStatus} align="center">
+      <div className={styles.signedInStatus} style={{ textAlign: "center" }}>
         <p
           className={`nojs-show ${
             !session && loading ? styles.loading : styles.loaded
           }`}
         >
+  <a
+      href={`/api/auth/signin`}
+      className={styles.buttonPrimary}
+      onClick={(e) => {
+        e.preventDefault()
+        signIn()
+      }}
+    >
+      Sign in
+    </a>
           {!session && (
             <>
               <span className={styles.notSignedInText}>
                 You are not signed in
               </span>
-              <a
-                href={`/api/auth/signin`}
-                className={styles.buttonPrimary}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signIn()
-                }}
-              >
-                Sign in
-              </a>
+              <SignInButton />
             </>
           )}
           {session?.user && (
@@ -65,19 +64,18 @@ export default function Header() {
           )}
         </p>
       </div>
-      <div align="center">
-      <nav >
-        <ul className={styles.navItems}>
-          <li className={styles.navItem}>
-            <Link href="/">Home</Link>
-          </li>
-
-          <li className={styles.navItem}>
-            <Link href="/api/auth/examples/protected">Admin</Link>
-          </li>
-
-        </ul>
-      </nav>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <nav>
+          <ul className={styles.navItems}>
+            <li className={styles.navItem}>
+              <Link href="/">Home</Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="/api/auth/examples/protected">About</Link>
+            </li>
+          </ul>
+        </nav>
+        
       </div>
     </header>
   )

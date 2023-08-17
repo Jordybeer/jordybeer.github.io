@@ -1,3 +1,4 @@
+import React from 'react'
 import { useToast, Box, Button } from '@chakra-ui/react'
 
 function Nuke() {

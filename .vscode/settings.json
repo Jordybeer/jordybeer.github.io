@@ -1,3 +1,12 @@
 {
-    "compile-hero.disable-compile-files-on-did-save-code": true
-}
+  "compile-hero.disable-compile-files-on-did-save-code": false,
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.formatOnPaste": false, // required 
+  "editor.formatOnType": false, // required
+  "editor.formatOnSave": false e, // optional 
+  "editor.formatOnSaveMode": "modificationsIfAvailable", // required to format on save
+  "files.autoSave": "onFocusChange", // optional but recommended
+  "files.eol": "\n", // optional but recommended,
+  "files.insertFinalNewline": true, // optional but recommended,
+  "files.trimFinalNewlines": true, // optional but recommended,
+  "files.trimTrailingWhitespace": true, // optional but recommended,
