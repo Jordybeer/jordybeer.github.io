@@ -43,7 +43,7 @@ export default function Header() {
                 You are not signed in
               </span> */}
             </>
-          )}
+        )}
           {session?.user && (
             <>
               {session.user.image && (
