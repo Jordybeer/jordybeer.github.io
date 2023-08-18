@@ -24,7 +24,7 @@ const SocialButton = ({
 }) => {
   return (
     <chakra.button
-      bg="whiteAlpha.100"
+      bg="#471DA9BB"
       rounded={'full'}
       w={8}
       h={8}
@@ -36,7 +36,7 @@ const SocialButton = ({
       justifyContent={'center'}
       transition={'background 0.3s ease'}
       _hover={{
-      bg:"whiteAlpha.300"
+      bg:"lightblue"
       }}>
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
@@ -47,9 +47,9 @@ const SocialButton = ({
 const Fooder=()=> {
   return (
     <Flex>
-    <Box 
+    <Box
 bg='transparent'
-  borderBottomColor='#232e4a'>
+  borderBottomColor='#461da9'>
      <Container
   position='absolute'
   bottom = '0'

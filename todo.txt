@@ -1,0 +1,47 @@
+#todo fix sign in top menu
+#todo fix left burger menu with gold _hover
+ #todo fix header text fontSize
+
+#TODO nicer button animation:
+
+https://choc-ui.com/docs/elements/extra
+
+#todo color pallette
+
+Mijn excuses voor het misverstand. Het lijkt erop dat er enige verwarring is ontstaan in de voorgaande antwoorden. Het kleurenpalet dat we hebben besproken, omvat niet de kleur #7F71E3. Als je specifiek deze kleur wilt opnemen, kunnen we het kleurenpalet als volgt aanpassen:
+
+// **Aangepast Kleurenpalet met #7F71E3:**
+// - Staalblauw (#4682b4)
+// - Diep Grijs (#333333)
+// - Zacht Goud (#D1B280)
+// - Mat Zwart (#000000)
+// - Lavendelblauw (#7F71E3)
+
+// Suggesties voor kleurgebruik:
+
+// 1. **Staalblauw (#4682b4):**
+//    - Achtergronden van headers en secties.
+//    - Knoppen en interactieve elementen (hover-effecten).
+//    - Accentkleur voor focus op belangrijke elementen.
+
+// 2. **Diep Grijs (#333333):**
+//    - Tekstkleur voor algemene inhoud en paragrafen.
+//    - Achtergronden voor navigatie en footer.
+//    - Kaders en scheidingslijnen voor visuele hiërarchie.
+
+// 3. **Zacht Goud (#D1B280):**
+//    - Hoogtepunten en accenten voor teksten en iconen.
+//    - Call-to-action knoppen en elementen om de aandacht te trekken.
+//    - Visuele interessante details.
+
+// 4. **Mat Zwart (#000000):**
+//    - Titels en koppen om ze te laten opvallen.
+//    - Accentkleur voor speciale effecten of focuspunten.
+//    - Achtergronden voor carousels of galerijen.
+
+// 5. **Lavendelblauw (#7F71E3):**
+//    - Accentkleur voor visuele variatie en contrast.
+//    - Achtergronden voor specifieke secties of elementen.
+//    - Extra kleur voor een moderne en unieke uitstraling.
+
+//    Dit aangepaste kleurenpalet met Lavendelblauw (#7F71E3) kan worden toegepast om een extra dimensie van kleur en diversiteit aan je website toe te voegen, terwijl het toch een modern en aantrekkelijk gevoel behoudt. Pas deze kleuren toe op verschillende ontwerpelementen van je website voor een verfijnde en aantrekkelijke presentatie van je meubelportfolio.

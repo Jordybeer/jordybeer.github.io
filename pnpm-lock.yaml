@@ -13,7 +13,11 @@ dependencies:
     version: 2.1.0(@chakra-ui/system@2.6.0)(react@18.2.0)
   '@chakra-ui/next-js':
     specifier: ^2.1.5
+<<<<<<< Updated upstream
     version: 2.1.5(@chakra-ui/react@2.8.0)(@emotion/react@11.11.1)(next@13.4.13)(react@18.2.0)
+=======
+    version: 2.1.5(@chakra-ui/react@2.8.0)(@emotion/react@11.11.1)(next@13.4.18)(react@18.2.0)
+>>>>>>> Stashed changes
   '@chakra-ui/react':
     specifier: ^2.8.0
     version: 2.8.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.20)(framer-motion@10.15.1)(react-dom@18.2.0)(react@18.2.0)
@@ -63,11 +67,25 @@ dependencies:
     specifier: ^2.29.4
     version: 2.29.4
   next:
+<<<<<<< Updated upstream
     specifier: ^13.4.13
     version: 13.4.13(react-dom@18.2.0)(react@18.2.0)
   next-auth:
     specifier: ^4.22.5
     version: 4.22.5(next@13.4.13)(react-dom@18.2.0)(react@18.2.0)
+=======
+    specifier: ^13.4.18
+    version: 13.4.18(react-dom@18.2.0)(react@18.2.0)
+  next-auth:
+    specifier: ^4.23.1
+    version: 4.23.1(next@13.4.18)(react-dom@18.2.0)(react@18.2.0)
+  next-seo:
+    specifier: ^6.1.0
+    version: 6.1.0(next@13.4.18)(react-dom@18.2.0)(react@18.2.0)
+  prettier:
+    specifier: ^3.0.2
+    version: 3.0.2
+>>>>>>> Stashed changes
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -584,7 +602,11 @@ packages:
       - '@types/react'
     dev: false
 
+<<<<<<< Updated upstream
   /@chakra-ui/next-js@2.1.5(@chakra-ui/react@2.8.0)(@emotion/react@11.11.1)(next@13.4.13)(react@18.2.0):
+=======
+  /@chakra-ui/next-js@2.1.5(@chakra-ui/react@2.8.0)(@emotion/react@11.11.1)(next@13.4.18)(react@18.2.0):
+>>>>>>> Stashed changes
     resolution: {integrity: sha512-bBd8zeXlAuVwDsjGN0/5ZZJknSbFeiZgJiGdbJo91v2lxKkOwo26b4ggc1ck1t+JR+daU6SrGBjlbQqSuWzyaA==}
     peerDependencies:
       '@chakra-ui/react': '>=2.4.0'
@@ -595,7 +617,11 @@ packages:
       '@chakra-ui/react': 2.8.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.20)(framer-motion@10.15.1)(react-dom@18.2.0)(react@18.2.0)
       '@emotion/cache': 11.11.0
       '@emotion/react': 11.11.1(@types/react@18.2.20)(react@18.2.0)
+<<<<<<< Updated upstream
       next: 13.4.13(react-dom@18.2.0)(react@18.2.0)
+=======
+      next: 13.4.18(react-dom@18.2.0)(react@18.2.0)
+>>>>>>> Stashed changes
       react: 18.2.0
     dev: false
 
@@ -1789,12 +1815,21 @@ packages:
       regenerator-runtime: 0.13.11
     dev: false
 
+<<<<<<< Updated upstream
   /@next/env@13.4.13:
     resolution: {integrity: sha512-fwz2QgVg08v7ZL7KmbQBLF2PubR/6zQdKBgmHEl3BCyWTEDsAQEijjw2gbFhI1tcKfLdOOJUXntz5vZ4S0Polg==}
     dev: false
 
   /@next/swc-darwin-arm64@13.4.13:
     resolution: {integrity: sha512-ZptVhHjzUuivnXMNCJ6lER33HN7lC+rZ01z+PM10Ows21NHFYMvGhi5iXkGtBDk6VmtzsbqnAjnx4Oz5um0FjA==}
+=======
+  /@next/env@13.4.18:
+    resolution: {integrity: sha512-ZUG5Y/KSSerggdeD2LIYgiYziKTuSE9oE2RnW8bhNw6WunA8MrVfrWaCDTYSx/UG8qzPpSF+BiZNiHUiALxCdA==}
+    dev: false
+
+  /@next/swc-darwin-arm64@13.4.18:
+    resolution: {integrity: sha512-d/73jvZe7dNTjLugDsIIy2AdQrwE2dFC9/QRr7yHmFm8mS5EiIHeDKzaqIsv9+JXKD9ZB1i/c0x7+F0PlKo1vQ==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
@@ -1802,8 +1837,13 @@ packages:
     dev: false
     optional: true
 
+<<<<<<< Updated upstream
   /@next/swc-darwin-x64@13.4.13:
     resolution: {integrity: sha512-t9nTiWCLApw8W4G1kqJyYP7y6/7lyal3PftmRturIxAIBlZss9wrtVN8nci50StDHmIlIDxfguYIEGVr9DbFTg==}
+=======
+  /@next/swc-darwin-x64@13.4.18:
+    resolution: {integrity: sha512-PwfvxgxG5rvUJppF02IdVAVx4HTtbZrS/Nz9qHfYfeFOQ9a+PijL8Xr9BJ21jiIS+dPQjwzvpsOdsC+DOrlzhg==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
@@ -1811,8 +1851,13 @@ packages:
     dev: false
     optional: true
 
+<<<<<<< Updated upstream
   /@next/swc-linux-arm64-gnu@13.4.13:
     resolution: {integrity: sha512-xEHUqC8eqR5DHe8SOmMnDU1K3ggrJ28uIKltrQAwqFSSSmzjnN/XMocZkcVhuncuxYrpbri0iMQstRyRVdQVWg==}
+=======
+  /@next/swc-linux-arm64-gnu@13.4.18:
+    resolution: {integrity: sha512-Nayn6yFeox9wKaRTLaWRvO3DjB8xEM3BnXu7QnQeZb0AgD484XmdxK13TYZW4jdNy3VJ5OyYIpL4mhkgWEVq/A==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -1820,8 +1865,13 @@ packages:
     dev: false
     optional: true
 
+<<<<<<< Updated upstream
   /@next/swc-linux-arm64-musl@13.4.13:
     resolution: {integrity: sha512-sNf3MnLAm8rquSSAoeD9nVcdaDeRYOeey4stOWOyWIgbBDtP+C93amSgH/LPTDoUV7gNiU6f+ghepTjTjRgIUQ==}
+=======
+  /@next/swc-linux-arm64-musl@13.4.18:
+    resolution: {integrity: sha512-sQzJ5DFPvGlKjI97R17v2RxKJYYzHw4lJZ4xhK6wvyYJYYcn9JfIMyKCvLtfLgpU1tOUcbkmx7i8XC28sB1BsQ==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -1829,8 +1879,13 @@ packages:
     dev: false
     optional: true
 
+<<<<<<< Updated upstream
   /@next/swc-linux-x64-gnu@13.4.13:
     resolution: {integrity: sha512-WhcRaJJSHyx9OWmKjjz+OWHumiPZWRqmM/09Bt7Up4UqUJFFhGExeztR4trtv3rflvULatu9IH/nTV8fUUgaMA==}
+=======
+  /@next/swc-linux-x64-gnu@13.4.18:
+    resolution: {integrity: sha512-zqCLvGdz+T0V+set8zRHbkl3PQq0quUp5Dtuj1yGw0N9htp3beL1RVyhfSusbgxT82TRTXJe94IREgM8iYq6wg==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -1838,8 +1893,13 @@ packages:
     dev: false
     optional: true
 
+<<<<<<< Updated upstream
   /@next/swc-linux-x64-musl@13.4.13:
     resolution: {integrity: sha512-+Y4LLhOWWZQIDKVwr2R17lq2KSN0F1c30QVgGIWfnjjHpH8nrIWHEndhqYU+iFuW8It78CiJjQKTw4f51HD7jA==}
+=======
+  /@next/swc-linux-x64-musl@13.4.18:
+    resolution: {integrity: sha512-V/+dWy32eo3iiWkro+0M4/vNp1anGrVzNp90teVKG5tl5t5qNGc/qWOgmgTG8JhowdJAxj7+fp+WltrcezqsDA==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -1847,8 +1907,13 @@ packages:
     dev: false
     optional: true
 
+<<<<<<< Updated upstream
   /@next/swc-win32-arm64-msvc@13.4.13:
     resolution: {integrity: sha512-rWurdOR20uxjfqd1X9vDAgv0Jb26KjyL8akF9CBeFqX8rVaBAnW/Wf6A2gYEwyYY4Bai3T7p1kro6DFrsvBAAw==}
+=======
+  /@next/swc-win32-arm64-msvc@13.4.18:
+    resolution: {integrity: sha512-anytZjyD1tAgfA/crOrVcUlm0yrSNKYKpg53NQ+Y83nAungrghBthZZiA1/QvmIs1Igu0Rqw/O6hqCOH63o8pw==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
@@ -1856,8 +1921,13 @@ packages:
     dev: false
     optional: true
 
+<<<<<<< Updated upstream
   /@next/swc-win32-ia32-msvc@13.4.13:
     resolution: {integrity: sha512-E8bSPwRuY5ibJ3CzLQmJEt8qaWrPYuUTwnrwygPUEWoLzD5YRx9SD37oXRdU81TgGwDzCxpl7z5Nqlfk50xAog==}
+=======
+  /@next/swc-win32-ia32-msvc@13.4.18:
+    resolution: {integrity: sha512-lgsZDjbU0FQQH2pDSYeKIbVX9g8dqA7fUtgcAcwbj4eEuVW/K41rKFQceMM1kt0ktVUZ4uF2qOHsgebOWpDJIw==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [ia32]
     os: [win32]
@@ -1865,8 +1935,13 @@ packages:
     dev: false
     optional: true
 
+<<<<<<< Updated upstream
   /@next/swc-win32-x64-msvc@13.4.13:
     resolution: {integrity: sha512-4KlyC6jWRubPnppgfYsNTPeWfGCxtWLh5vaOAW/kdzAk9widqho8Qb5S4K2vHmal1tsURi7Onk2MMCV1phvyqA==}
+=======
+  /@next/swc-win32-x64-msvc@13.4.18:
+    resolution: {integrity: sha512-cS72bVNqICglP/uEzqNy26lfRH30zf4AbqnnhPhe+UxRg6d+OTtRQpFX7C4xtBP09FKA+MSSflNVkrn2ZfaWrA==}
+>>>>>>> Stashed changes
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -2494,8 +2569,17 @@ packages:
     hasBin: true
     dev: false
 
+<<<<<<< Updated upstream
   /next-auth@4.22.5(next@13.4.13)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-zPVEpqDp4cx1y0HbonCSrz2sA4qw0grTMd/S0PezUKXvDzmVemtsJnfNK/xo5pO2sz5ilM541+EVCTp9QoRLbA==}
+=======
+  /natural-compare@1.4.0:
+    resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: false
+
+  /next-auth@4.23.1(next@13.4.18)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-mL083z8KgRtlrIV6CDca2H1kduWJuK/3pTS0Fe2og15KOm4v2kkLGdSDfc2g+019aEBrJUT0pPW2Xx42ImN1WA==}
+>>>>>>> Stashed changes
     peerDependencies:
       next: ^12.2.5 || ^13
       nodemailer: ^6.6.5
@@ -2509,7 +2593,11 @@ packages:
       '@panva/hkdf': 1.1.1
       cookie: 0.5.0
       jose: 4.14.4
+<<<<<<< Updated upstream
       next: 13.4.13(react-dom@18.2.0)(react@18.2.0)
+=======
+      next: 13.4.18(react-dom@18.2.0)(react@18.2.0)
+>>>>>>> Stashed changes
       oauth: 0.9.15
       openid-client: 5.4.3
       preact: 10.16.0
@@ -2519,8 +2607,25 @@ packages:
       uuid: 8.3.2
     dev: false
 
+<<<<<<< Updated upstream
   /next@13.4.13(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-A3YVbVDNeXLhWsZ8Nf6IkxmNlmTNz0yVg186NJ97tGZqPDdPzTrHotJ+A1cuJm2XfuWPrKOUZILl5iBQkIf8Jw==}
+=======
+  /next-seo@6.1.0(next@13.4.18)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-iMBpFoJsR5zWhguHJvsoBDxDSmdYTHtnVPB1ij+CD0NReQCP78ZxxbdL9qkKIf4oEuZEqZkrjAQLB0bkII7RYA==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 13.4.18(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /next@13.4.18(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-V/IIFA/znYYnOFlZQegrlhlWRpyIuCLXLGuH6pzCjwyxThNBZl4ItqoE3ffUyYY9f0X6XIQ2dX6UUBpNVSKZ8A==}
+>>>>>>> Stashed changes
     engines: {node: '>=16.8.0'}
     hasBin: true
     peerDependencies:
@@ -2534,7 +2639,11 @@ packages:
       sass:
         optional: true
     dependencies:
+<<<<<<< Updated upstream
       '@next/env': 13.4.13
+=======
+      '@next/env': 13.4.18
+>>>>>>> Stashed changes
       '@swc/helpers': 0.5.1
       busboy: 1.6.0
       caniuse-lite: 1.0.30001519
@@ -2545,6 +2654,7 @@ packages:
       watchpack: 2.4.0
       zod: 3.21.4
     optionalDependencies:
+<<<<<<< Updated upstream
       '@next/swc-darwin-arm64': 13.4.13
       '@next/swc-darwin-x64': 13.4.13
       '@next/swc-linux-arm64-gnu': 13.4.13
@@ -2554,6 +2664,17 @@ packages:
       '@next/swc-win32-arm64-msvc': 13.4.13
       '@next/swc-win32-ia32-msvc': 13.4.13
       '@next/swc-win32-x64-msvc': 13.4.13
+=======
+      '@next/swc-darwin-arm64': 13.4.18
+      '@next/swc-darwin-x64': 13.4.18
+      '@next/swc-linux-arm64-gnu': 13.4.18
+      '@next/swc-linux-arm64-musl': 13.4.18
+      '@next/swc-linux-x64-gnu': 13.4.18
+      '@next/swc-linux-x64-musl': 13.4.18
+      '@next/swc-win32-arm64-msvc': 13.4.18
+      '@next/swc-win32-ia32-msvc': 13.4.18
+      '@next/swc-win32-x64-msvc': 13.4.18
+>>>>>>> Stashed changes
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
