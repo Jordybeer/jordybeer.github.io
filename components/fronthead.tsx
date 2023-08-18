@@ -1,5 +1,5 @@
-import React from "react";
-import { chakra, Box, Flex } from "@chakra-ui/react";
+import React from 'react';
+import {chakra, Box, Flex} from '@chakra-ui/react';
 import '@fontsource-variable/raleway';
 
 export default function FrontHead() {

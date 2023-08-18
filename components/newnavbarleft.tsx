@@ -82,34 +82,68 @@ export default function LeftNavbarBackb() {
 
       <Drawer isOpen={isOpen} placement="left" onClose={toggleMenu}>
         <DrawerOverlay />
-        <DrawerContent bg="#7E71E3CB" color="7F71E3CB"> {/* Set the background color to 7F71E3 */}
-          <DrawerCloseButton />
-          <DrawerHeader>Menu</DrawerHeader>
-          <DrawerBody>
-            <Link as={NextLink} href="/" passHref>
-              <Button
-                as="a"
-                variant="ghost"
-                aria-label="Home"
-                my={2}
-                w="100%"
-                _hover={{ bg: "#BFAE73" }}
-              >
-                Home
-              </Button>
-            </Link>
-            <Link as={NextLink} href="/about" passHref>
-              <Button
-                as="a"
-                variant="ghost"
-                aria-label="About"
-                my={2}
-                w="100%"
-                _hover={{ bg: "#BFAE73" }}
-              >
-                About
-              </Button>
-            </Link>
+        <DrawerContent bg="#7E71E3B1" color="7F71E3CB"> {/* Set the background color to 7F71E3 */}
+          {/* <DrawerCloseButton /> */}
+          <DrawerBody >
+
+
+        <Stack spacing='5' pt='10' align="center" justify="center" fontFamily='Raleway Variable' fontSize='4xlg' >
+
+
+          {/* font gold */}
+        <DrawerHeader
+        borderBottomWidth='1px'
+        color='#BFAE73'
+        fontSize='2xl'
+        m='4'
+        pt='10'
+         >
+          RB Lasprojecten
+          </DrawerHeader>
+
+          <Button
+              as="a"
+              href="/"
+              variant="ghost"
+              aria-label="Menu"
+              _hover={{bg: '#BFAE73'}}
+            >
+              Portfolio
+            </Button>
+            <Button
+              as="a"
+              href="/"
+              variant="ghost"
+              aria-label="Menu"
+              _hover={{bg: '#BFAE73'}}
+            >
+              Te koop
+            </Button>
+            <Button
+              as="a"
+              href="/"
+              variant="outlined"
+              aria-label="Menu"
+              _hover={{bg: '#BFAE73'}}
+            >
+              Over mij
+            </Button>
+            <Button
+              as="a"
+              href="/"
+              variant="ghost"
+              aria-label="Menu"
+              _hover={{bg: '#BFAE73'}}
+            >
+              Contact
+            </Button>
+            
+            </Stack>
+            <Box
+             justifyContent='center' display='flex' alignContent='center' alignItems='center' m='4' pt='60'>
+          <Image src="https://i.imgur.com/jTxqkb2.png" alt="logo"/>
+
+          </Box>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

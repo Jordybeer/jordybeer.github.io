@@ -1,14 +1,14 @@
-import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Model3D from "../components/mm";
-import NextJsCarousel from "../components/mobcar";
-import { Divider, Image, Box, Heading, Highlight, SlideFade, Slide, Flex } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import IconList from "../components/list"
-import Fooder from "../components/fooder";
-import FrontHead from "../components/fronthead";
-import Header from "../components/header";
-
+import React from 'react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import NextJsCarousel from '../components/mobcar';
+import {
+  Divider,
+  Flex,
+} from '@chakra-ui/react';
+import IconList from '../components/list';
+import FrontHead from '../components/fronthead';
+import Header from '../components/header';
+import LeftNav from '../components/newnavbarleft';
 export default function Home() {
   return (
     <>
@@ -79,6 +79,8 @@ export default function Home() {
       </Box>
     </motion.div> */}
         <Header />
+        <LeftNav />
+
         <FrontHead />
         <Divider />
 
