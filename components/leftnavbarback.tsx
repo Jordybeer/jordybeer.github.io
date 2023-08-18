@@ -68,21 +68,21 @@ export default function LeftNavbarBackb() {
         >
           <IconButton
             aria-label="Open menu"
-            variant="outlined"
+            variant="ghost"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             onClick={toggleMenu}
             _hover={{ bg: "#BFAE73" }}
             my={5}
             ml={2}
-            fontSize="2xl"
-            display={{ base: 'block', md: 'none' }}
+            fontSize="6xl"
+            display="flex"
           />
         </Flex>
       </Flex>
 
       <Drawer isOpen={isOpen} placement="left" onClose={toggleMenu}>
         <DrawerOverlay />
-        <DrawerContent bg="#7E71E3CB" color="7F71E3CB"> {/* Set the background color to 7F71E3 */}
+        <DrawerContent > {/* Set the background color to 7F71E3 */}
           <DrawerCloseButton />
           <DrawerHeader>Menu</DrawerHeader>
           <DrawerBody>

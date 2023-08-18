@@ -30,7 +30,7 @@ export default function FrontHead() {
             mx="auto"
             maxW={{ base: '7xl' }}
             px={{ base: 4, sm: 6, lg: 8 }}
-            mt={{ base: 10, sm: 4, md: 16, lg: 20, xl: 28 }}
+            mt='10'
           >
             {/* image in the middle */}
            
@@ -43,7 +43,7 @@ export default function FrontHead() {
             >
                <Box
               as="img"
-              opacity={0.15}
+              opacity={0.4}
               src="https://i.imgur.com/41sjJtw.png"
               alt="RB logo"
               position="absolute"
@@ -56,43 +56,44 @@ export default function FrontHead() {
               bottom={{ base: 'auto', md: 'auto' }}
               objectFit="cover"
             />
-              <chakra.h1
-                fontSize="6xl"
-                letterSpacing="tight"
-                lineHeight="short"
-                fontWeight="extrabold"
-                color="#cccccc"
-                _dark={{ color: 'white' }}
-              >
-                <chakra.span
-                  fontFamily="Raleway Variable"
-                  display={{ base: 'block', sm: 'md', lg: 'block' }}
-                >
-                  Waar dromen
-                </chakra.span>
-                <Box mx={'2'} />
-                <chakra.span
-                  fontFamily={'Raleway Variable'}
-                  color="#BFAE73"
-                  _dark={{ color: '#BFAE73' }}
-                >
-                  vorm krijgen
-                </chakra.span>
-              </chakra.h1>
-              <chakra.p
-                mt={{ base: 3, sm: 5, md: 5 }}
-                fontSize={{ sm: 'lg', md: 'xl' }}
-                maxW={{ sm: 'xl' }}
-                mx={{ sm: 'auto', lg: 0 }}
-                color="#333333"
-                textAlign="left"
-              >
-                Stap binnen in mijn wereld van solide vakmanschap, waar hout en
-                staal samenkomen om unieke meubelstukken te creëren. Van jouw
-                ideeën tot tastbare kunstwerken, elke creatie vertelt een
-                verhaal van ambacht en passie. Ontdek de harmonie van materialen
-                en de kracht van individualiteit bij RB Lasprojecten.
-              </chakra.p>
+             <chakra.h1
+  letterSpacing="tight"
+  lineHeight="short"
+  fontWeight="extrabold"
+  rounded="md"
+  color="#cccccc"
+_dark={{ color: '#cccccc' }}
+>
+  <chakra.span
+    fontSize={{base: '4xl', sm: '4xl', lg: '6xl'}}
+    fontFamily="Raleway Variable"
+    backdropFilter="blur(2.5px)"
+    display={{ base: 'block', sm: 'md', lg: 'block' }} >
+    Waar dromen
+  </chakra.span>
+  <chakra.span
+    fontFamily={'Raleway Variable'}
+    fontSize={{base: '4xl', sm: '5xl', lg: '6xl'}}
+    color="#BFAE73"
+    _dark={{ color: '#BFAE73' }}
+  >
+    vorm krijgen
+  </chakra.span>
+</chakra.h1>
+            <chakra.p
+              mt={{ base: 3, sm: 5, md: 5 }}
+              fontSize={{ sm: 'lg', md: 'xl' }}
+              maxW={{ sm: 'xl' }}
+              mx={{ sm: 'auto', lg: 0 }}
+              color="#333333"
+              textAlign="left"
+              rounded="md"
+              backdropFilter="blur(0.5px)"
+              shadow="dark-lg"
+              style={{ padding: '1rem' }}
+            >
+              Stap binnen in mijn wereld van solide vakmanschap, waar hout en staal samenkomen om unieke meubelstukken te creëren. Van jouw ideeën tot tastbare kunstwerken, elke creatie vertelt een verhaal van ambacht en passie. Ontdek de harmonie van materialen en de kracht van individualiteit bij RB Lasprojecten.
+            </chakra.p>
               <Box
                 mt={{ base: 5, sm: 8 }}
                 display="flex"
@@ -117,8 +118,8 @@ export default function FrontHead() {
                     fontSize={{ base: 'md', md: 'lg' }}
                     rounded="md"
                     color="white"
-                    bg="#461da9"
-                    _hover={{ bg: '#301475' }}
+                    bg="#471DA9E3"
+                    _hover={{ bg: '#301475E3' }}
                     px={{ base: 8, md: 10 }}
                     py={{ base: 3, md: 4 }}
                     cursor="pointer"
@@ -136,10 +137,10 @@ export default function FrontHead() {
                     py={{ base: 3, md: 4 }}
                     border="#solid 2px #3B5221"
                     fontSize={{ base: 'md', md: 'lg' }}
-                    rounded="md"
+                    srounded="md"
                     color="c7cdfc"
-                    bg="#c7cdfc"
-                    _hover={{ bg: '#a9aed6' }}
+                    bg="#535C91E3"
+                    _hover={{ bg: '#313557E3' }}
                     cursor="pointer"
                   >
                     Contacteer ons

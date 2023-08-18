@@ -69,85 +69,91 @@ export default function LeftNav() {
       </Flex>
 
       <Drawer
-isOpen={isOpen}
-placement="left"
-size={{ base: 'xs', sm: 'xs', md: 'xs' }}
-onClose={toggleMenu} children={undefined}
+        isOpen={isOpen}
+        placement="left"
+        size={{ base: 'xs', sm: 'xs', md: 'xs' }}
+        onClose={toggleMenu} children={undefined}
       >
         <DrawerOverlay />
         <DrawerContent bg="#7E71E3B1" color="7F71E3CB"> {/* Set the background color to 7F71E3 */}
           {/* <DrawerCloseButton /> */}
           <DrawerBody >
 
+            <Flex direction="column" alignItems="center">
 
-        <Stack spacing='5' pt='10' align="center" justify="center" fontFamily='Raleway Variable' fontSize='4xlg' >
+              <Stack spacing='5' pt='10' align="center" justify="center" fontFamily='Raleway Variable' fontSize='4xlg' >
 
 
-          {/* font gold */}
+                {/* font gold */}
+                <DrawerHeader
+                borderBottomWidth='2px'
+                color='#BFAE73'
+                fontSize='2xl'
+                m='4'
+              >
+                RB Lasprojecten
+              </DrawerHeader>
 
-          <Button
-              as="a"
-              href="/"
-              variant="ghost"
-              aria-label="Menu"
-              _hover={{bg: '#BFAE73'}}
-            >
-              Portfolio
-            </Button>
-            <Button
-              as="a"
-              href="/"
-              variant="ghost"
-              aria-label="Menu"
-              _hover={{bg: '#BFAE73'}}
-            >
-              Te koop
-            </Button>
-            <Button
-              as="a"
-              href="/"
-              variant="outlined"
-              aria-label="Menu"
-              _hover={{bg: '#BFAE73'}}
-            >
-              Over mij
-            </Button>
-            <Button
-              as="a"
-              href="/"
-              variant="ghost"
-              aria-label="Menu"
-              _hover={{bg: '#BFAE73'}}
-            >
-              Contact
-            </Button>
+                <Button
+                  as="a"
+                  href="/"
+                  variant="ghost"
+                  aria-label="Menu"
+                  _hover={{bg: '#BFAE73'}}
+                >
+                  Portfolio
+                </Button>
+                <Button
+                  as="a"
+                  href="/"
+                  variant="ghost"
+                  aria-label="Menu"
+                  _hover={{bg: '#BFAE73'}}
+                >
+                  Te koop
+                </Button>
+                <Button
+                  as="a"
+                  href="/"
+                  variant="outlined"
+                  aria-label="Menu"
+                  _hover={{bg: '#BFAE73'}}
+                >
+                  Over mij
+                </Button>
+                <Button
+                  as="a"
+                  href="/"
+                  variant="ghost"
+                  aria-label="Menu"
+                  _hover={{bg: '#BFAE73'}}
+                >
+                  Contact
+                </Button>
 
-#todo only show login when not logged in
+                {/* todo only show login when not logged in */}
+                <Button
+                  as="a"
+                  href="/api/auth/signin"
+                  variant="ghost"
+                  aria-label="Login"
+                  _hover={{bg: '#BFAE73'}}
+                >
+                  Sign in
+                </Button>
 
-            <Button
-            as = "a"
-
-          // className={styles.signedInStatus} 
-          href="/api/auth/signin"
-          variant="ghost"
-          aria-label= "Login"
-          _hover={{bg: '#BFAE73'}}
-
-    
->
-            Sign in
-            </Button>
-            
-            </Stack>
-            <Box
-             justifyContent='center' display='flex' alignContent='center' alignItems='center' m='4' pt='60'>
-          <Image src="https://i.imgur.com/jTxqkb2.png" alt="logo"/>
-
-          </Box>
+              </Stack>
+              <Box display="flex" justifyContent="center" alignItems="center" mt={8}
+              pl='4' pr='4' pt='4'
+              maxW='90%'
+              mawL='90%'>
+                <Image src="https://i.imgur.com/TEV6O5d.png" alt="logo-white" />
+              </Box>
+            </Flex>
           </DrawerBody>
           <Fooder />
         </DrawerContent>
       </Drawer>
     </Flex>
-  )
+  );
 }

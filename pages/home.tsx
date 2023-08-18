@@ -4,7 +4,8 @@ import NextJsCarousel from '../components/mobcar';
 import {
   Divider,
   Flex,
-  Text
+  Text,
+  Box,
 } from '@chakra-ui/react';
 import IconList from '../components/list';
 import FrontHead from '../components/fronthead';
@@ -23,26 +24,36 @@ export default function Home() {
       pr={2}
       pl={7}
       m= {4}
-      color="darkblue"
       pb={10}
       width="100%"
       height="100%"
       position="relative"
       fontSize="110%">
-        <Text               
-                pb='5'
-                fontSize='5xl'
-                pt='5'
-                pb='5'
-                fontWeight='bold'
-                fontFamily='Raleway Variable'
-                letterSpacing='wide'
-                color='#cccccc'
-
+<Box
+  align="center"
+  bg="rgba(255, 255, 255, 0.05)"
+  p={4}
+  width="100%"
+  maxW="2xl"
+  fontFamily='Raleway Variable'
+  fontWeight="bold"
+  rounded="3xl"
+  backdropFilter="blur(15px)"
+  shadow="dark-lg"
+  style={{ padding: '1rem' }}
 >
-                 RB Lasprojecten
-
-                </Text>
+  <Text
+    pb='5'
+    fontSize={{base:'2xl', sm:'6xl'}}
+    pt='5'
+    pb='5'
+    letterSpacing='wide'
+    color='blue.900'
+    opacity={1}
+  >
+    RB Lasprojecten
+  </Text>
+</Box>
       {/* <motion.div initial="hidden" animate="visible" variants={{
         hidden: {
           scale:0.01,
