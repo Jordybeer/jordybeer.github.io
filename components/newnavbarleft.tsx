@@ -7,18 +7,27 @@ import {
   DrawerContent,
   DrawerCloseButton,
   DrawerHeader,
+  Stack,
   DrawerBody,
+  Box,
   Button,
-  Link,
+  Text,
+  Image,
 } from '@chakra-ui/react'
+import Fooder from './fooder'
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
 import React from 'react'
+import '@fontsource-variable/raleway';
+import styles from '../components/header.module.css'
 
-export default function LeftNavbarBackb() {
+export default function LeftNav() {
+
+
   const [isOpen, setIsOpen] = useState(false)
-
   const toggleMenu = () => setIsOpen(!isOpen)
+
+
 
   return (
     <Flex>
@@ -26,7 +35,7 @@ export default function LeftNavbarBackb() {
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
       <Flex
-        borderRight="1px solid #ccc"
+        borderRight="2px solid #cccccc"
         bg="transparent"
         position="fixed"
         top="0"
@@ -35,52 +44,36 @@ export default function LeftNavbarBackb() {
         zIndex="999"
         align="center"
       >
-   <Flex
-          display={['flex', 'flex', 'flex', 'flex']}
-        >
-          <NextLink href="/" passHref>
-            <Button
-              as="a"
-              variant="ghost"
-              aria-label="Home"
-              my={5}
-              _hover={{ bg: "#BFAE73" }}
-            >
-              Home
-            </Button>
-          </NextLink>
-          <NextLink href="/about" passHref>
-            <Button
-              as="a"
-              variant="ghost"
-              aria-label="About"
-              my={5}
-              mx={2}
-              _hover={{ bg: "#BFAE73" }}
-            >
-              About
-            </Button>
-          </NextLink>
-        </Flex>
+
 
         <Flex
-          display={['flex', 'flex', 'flex', 'flex']}
-        >
+          display="flex"   >
           <IconButton
             aria-label="Open menu"
-            variant="outlined"
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            variant="solid"
+            color="white"
+            bgColor="#7E71E3B1"
+            icon={<HamburgerIcon />}
             onClick={toggleMenu}
             _hover={{ bg: "#BFAE73" }}
             my={5}
             ml={2}
-            fontSize="2xl"
-            display={{ base: 'block', md: 'none' }}
+            fontSize="3xl"
+            position="fixed"
+            display='flex'
+            mx={2}
+            justifyContent='center'
+
           />
         </Flex>
       </Flex>
 
-      <Drawer isOpen={isOpen} placement="left" onClose={toggleMenu}>
+      <Drawer
+isOpen={isOpen}
+placement="left"
+size={{ base: 'xs', sm: 'xs', md: 'xs' }}
+onClose={toggleMenu} children={undefined}
+      >
         <DrawerOverlay />
         <DrawerContent bg="#7E71E3B1" color="7F71E3CB"> {/* Set the background color to 7F71E3 */}
           {/* <DrawerCloseButton /> */}
@@ -91,15 +84,6 @@ export default function LeftNavbarBackb() {
 
 
           {/* font gold */}
-        <DrawerHeader
-        borderBottomWidth='1px'
-        color='#BFAE73'
-        fontSize='2xl'
-        m='4'
-        pt='10'
-         >
-          RB Lasprojecten
-          </DrawerHeader>
 
           <Button
               as="a"
@@ -137,6 +121,22 @@ export default function LeftNavbarBackb() {
             >
               Contact
             </Button>
+
+#todo only show login when not logged in
+
+            <Button
+            as = "a"
+
+          // className={styles.signedInStatus} 
+          href="/api/auth/signin"
+          variant="ghost"
+          aria-label= "Login"
+          _hover={{bg: '#BFAE73'}}
+
+    
+>
+            Sign in
+            </Button>
             
             </Stack>
             <Box
@@ -145,6 +145,7 @@ export default function LeftNavbarBackb() {
 
           </Box>
           </DrawerBody>
+          <Fooder />
         </DrawerContent>
       </Drawer>
     </Flex>

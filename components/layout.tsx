@@ -1,13 +1,10 @@
 import React from "react";
 import { Divider, Container } from "@chakra-ui/react";
-import Header from "../components/header";
 import Fooder from "../components/fooder";
 import Home from "../pages/home";
-import LeftNavbarBackb from "../components/leftnavbarback";
 
 import Nuke from "./toast";
 import IconList from "./list";
-import NewNavbarLeft from "../components/newnavbarleft";
 
 export default function Layout(): JSX.Element {
   return (
@@ -25,7 +22,6 @@ export default function Layout(): JSX.Element {
         borderRadius="xs"
       >
         <Home />
-        <NewNavbarLeft />
       </Container>
       {/* hier kan footer content */}
       <Fooder />

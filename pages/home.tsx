@@ -4,6 +4,7 @@ import NextJsCarousel from '../components/mobcar';
 import {
   Divider,
   Flex,
+  Text
 } from '@chakra-ui/react';
 import IconList from '../components/list';
 import FrontHead from '../components/fronthead';
@@ -28,6 +29,20 @@ export default function Home() {
       height="100%"
       position="relative"
       fontSize="110%">
+        <Text               
+                pb='5'
+                fontSize='5xl'
+                pt='5'
+                pb='5'
+                fontWeight='bold'
+                fontFamily='Raleway Variable'
+                letterSpacing='wide'
+                color='#cccccc'
+
+>
+                 RB Lasprojecten
+
+                </Text>
       {/* <motion.div initial="hidden" animate="visible" variants={{
         hidden: {
           scale:0.01,
