@@ -67,7 +67,6 @@ _dark={{ color: '#cccccc' }}
   <chakra.span
     fontSize={{base: '4xl', sm: '4xl', lg: '6xl'}}
     fontFamily="Raleway Variable"
-    backdropFilter="blur(2.5px)"
     display={{ base: 'block', sm: 'md', lg: 'block' }} >
     Waar dromen
   </chakra.span>
@@ -85,7 +84,7 @@ _dark={{ color: '#cccccc' }}
               fontSize={{ sm: 'lg', md: 'xl' }}
               maxW={{ sm: 'xl' }}
               mx={{ sm: 'auto', lg: 0 }}
-              color="#333333"
+              color="#cccccc"
               textAlign="left"
               rounded="md"
               backdropFilter="blur(0.5px)"
@@ -137,7 +136,7 @@ _dark={{ color: '#cccccc' }}
                     py={{ base: 3, md: 4 }}
                     border="#solid 2px #3B5221"
                     fontSize={{ base: 'md', md: 'lg' }}
-                    srounded="md"
+                    rounded="md"
                     color="c7cdfc"
                     bg="#535C91E3"
                     _hover={{ bg: '#313557E3' }}
