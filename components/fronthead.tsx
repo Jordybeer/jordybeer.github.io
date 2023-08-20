@@ -3,7 +3,17 @@ import { chakra, Box, Image } from "@chakra-ui/react";
 import "@fontsource-variable/raleway";
 
 export default function FrontHead() {
-  const bg = "#4682b4 ";
+  // const bg = "#4682b4 ";
+ const bg = "linear-gradient(180deg, #2D1E5FD7 0%, #5C2E91DC 100%)";
+  const titleColor = "#FFFFFF";
+  const subtitleColor = "#BFAE73";
+  const textColor = "#FFFFFF";
+  const buttonBgColor = "#471DA9E3";
+  const buttonHoverBgColor = "#301475E3";
+  const buttonTextColor = "#FFFFFF";
+  const buttonBorderColor = "#3B5221";
+  const buttonHoverBorderColor = "#3B5221";
+
   return (
     <Box
       pos="relative"
@@ -64,8 +74,8 @@ export default function FrontHead() {
                 lineHeight="short"
                 fontWeight="extrabold"
                 rounded="md"
-                color="#cccccc"
-                _dark={{ color: "#cccccc" }}
+                color={titleColor}
+                _dark={{ color: titleColor }}
               >
                 <chakra.span
                   fontSize={{ base: "4xl", sm: "4xl", lg: "6xl" }}
@@ -77,8 +87,8 @@ export default function FrontHead() {
                 <chakra.span
                   fontFamily={"Raleway Variable"}
                   fontSize={{ base: "4xl", sm: "5xl", lg: "6xl" }}
-                  color="#BFAE73"
-                  _dark={{ color: "#BFAE73" }}
+                  color={subtitleColor}
+                  _dark={subtitleColor}
                 >
                   vorm krijgen
                 </chakra.span>
@@ -88,7 +98,7 @@ export default function FrontHead() {
                 fontSize={{ sm: "lg", md: "xl" }}
                 maxW={{ sm: "xl" }}
                 mx={{ sm: "auto", lg: 0 }}
-                color="#cccccc"
+                color={textColor}
                 textAlign="left"
                 rounded="md"
                 backdropFilter="blur(0.5px)"
@@ -124,9 +134,9 @@ export default function FrontHead() {
                     border="solid 1px transparent"
                     fontSize={{ base: "md", md: "lg" }}
                     rounded="md"
-                    color="white"
-                    bg="#471DA9E3"
-                    _hover={{ bg: "#301475E3" }}
+                    color={buttonTextColor}
+                    bg={buttonBgColor}
+                    _hover={{buttonHoverBgColor}}
                     px={{ base: 8, md: 10 }}
                     py={{ base: 3, md: 4 }}
                     cursor="pointer"
@@ -142,7 +152,8 @@ export default function FrontHead() {
                     justifyContent="center"
                     px={{ base: 8, md: 10 }}
                     py={{ base: 3, md: 4 }}
-                    border="#solid 2px #3B5221"
+                    border={buttonBorderColor}
+
                     fontSize={{ base: "md", md: "lg" }}
                     rounded="md"
                     color="c7cdfc"

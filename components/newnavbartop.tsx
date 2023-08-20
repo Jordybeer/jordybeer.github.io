@@ -148,9 +148,8 @@ export default function LeftNav() {
                 pl="4"
                 pr="4"
                 pt="4"
-                mb={8}
                 maxW="90%"
-                maxH="90%"
+                maxL="90%"
               >
                 <Image src="https://i.imgur.com/TEV6O5d.png" alt="logo-white" />
               </Box>
