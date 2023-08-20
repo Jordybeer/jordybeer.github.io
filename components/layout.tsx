@@ -8,7 +8,7 @@ import IconList from "./list";
 
 export default function Layout(): JSX.Element {
   return (
-    <> 
+    <>
       <Container
         maxW="100%"
         minH="100vh"

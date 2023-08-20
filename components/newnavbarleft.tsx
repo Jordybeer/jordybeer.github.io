@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 import {
   Flex,
   IconButton,
@@ -13,21 +13,17 @@ import {
   Button,
   Text,
   Image,
-} from '@chakra-ui/react'
-import Fooder from './fooder'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-import NextLink from 'next/link'
-import React from 'react'
-import '@fontsource-variable/raleway';
-import styles from '../components/header.module.css'
+} from "@chakra-ui/react";
+import Fooder from "./fooder";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
+import React from "react";
+import "@fontsource-variable/raleway";
+import styles from "../components/header.module.css";
 
 export default function LeftNav() {
-
-
-  const [isOpen, setIsOpen] = useState(false)
-  const toggleMenu = () => setIsOpen(!isOpen)
-
-
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <Flex>
@@ -44,10 +40,7 @@ export default function LeftNav() {
         zIndex="999"
         align="center"
       >
-
-
-        <Flex
-          display="flex"   >
+        <Flex display="flex">
           <IconButton
             aria-label="Open menu"
             variant="solid"
@@ -60,10 +53,9 @@ export default function LeftNav() {
             ml={2}
             fontSize="3xl"
             position="fixed"
-            display='flex'
+            display="flex"
             mx={2}
-            justifyContent='center'
-
+            justifyContent="center"
           />
         </Flex>
       </Flex>
@@ -71,35 +63,41 @@ export default function LeftNav() {
       <Drawer
         isOpen={isOpen}
         placement="left"
-        size={{ base: 'xs', sm: 'xs', md: 'xs' }}
-        onClose={toggleMenu} children={undefined}
+        size={{ base: "xs", sm: "xs", md: "xs" }}
+        onClose={toggleMenu}
+        children={undefined}
       >
         <DrawerOverlay />
-        <DrawerContent bg="#7E71E3B1" color="7F71E3CB"> {/* Set the background color to 7F71E3 */}
+        <DrawerContent bg="#7E71E3B1" color="7F71E3CB">
+          {" "}
+          {/* Set the background color to 7F71E3 */}
           {/* <DrawerCloseButton /> */}
-          <DrawerBody >
-
+          <DrawerBody>
             <Flex direction="column" alignItems="center">
-
-              <Stack spacing='5' pt='10' align="center" justify="center" fontFamily='Raleway Variable' fontSize='4xlg' >
-
-
+              <Stack
+                spacing="5"
+                pt="10"
+                align="center"
+                justify="center"
+                fontFamily="Raleway Variable"
+                fontSize="4xlg"
+              >
                 {/* font gold */}
                 <DrawerHeader
-                borderBottomWidth='2px'
-                color='#BFAE73'
-                fontSize='2xl'
-                m='4'
-              >
-                RB Lasprojecten
-              </DrawerHeader>
+                  borderBottomWidth="2px"
+                  color="#BFAE73"
+                  fontSize="2xl"
+                  m="4"
+                >
+                  RB Lasprojecten
+                </DrawerHeader>
 
                 <Button
                   as="a"
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{bg: '#BFAE73'}}
+                  _hover={{ bg: "#BFAE73" }}
                 >
                   Portfolio
                 </Button>
@@ -108,7 +106,7 @@ export default function LeftNav() {
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{bg: '#BFAE73'}}
+                  _hover={{ bg: "#BFAE73" }}
                 >
                   Te koop
                 </Button>
@@ -117,7 +115,7 @@ export default function LeftNav() {
                   href="/"
                   variant="outlined"
                   aria-label="Menu"
-                  _hover={{bg: '#BFAE73'}}
+                  _hover={{ bg: "#BFAE73" }}
                 >
                   Over mij
                 </Button>
@@ -126,7 +124,7 @@ export default function LeftNav() {
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{bg: '#BFAE73'}}
+                  _hover={{ bg: "#BFAE73" }}
                 >
                   Contact
                 </Button>
@@ -137,16 +135,22 @@ export default function LeftNav() {
                   href="/api/auth/signin"
                   variant="ghost"
                   aria-label="Login"
-                  _hover={{bg: '#BFAE73'}}
+                  _hover={{ bg: "#BFAE73" }}
                 >
                   Sign in
                 </Button>
-
               </Stack>
-              <Box display="flex" justifyContent="center" alignItems="center" mt={8}
-              pl='4' pr='4' pt='4'
-              maxW='90%'
-              mawL='90%'>
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                mt={8}
+                pl="4"
+                pr="4"
+                pt="4"
+                maxW="90%"
+                maxL="90%"
+              >
                 <Image src="https://i.imgur.com/TEV6O5d.png" alt="logo-white" />
               </Box>
             </Flex>
