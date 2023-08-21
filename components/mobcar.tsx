@@ -17,15 +17,15 @@ export default class NextJsCarousel extends React.Component {
         visible: {
           scale: 1,
           opacity: 1,
-          
+
           transition: {
             ease: "easeIn",
             duration: 1.5,
           }
         },
       }}>
-      <Card shadow="dark-lg" 
-// bgGradient="linear(to bottom left, #BA90EE9B, #2E51BBB7, )"  
+      <Card shadow="dark-lg"
+// bgGradient="linear(to bottom left, #BA90EE9B, #2E51BBB7, )"
 borderRadius='lg'
       bgColor='#1a202c'
 borderWidth='2px'
@@ -35,30 +35,30 @@ borderWidth='2px'
       maxW='xl'
       maxH='xl'
         height={"60%"}
-        width={"80%"}
-        display='relative'
+        width={{base:'100vw', sm:'100vw'}}
+        maxW={{base:'100vw', sm:'100vw', md:'xl', lg:'2xl',xl:'3xl'}}           display='relative'
         overflow='hidden'
-        pt={10}
+        // pt={10}
         m={4}
-        
-        zIndex={8} // Set a higher z-index value
-      >  
 
-        
-        
+        zIndex={8} // Set a higher z-index value
+      >
+
+
+
             {/* <CardHeader pb={10} display='flex' fontWeight={'bold'}>Album is swipe friendly
             </CardHeader>     */}
-      
+
             <Stack>
         <Carousel
           showArrows={true}
           autoPlay={true}
           infiniteLoop={true}
-          showStatus={false}
+          showStatus={true}
           interval = {6000}
-          showThumbs={false}
+          showThumbs={true}
           emulateTouch={true}
-          
+
           className="carousel-container"
         >
           <div>
@@ -94,7 +94,7 @@ borderWidth='2px'
               <Nuke />
               </Flex>
         </Stack>
-      
+
       </Card>
       </motion.div>
     );

@@ -19,7 +19,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import React from "react";
 import "@fontsource-variable/raleway";
-import styles from "../components/header.module.css";
+// import styles from "../components/header.module.css";
 
 export default function LeftNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,21 +40,25 @@ export default function LeftNav() {
         zIndex="999"
         align="center"
       >
-        <Flex display="flex">
+        <Flex display= {{ base: "flex", md: "none", lg:'none', xl:'none' }}
+        >
           <IconButton
             aria-label="Open menu"
-            variant="solid"
-            color="white"
-            bgColor="#7E71E3B1"
+            variant="ghost"
+            color="#FFD700"
+            _dark={{
+              color: "inherit",
+            }}
+            // bgColor="#7E71E3B1"
             icon={<HamburgerIcon />}
             onClick={toggleMenu}
-            _hover={{ bg: "#BFAE73" }}
-            my={5}
-            ml={2}
-            fontSize="3xl"
+            _hover={{ bg: "#FFD700" }}
+             my={3}
+           ml={5}
+            fontSize="30px"
             position="fixed"
             display="flex"
-            mx={2}
+            mx="auto"
             justifyContent="center"
           />
         </Flex>
@@ -63,12 +67,18 @@ export default function LeftNav() {
       <Drawer
         isOpen={isOpen}
         placement="left"
-        size={{ base: "xs", sm: "xs", md: "xs" }}
+        size={{ base: "xs", sm: "xs" }}
+
         onClose={toggleMenu}
-        children={undefined}
       >
         <DrawerOverlay />
-        <DrawerContent bg="#7E71E3B1" color="7F71E3CB">
+        <DrawerContent
+        // more opacity
+        // bg="#7E71E3B1"
+        bg="#7E71E3B7"
+        // color="7F71E3CB"
+        color="#FFD700"
+        >
           {" "}
           {/* Set the background color to 7F71E3 */}
           {/* <DrawerCloseButton /> */}
@@ -76,20 +86,21 @@ export default function LeftNav() {
             <Flex direction="column" alignItems="center">
               <Stack
                 spacing="5"
-                pt="10"
+                pt="5"
                 align="center"
                 justify="center"
                 fontFamily="Raleway Variable"
-                fontSize="4xlg"
+                fontSize="6xl"
               >
                 {/* font gold */}
                 <DrawerHeader
                   borderBottomWidth="2px"
-                  color="#BFAE73"
+                  color="#FFD700"
                   fontSize="2xl"
                   m="4"
                 >
-                  RB Lasprojecten
+                  {/* RB Lasprojecten */}
+                Menu
                 </DrawerHeader>
 
                 <Button
@@ -97,7 +108,7 @@ export default function LeftNav() {
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Portfolio
                 </Button>
@@ -106,16 +117,16 @@ export default function LeftNav() {
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Te koop
                 </Button>
                 <Button
                   as="a"
                   href="/"
-                  variant="outlined"
+                  variant="ghost"
                   aria-label="Menu"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Over mij
                 </Button>
@@ -124,7 +135,7 @@ export default function LeftNav() {
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Contact
                 </Button>
@@ -135,28 +146,31 @@ export default function LeftNav() {
                   href="/api/auth/signin"
                   variant="ghost"
                   aria-label="Login"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
-                  Sign in
+                  Aanmelden
                 </Button>
               </Stack>
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                mt={8}
-                pl="4"
-                pr="4"
-                pt="4"
-                mb={8}
-                maxW="90%"
-                maxH="90%"
-              >
-                <Image src="https://i.imgur.com/TEV6O5d.png" alt="logo-white" />
-              </Box>
+          <Box
+  display="flex"
+  justifyContent="center"
+  alignItems="center"
+  pl="4"
+  pr="4"
+  pt="4"
+  maxW="90%"
+  maxH="90%"
+  position="absolute"
+  bottom="10"
+  left="50%"
+  transform="translateX(-50%)"
+  marginBottom="10"
+>
+  <Image src="https://i.imgur.com/TEV6O5d.png" alt="logo-white" />
+</Box>
             </Flex>
           </DrawerBody>
-          <Fooder />
+          {/* <Fooder /> */}
         </DrawerContent>
       </Drawer>
     </Flex>

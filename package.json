@@ -13,6 +13,8 @@
     "@chakra-ui/react": "^2.8.0",
     "@emotion/styled": "^11.11.0",
     "@fontsource-variable/raleway": "^5.0.9",
+    "@fontsource/fredoka-one": "^5.0.5",
+    "@fontsource/lato": "^5.0.9",
     "@react-icons/all-files": "^4.1.0",
     "@tinymce/tinymce-react": "^4.3.0",
     "@types/node": "^17.0.45",

@@ -44,7 +44,7 @@ export default function LeftNavbarBackb() {
               variant="ghost"
               aria-label="Home"
               my={5}
-              _hover={{ bg: "#BFAE73" }}
+              _hover={{ bg: "#FFD700" }}
             >
               Home
             </Button>
@@ -56,7 +56,7 @@ export default function LeftNavbarBackb() {
               aria-label="About"
               my={5}
               mx={2}
-              _hover={{ bg: "#BFAE73" }}
+              _hover={{ bg: "#FFD700" }}
             >
               About
             </Button>
@@ -71,7 +71,7 @@ export default function LeftNavbarBackb() {
             variant="ghost"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             onClick={toggleMenu}
-            _hover={{ bg: "#BFAE73" }}
+            _hover={{ bg: "#FFD700" }}
             my={5}
             ml={2}
             fontSize="6xl"
@@ -93,7 +93,7 @@ export default function LeftNavbarBackb() {
                 aria-label="Home"
                 my={2}
                 w="100%"
-                _hover={{ bg: "#BFAE73" }}
+                _hover={{ bg: "#FFD700" }}
               >
                 Home
               </Button>
@@ -105,7 +105,7 @@ export default function LeftNavbarBackb() {
                 aria-label="About"
                 my={2}
                 w="100%"
-                _hover={{ bg: "#BFAE73" }}
+                _hover={{ bg: "#FFD700" }}
               >
                 About
               </Button>

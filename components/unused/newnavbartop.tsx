@@ -14,7 +14,7 @@ import {
   Text,
   Image,
 } from "@chakra-ui/react";
-import Fooder from "./fooder";
+import Fooder from "../fooder";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 import React from "react";
@@ -48,7 +48,7 @@ export default function LeftNav() {
             bgColor="#7E71E3B1"
             icon={<HamburgerIcon />}
             onClick={toggleMenu}
-            _hover={{ bg: "#BFAE73" }}
+            _hover={{ bg: "#FFD700" }}
             my={5}
             ml={2}
             fontSize="3xl"
@@ -85,7 +85,7 @@ export default function LeftNav() {
                 {/* font gold */}
                 <DrawerHeader
                   borderBottomWidth="2px"
-                  color="#BFAE73"
+                  color="#FFD700"
                   fontSize="2xl"
                   m="4"
                 >
@@ -97,7 +97,7 @@ export default function LeftNav() {
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Portfolio
                 </Button>
@@ -106,7 +106,7 @@ export default function LeftNav() {
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Te koop
                 </Button>
@@ -115,7 +115,7 @@ export default function LeftNav() {
                   href="/"
                   variant="outlined"
                   aria-label="Menu"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Over mij
                 </Button>
@@ -124,7 +124,7 @@ export default function LeftNav() {
                   href="/"
                   variant="ghost"
                   aria-label="Menu"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Contact
                 </Button>
@@ -135,7 +135,7 @@ export default function LeftNav() {
                   href="/api/auth/signin"
                   variant="ghost"
                   aria-label="Login"
-                  _hover={{ bg: "#BFAE73" }}
+                  _hover={{ bg: "#FFD700" }}
                 >
                   Sign in
                 </Button>

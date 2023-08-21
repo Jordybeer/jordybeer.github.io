@@ -6,20 +6,23 @@ export default function FrontHead() {
   // const bg = "#4682b4 ";
  const bg = "linear-gradient(180deg, #2D1E5FD7 0%, #5C2E91DC 100%)";
   const titleColor = "#FFFFFF";
-  const subtitleColor = "#BFAE73";
+  const subtitleColor = "#FFD700";
   const textColor = "#FFFFFF";
   const buttonBgColor = "#471DA9E3";
   const buttonHoverBgColor = "#301475E3";
   const buttonTextColor = "#FFFFFF";
   const buttonBorderColor = "#3B5221";
   const buttonHoverBorderColor = "#3B5221";
+  const subtitleOpacity = '1';
+  const           textShadow="1px 1px 2px rgba(0,0,0,0.5)"
+
 
   return (
     <Box
       pos="relative"
       overflow="hidden"
       bg={bg}
-      mt={10}
+      // mt={10}
       rounded={{base:'none', sm:'none', md:'3xl', lg:'3xl',xl:'3xl'}}
       display="inline-block"
       shadow="dark-lg"
@@ -76,6 +79,8 @@ export default function FrontHead() {
                 rounded="md"
                 color={titleColor}
                 _dark={{ color: titleColor }}
+                opacity={subtitleOpacity}
+                textShadow = {textShadow}
               >
                 <chakra.span
                   fontSize={{ base: "4xl", sm: "4xl", lg: "6xl" }}
@@ -88,14 +93,17 @@ export default function FrontHead() {
                   fontFamily={"Raleway Variable"}
                   fontSize={{ base: "4xl", sm: "5xl", lg: "6xl" }}
                   color={subtitleColor}
-                  _dark={subtitleColor}
+                opacity={subtitleOpacity}
+                textShadow = {textShadow}
+
+
                 >
                   vorm krijgen
                 </chakra.span>
               </chakra.h1>
               <chakra.p
                 mt={{ base: 3, sm: 5, md: 5 }}
-                fontSize={{ sm: "lg", md: "xl" }}
+                fontSize={{ sm: "2xl", md: "2xl" }}
                 maxW={{ sm: "xl" }}
                 mx={{ sm: "auto", lg: 0 }}
                 color={textColor}

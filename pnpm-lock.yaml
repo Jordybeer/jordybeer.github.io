@@ -23,6 +23,12 @@ dependencies:
   '@fontsource-variable/raleway':
     specifier: ^5.0.9
     version: 5.0.9
+  '@fontsource/fredoka-one':
+    specifier: ^5.0.5
+    version: 5.0.5
+  '@fontsource/lato':
+    specifier: ^5.0.9
+    version: 5.0.9
   '@react-icons/all-files':
     specifier: ^4.1.0
     version: 4.1.0(react@18.2.0)
@@ -1505,6 +1511,14 @@ packages:
 
   /@fontsource-variable/raleway@5.0.9:
     resolution: {integrity: sha512-HdDKMijtCgXDY7VEmtB7mDs8pjo35lt51JQ9OqlfHCqKZDutHxvHR7teT1yZbQA7DqQuCYTjSee9UfnhB7F/+g==}
+    dev: false
+
+  /@fontsource/fredoka-one@5.0.5:
+    resolution: {integrity: sha512-cSpibxKqsrZCGJAisYkptDcr0O+gjk8h0RQxIqoiXEhXMaI2x7wc8Zyl6HyUUTTH5wHxi0tlM7zyQ4zwADVHiw==}
+    dev: false
+
+  /@fontsource/lato@5.0.9:
+    resolution: {integrity: sha512-VqqZWU5he/4gCBjbexQCL5chelaeYu+ssZ8im4vx4VeDeMS/M6mxPelX2zlCbCdzYczwrVBodr3GVRbqIMpWUg==}
     dev: false
 
   /@graphql-typed-document-node/core@3.2.0(graphql@16.8.0):
