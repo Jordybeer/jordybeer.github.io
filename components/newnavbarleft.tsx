@@ -53,10 +53,11 @@ export default function LeftNav() {
             icon={<HamburgerIcon />}
             onClick={toggleMenu}
             _hover={{ bg: "#FFD700" }}
-             my={3}
-           ml={5}
-            fontSize="30px"
-            position="fixed"
+            pt="10"
+            pb="4"
+            pl="5"
+            fontSize="35px"
+            position="absolute"
             display="flex"
             mx="auto"
             justifyContent="center"
@@ -166,7 +167,7 @@ export default function LeftNav() {
   transform="translateX(-50%)"
   marginBottom="10"
 >
-  <Image src="https://i.imgur.com/TEV6O5d.png" alt="logo-white" />
+  <Image src="https://i.imgur.com/SJGxcPo.png" alt="logo-white" />
 </Box>
             </Flex>
           </DrawerBody>
