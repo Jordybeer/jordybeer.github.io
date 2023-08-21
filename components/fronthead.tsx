@@ -81,6 +81,7 @@ export default function FrontHead() {
                 _dark={{ color: titleColor }}
                 opacity={subtitleOpacity}
                 textShadow = {textShadow}
+                textAlign = "center"
               >
                 <chakra.span
                   fontSize={{ base: "4xl", sm: "4xl", lg: "6xl" }}
