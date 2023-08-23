@@ -1,10 +1,7 @@
-import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import styles from "./header.module.css";
 
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
-import { Text } from "@chakra-ui/react";
+import React from "react";
 
 //todo only show top bar when signed in
 

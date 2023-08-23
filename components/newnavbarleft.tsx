@@ -5,18 +5,14 @@ import {
   Drawer,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
   DrawerHeader,
   Stack,
   DrawerBody,
   Box,
   Button,
-  Text,
   Image,
 } from "@chakra-ui/react";
-import Fooder from "./fooder";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import NextLink from "next/link";
+import { HamburgerIcon } from "@chakra-ui/icons";
 import React from "react";
 import "@fontsource-variable/raleway";
 // import styles from "../components/header.module.css";

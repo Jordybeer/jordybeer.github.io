@@ -2,15 +2,12 @@ import React from "react";
 import {
   Box,
   chakra,
-  Button,
   Container,
   Stack,
-  Tag,
-  Tooltip,
   VisuallyHidden,
   Flex,
 } from "@chakra-ui/react";
-import { FaInstagram, FaFacebook, FaYoutube, FaPaw } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
 
 const SocialButton = ({

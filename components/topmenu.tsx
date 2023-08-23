@@ -1,19 +1,13 @@
 import React from "react";
 import {
   useColorModeValue,
-  Image,
   useDisclosure,
   chakra,
   Flex,
-  VisuallyHidden,
   HStack,
   Button,
-  IconButton,
-  VStack,
-  CloseButton,
   Box,
 } from "@chakra-ui/react";
-import { AiOutlineMenu } from "react-icons/ai";
 import "@fontsource/lato";
 import LeftNav from "./newnavbarleft";
 export default function TopMenu() {

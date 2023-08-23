@@ -1,6 +1,5 @@
 import { SessionProvider } from "next-auth/react";
-import { useSession } from "next-auth/react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "../theme";
 import Layout from "../components/layout";
 import React, { useEffect, useState } from "react";
@@ -18,8 +17,10 @@ function App({ Component, pageProps }: any) {
   }
 
   return (
-    <SessionProvider>
+    <SessionProvider>clear
+
       <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Head>
           <title>RB Lasprojecten</title>
         </Head>

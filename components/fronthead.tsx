@@ -1,5 +1,5 @@
 import React from "react";
-import { chakra, Box, Image } from "@chakra-ui/react";
+import { chakra, Box } from "@chakra-ui/react";
 import "@fontsource-variable/raleway";
 
 export default function FrontHead() {
@@ -12,7 +12,6 @@ export default function FrontHead() {
   const buttonHoverBgColor = "#301475E3";
   const buttonTextColor = "#FFFFFF";
   const buttonBorderColor = "#3B5221";
-  const buttonHoverBorderColor = "#3B5221";
   const subtitleOpacity = "1";
   const textShadow = "1px 1px 2px rgba(0,0,0,0.5)";
 

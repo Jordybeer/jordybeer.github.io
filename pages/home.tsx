@@ -1,12 +1,9 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import NextJsCarousel from "../components/mobcar";
-import { Divider, Flex, Text, Box } from "@chakra-ui/react";
-import IconList from "../components/list";
+import { Flex } from "@chakra-ui/react";
 import FrontHead from "../components/fronthead";
 import Header from "../components/header";
 import LeftNav from "../components/newnavbarleft";
-import TopMenu from "../components/topmenu";
 export default function Home() {
   return (
     <>
