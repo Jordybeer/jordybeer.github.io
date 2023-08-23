@@ -17,10 +17,10 @@ import { AiOutlineMenu } from "react-icons/ai";
 import "@fontsource/lato";
 import LeftNav from "./newnavbarleft";
 export default function TopMenu() {
-    const bg = useColorModeValue(
-        "linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8))",
-        "linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8))"
-      );
+  const bg = useColorModeValue(
+    "linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8))",
+    "linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8))",
+  );
   const mobileNav = useDisclosure();
   return (
     <React.Fragment>
@@ -31,12 +31,12 @@ export default function TopMenu() {
           base: 2,
           sm: 4,
         }}
-        alignContent={'center'}
-        justifyContent='center'
+        alignContent={"center"}
+        justifyContent="center"
         py={4}
         shadow="md"
         fontFamily="Raleway Variable"
-        fontWeight='bold'
+        fontWeight="bold"
       >
         <Flex alignItems="center" justifyContent="center" mx="auto">
           <Flex>
@@ -55,12 +55,11 @@ export default function TopMenu() {
             </chakra.h1> */}
             <chakra.h1
               color="#FFD700"
-                fontFamily="Raleway Variable"
-            //   pl='10'
+              fontFamily="Raleway Variable"
+              //   pl='10'
               fontSize="30px"
-                textShadow = "1px 1px 2px rgba(0,0,0,0.5)">
-
-
+              textShadow="1px 1px 2px rgba(0,0,0,0.5)"
+            >
               RB Lasprojecten
             </chakra.h1>
           </Flex>

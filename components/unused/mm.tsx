@@ -32,7 +32,7 @@ const Model3D = () => {
     scene.background = null; // Set background to null for transparent background
     scene.environment = pmremGenerator.fromScene(
       new RoomEnvironment(),
-      0.04
+      0.04,
     ).texture;
 
     // Step 3: Create a new instance of the PerspectiveCamera and set its position and aspect ratio.
@@ -81,7 +81,7 @@ const Model3D = () => {
       undefined,
       (e: any) => {
         console.error(e);
-      }
+      },
     );
 
     // Step 11: Define an animate function that updates the scene and renderer on each frame.
@@ -128,24 +128,20 @@ const Model3D = () => {
     <Box
       bg="#0C0AA1"
       position="relative"
-  
-      borderRadius='lg'
-      borderWidth='2px'
-      maxW='md'
-      maxH='md'
+      borderRadius="lg"
+      borderWidth="2px"
+      maxW="md"
+      maxH="md"
       height="100%"
       width="100%"
       overflow="hidden"
       display="flex"
-      
-
-      mx="4"      justifyContent="center"
+      mx="4"
+      justifyContent="center"
       alignContent="center"
       m={3}
-
     >
-            <div ref={containerRef} 
-      />
+      <div ref={containerRef} />
     </Box>
   );
 };

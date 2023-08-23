@@ -33,12 +33,9 @@ import { IconType } from "react-icons";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import Home from "../pages/home";
 
-
 // Supports weights 100-900
 import "@fontsource-variable/raleway";
 import Fooder from "../components/fooder";
-
-
 
 interface LinkItemProps {
   name: string;
@@ -68,24 +65,22 @@ const LinkItems: Array<LinkItemProps> = [
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
     // left navbar
-    
+
     <Flex
-
-    borderRight="1px solid #ccc"    bg="white"
-    zIndex="sticky"
-
-    h="full" 
-    flexDirection={{ base: "column", md: "column" }}
+      borderRight="1px solid #ccc"
+      bg="white"
+      zIndex="sticky"
+      h="full"
+      flexDirection={{ base: "column", md: "column" }}
       transition="3s ease"
       // bg="#022636"
-bgGradient="linear(to top right, #4A23579B, #2e51bb)"
+      bgGradient="linear(to top right, #4A23579B, #2e51bb)"
       w={{ base: "null", md: 60 }}
       pos="fixed"
-      color='white'
+      color="white"
       {...rest}
     >
-      
-      <Flex h="20" alignItems="center" mx="70" justifyContent="space-start"> 
+      <Flex h="20" alignItems="center" mx="70" justifyContent="space-start">
         <Text
           textAlign={{ base: "left", md: "left" }}
           fontSize="2xl"
@@ -93,7 +88,7 @@ bgGradient="linear(to top right, #4A23579B, #2e51bb)"
           fontWeight="700"
           letterSpacing={"0.10em"}
         >
-          RAW Brands 
+          RAW Brands
         </Text>
 
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
@@ -108,11 +103,10 @@ bgGradient="linear(to top right, #4A23579B, #2e51bb)"
   );
 };
 
-
 const variants = {
   open: { opacity: 1, x: 0 },
   closed: { opacity: 0, x: "-100%" },
-}
+};
 // const Icon = (props) => {
 //   return (
 //     <motion.div
@@ -172,7 +166,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
             fontSize="16"
             _groupHover={{
               color: "white.200",
-              fontWeight: "bold"
+              fontWeight: "bold",
             }}
             as={icon}
           />
@@ -185,14 +179,11 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
 
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   return (
-
     <Flex
       // top navbar
       borderBottom="1px solid #ccc"
       bg="white"
       zIndex="sticky"
-
-
       ml={{ base: 0, md: 60 }}
       px={{ base: 4, md: 4 }}
       height="20"
@@ -204,46 +195,48 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       <IconButton
         display={{ base: "flex", md: "none" }}
         onClick={onOpen}
-        bgColor='transparent'
-        borderColor='white.400'
+        bgColor="transparent"
+        borderColor="white.400"
         variant="outline"
         color="white.200"
         aria-label="open menu"
         icon={<FiMenu />}
       />
-    <motion.div initial="hidden" animate="visible" variants={{
-      hidden: {
-        scale:0.01,
-        opacity: 1
-      },
-      visible: {
-        scale: 1,
-        opacity: 1,
-        
-        transition: {
-          ease: "easeOut",
-          delay: .3,
-          duration: 0.4,
-        }
-      },
-    }}>
-      <Text
-        display={{ base: "flex", md: "none" }}
-        // bgGradient="linear(to-l, #7928CA, #FF0080)"
-        // bgClip="text"
-        fontSize="2xl"
-        color="white.200"
-        // letterSpacing={"0.050em"}
-        fontFamily="Raleway Variable"
-        fontWeight="700"
-        // backgroundClip="text"
-              >
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            scale: 0.01,
+            opacity: 1,
+          },
+          visible: {
+            scale: 1,
+            opacity: 1,
+
+            transition: {
+              ease: "easeOut",
+              delay: 0.3,
+              duration: 0.4,
+            },
+          },
+        }}
+      >
+        <Text
+          display={{ base: "flex", md: "none" }}
+          // bgGradient="linear(to-l, #7928CA, #FF0080)"
+          // bgClip="text"
+          fontSize="2xl"
+          color="white.200"
+          // letterSpacing={"0.050em"}
+          fontFamily="Raleway Variable"
+          fontWeight="700"
+          // backgroundClip="text"
+        >
           RAW Brands 👨‍🏭
-      </Text>
+        </Text>
       </motion.div>
       <HStack spacing={{ base: "0", md: "2" }}>
-
-
         {/* <Flex alignItems={"center"}>
           <Menu>
           <MenuButton
@@ -300,7 +293,6 @@ const SidebarWithHeader = () => {
     <Box>
       <SidebarContent
         onClose={() => onClose}
-        
         display={{ base: "none", md: "block" }}
       />
       <Drawer

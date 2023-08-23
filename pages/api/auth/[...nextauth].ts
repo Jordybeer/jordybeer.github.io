@@ -1,7 +1,7 @@
-import NextAuth, { NextAuthOptions } from "next-auth"
-import GoogleProvider from "next-auth/providers/google"
-import FacebookProvider from "next-auth/providers/facebook"
-import Auth0Provider from "next-auth/providers/auth0"
+import NextAuth, { NextAuthOptions } from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
+import Auth0Provider from "next-auth/providers/auth0";
 // import AppleProvider from "next-auth/providers/apple"
 // import EmailProvider from "next-auth/providers/email"
 
@@ -29,28 +29,23 @@ export const authOptions: NextAuthOptions = {
     */
 
     GoogleProvider({
-          clientId: process.env.GOOGLE_ID,
-          clientSecret: process.env.GOOGLE_SECRET,
-        }),
-        
-
-        
-
-
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+    }),
   ],
   theme: {
     colorScheme: "dark",
     brandColor: "#7F00FF",
     buttonText: "#7F00FF",
-    logo: "https://i.imgur.com/UfNPoEK.png"
+    logo: "https://i.imgur.com/UfNPoEK.png",
   },
   callbacks: {
     async jwt({ token }) {
-      token.userRole = "admin"
-      secure:false
-      return token
+      token.userRole = "admin";
+      secure: false;
+      return token;
     },
   },
-}
+};
 
-export default NextAuth(authOptions)
+export default NextAuth(authOptions);

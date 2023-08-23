@@ -40,8 +40,7 @@ export default function LeftNav() {
         zIndex="999"
         align="center"
       >
-        <Flex display= {{ base: "flex", md: "none", lg:'none', xl:'none' }}
-        >
+        <Flex display={{ base: "flex", md: "none", lg: "none", xl: "none" }}>
           <IconButton
             aria-label="Open menu"
             variant="ghost"
@@ -69,16 +68,15 @@ export default function LeftNav() {
         isOpen={isOpen}
         placement="left"
         size={{ base: "xs", sm: "xs" }}
-
         onClose={toggleMenu}
       >
         <DrawerOverlay />
         <DrawerContent
-        // more opacity
-        // bg="#7E71E3B1"
-        bg="#7E71E3B7"
-        // color="7F71E3CB"
-        color="#FFD700"
+          // more opacity
+          // bg="#7E71E3B1"
+          bg="#7E71E3B7"
+          // color="7F71E3CB"
+          color="#FFD700"
         >
           {" "}
           {/* Set the background color to 7F71E3 */}
@@ -101,7 +99,7 @@ export default function LeftNav() {
                   m="4"
                 >
                   {/* RB Lasprojecten */}
-                Menu
+                  Menu
                 </DrawerHeader>
 
                 <Button
@@ -152,23 +150,23 @@ export default function LeftNav() {
                   Aanmelden
                 </Button>
               </Stack>
-          <Box
-  display="flex"
-  justifyContent="center"
-  alignItems="center"
-  pl="4"
-  pr="4"
-  pt="4"
-  maxW="90%"
-  maxH="90%"
-  position="absolute"
-  bottom="10"
-  left="50%"
-  transform="translateX(-50%)"
-  marginBottom="10"
->
-  <Image src="https://i.imgur.com/SJGxcPo.png" alt="logo-white" />
-</Box>
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                pl="4"
+                pr="4"
+                pt="4"
+                maxW="90%"
+                maxH="90%"
+                position="absolute"
+                bottom="10"
+                left="50%"
+                transform="translateX(-50%)"
+                marginBottom="10"
+              >
+                <Image src="https://i.imgur.com/SJGxcPo.png" alt="logo-white" />
+              </Box>
             </Flex>
           </DrawerBody>
           {/* <Fooder /> */}

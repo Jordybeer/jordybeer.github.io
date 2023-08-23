@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 import {
   Flex,
   IconButton,
@@ -10,15 +10,15 @@ import {
   DrawerBody,
   Button,
   Link,
-} from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
-import NextLink from 'next/link'
-import React from 'react'
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import NextLink from "next/link";
+import React from "react";
 
 export default function LeftNavbarBackb() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <Flex>
@@ -35,9 +35,7 @@ export default function LeftNavbarBackb() {
         zIndex="999"
         align="center"
       >
-   <Flex
-          display={['flex', 'flex', 'flex', 'flex']}
-        >
+        <Flex display={["flex", "flex", "flex", "flex"]}>
           <NextLink href="/" passHref>
             <Button
               as="a"
@@ -63,9 +61,7 @@ export default function LeftNavbarBackb() {
           </NextLink>
         </Flex>
 
-        <Flex
-          display={['flex', 'flex', 'flex', 'flex']}
-        >
+        <Flex display={["flex", "flex", "flex", "flex"]}>
           <IconButton
             aria-label="Open menu"
             variant="ghost"
@@ -82,7 +78,9 @@ export default function LeftNavbarBackb() {
 
       <Drawer isOpen={isOpen} placement="left" onClose={toggleMenu}>
         <DrawerOverlay />
-        <DrawerContent > {/* Set the background color to 7F71E3 */}
+        <DrawerContent>
+          {" "}
+          {/* Set the background color to 7F71E3 */}
           <DrawerCloseButton />
           <DrawerHeader>Menu</DrawerHeader>
           <DrawerBody>
@@ -114,5 +112,5 @@ export default function LeftNavbarBackb() {
         </DrawerContent>
       </Drawer>
     </Flex>
-  )
+  );
 }

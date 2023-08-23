@@ -4,7 +4,7 @@ import "@fontsource-variable/raleway";
 
 export default function FrontHead() {
   // const bg = "#4682b4 ";
- const bg = "linear-gradient(180deg, #2D1E5FD7 0%, #5C2E91DC 100%)";
+  const bg = "linear-gradient(180deg, #2D1E5FD7 0%, #5C2E91DC 100%)";
   const titleColor = "#FFFFFF";
   const subtitleColor = "#FFD700";
   const textColor = "#FFFFFF";
@@ -13,9 +13,8 @@ export default function FrontHead() {
   const buttonTextColor = "#FFFFFF";
   const buttonBorderColor = "#3B5221";
   const buttonHoverBorderColor = "#3B5221";
-  const subtitleOpacity = '1';
-  const           textShadow="1px 1px 2px rgba(0,0,0,0.5)"
-
+  const subtitleOpacity = "1";
+  const textShadow = "1px 1px 2px rgba(0,0,0,0.5)";
 
   return (
     <Box
@@ -23,20 +22,19 @@ export default function FrontHead() {
       overflow="hidden"
       bg={bg}
       // mt={10}
-      rounded={{base:'none', sm:'none', md:'3xl', lg:'3xl',xl:'3xl'}}
+      rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
       display="inline-block"
       shadow="dark-lg"
       transition={"background 0.3s ease"}
-      width={{base:'100vw', sm:'100vw'}}
-      maxW={{base:'100vw', sm:'100vw', md:'xl', lg:'2xl',xl:'3xl'}}    >
-      <Box
-      maxW="7xl"
-      mx="auto">
+      width={{ base: "100vw", sm: "100vw" }}
+      maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
+    >
+      <Box maxW="7xl" mx="auto">
         <Box
           pos="relative"
           pb={{ base: 8, sm: 16, md: 20, lg: 28, xl: 32 }}
-          width={{base:'100vw', sm:'100vw'}}
-          maxW={{base:'100vw', sm:'100vw', md:'xl', lg:'2xl',xl:'3xl'}}
+          width={{ base: "100vw", sm: "100vw" }}
+          maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
           zIndex={1}
           bg={bg}
           shadow="dark-lg"
@@ -80,8 +78,8 @@ export default function FrontHead() {
                 color={titleColor}
                 _dark={{ color: titleColor }}
                 opacity={subtitleOpacity}
-                textShadow = {textShadow}
-                textAlign = "center"
+                textShadow={textShadow}
+                textAlign="center"
               >
                 <chakra.span
                   fontSize={{ base: "4xl", sm: "4xl", lg: "6xl" }}
@@ -94,10 +92,8 @@ export default function FrontHead() {
                   fontFamily={"Raleway Variable"}
                   fontSize={{ base: "4xl", sm: "5xl", lg: "6xl" }}
                   color={subtitleColor}
-                opacity={subtitleOpacity}
-                textShadow = {textShadow}
-
-
+                  opacity={subtitleOpacity}
+                  textShadow={textShadow}
                 >
                   vorm krijgen
                 </chakra.span>
@@ -145,7 +141,7 @@ export default function FrontHead() {
                     rounded="md"
                     color={buttonTextColor}
                     bg={buttonBgColor}
-                    _hover={{buttonHoverBgColor}}
+                    _hover={{ buttonHoverBgColor }}
                     px={{ base: 8, md: 10 }}
                     py={{ base: 3, md: 4 }}
                     cursor="pointer"
@@ -162,7 +158,6 @@ export default function FrontHead() {
                     px={{ base: 8, md: 10 }}
                     py={{ base: 3, md: 4 }}
                     border={buttonBorderColor}
-
                     fontSize={{ base: "md", md: "lg" }}
                     rounded="md"
                     color="c7cdfc"

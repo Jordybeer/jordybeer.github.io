@@ -1,23 +1,19 @@
-import Link from "next/link"
-import { signIn, signOut, useSession } from "next-auth/react"
-import styles from "./header.module.css"
+import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/react";
+import styles from "./header.module.css";
 
-import { motion, useAnimation } from 'framer-motion';
-import React, { useEffect } from 'react';
-import { Text } from '@chakra-ui/react';
-
+import { motion, useAnimation } from "framer-motion";
+import React, { useEffect } from "react";
+import { Text } from "@chakra-ui/react";
 
 //todo only show top bar when signed in
 
-
 export default function Header() {
-
-
-  const { data: session, status } = useSession()
-  const loading = status === "loading"
+  const { data: session, status } = useSession();
+  const loading = status === "loading";
 
   return (
-    <header style={{ position: "absolute", top: 0, left: 0, right: 0}}>
+    <header style={{ position: "absolute", top: 0, left: 0, right: 0 }}>
       <noscript>
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
@@ -27,7 +23,7 @@ export default function Header() {
             !session && loading ? styles.loading : styles.loaded
           }`}
         >
-  {/* <a
+          {/* <a
       href={`/api/auth/signin`}
       className={styles.buttonPrimary}
       onClick={(e) => {
@@ -43,7 +39,7 @@ export default function Header() {
                 You are not signed in
               </span> */}
             </>
-        )}
+          )}
           {session?.user && (
             <>
               {session.user.image && (
@@ -61,8 +57,8 @@ export default function Header() {
                 href={`/api/auth/signout`}
                 className={styles.button}
                 onClick={(e) => {
-                  e.preventDefault()
-                  signOut()
+                  e.preventDefault();
+                  signOut();
                 }}
               >
                 Sign out
@@ -82,8 +78,7 @@ export default function Header() {
             </li>
           </ul>
         </nav> */}
-        
       </div>
     </header>
-  )
+  );
 }

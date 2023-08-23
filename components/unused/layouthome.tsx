@@ -6,7 +6,11 @@ const LayoutHome = ({ children }) => {
   return (
     <Flex
       position="relative"
-      justifyContent={{ base: "center", md: "space-around", xl: "space-between" }}
+      justifyContent={{
+        base: "center",
+        md: "space-around",
+        xl: "space-between",
+      }}
       direction="column"
       align="center"
       justify="center"
