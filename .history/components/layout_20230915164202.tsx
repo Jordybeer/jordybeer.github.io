@@ -1,18 +1,12 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Divider, Container, Flex } from "@chakra-ui/react";
 import Fooder from "../components/fooder";
 import Home from "../pages/home";
 import TopMenu from "../components/topmenu";
 import Nuke from "./toast";
 import IconList from "./list";
-import Header from "./header";
-import LeftNav from "./newnavbarleft";
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps): JSX.Element {
+export default function Layout(): JSX.Element {
   return (
     <Flex
       flexDirection="column"
@@ -31,11 +25,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           borderRight="solid #03435f"
           borderRadius="xs"
         >
-          <Header />
-          <LeftNav />
-
-          {/* Dynamic content */}
-          {children}
+          <Home />
         </Container>
       </Flex>
       <Fooder />
