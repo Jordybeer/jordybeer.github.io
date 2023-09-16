@@ -1,15 +1,9 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import NextJsCarousel from "../components/mobcar";
-import { Divider, Flex, Text, Box } from "@chakra-ui/react";
-import IconList from "../components/list";
+import { Flex } from "@chakra-ui/react";
 import FrontHead from "../components/fronthead";
 import Header from "../components/header";
-<<<<<<< HEAD
-=======
 import LeftNav from "../components/newnavbarleft";
-import TopMenu from "../components/topmenu";
->>>>>>> bbe3434f0494198e70ff02d026b3a69a489bd0d7
 export default function Home() {
   return (
     <>
@@ -29,9 +23,10 @@ export default function Home() {
         position="fixed"
         fontSize="80%"
       >
-         <Header />
+        <Header />
+        <LeftNav />
 
-         <FrontHead />
+        <FrontHead />
         {/* <Divider /> */}
 
         {/* <NextJsCarousel /> */}

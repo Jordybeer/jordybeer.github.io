@@ -9,8 +9,4 @@
   "files.eol": "\n", // optional but recommended,
   "files.insertFinalNewline": true, // optional but recommended,
   "files.trimFinalNewlines": true, // optional but recommended,
-  "files.trimTrailingWhitespace": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "BoBoo.prettier-extension-vscode"
-  } // optional but recommended
-}
+  "files.trimTrailingWhitespace": true, // optional but recommended,
