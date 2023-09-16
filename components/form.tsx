@@ -167,7 +167,7 @@ export default function ContactFormulier() {
                   </FormControl>
 
                   <FormControl isRequired>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel>Bericht</FormLabel>
 
                     <Textarea
                       name="Bericht"
