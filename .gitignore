@@ -41,7 +41,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-
+.history
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -91,12 +91,7 @@ dist
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
 
-# vuepress build output
-.vuepress/dist
 
-# vuepress v2.x temp and cache directory
-.temp
-.cache
 
 # Serverless directories
 .serverless/
@@ -112,11 +107,3 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
-
-# yarn v2
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
-.pnp.*
-base/

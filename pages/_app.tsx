@@ -1,13 +1,11 @@
-
-
 import { SessionProvider } from "next-auth/react";
-import { useSession } from "next-auth/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../theme";
 import Layout from "../components/layout";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 
+console.log("_App rendered");
 function App({ Component, pageProps }: any) {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -20,7 +18,7 @@ function App({ Component, pageProps }: any) {
   }
 
   return (
-    <SessionProvider>
+    <SessionProvider session={pageProps.session}>
       <ChakraProvider theme={theme}>
         <Head>
           <title>RB Lasprojecten</title>
@@ -32,6 +30,5 @@ function App({ Component, pageProps }: any) {
     </SessionProvider>
   );
 }
-
 
 export default App;

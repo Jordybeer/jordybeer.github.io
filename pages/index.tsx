@@ -1,11 +1,9 @@
 import React from "react";
+import Home from "./home"
 
 const IndexPage = () => {
-  return (
-    <>
-
-    </>
-  );
+  return <>
+  <Home /></>;
 };
 
 export default IndexPage;
