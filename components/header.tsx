@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import styles from "./header.module.css";
@@ -6,12 +5,6 @@ import styles from "./header.module.css";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { Text } from "@chakra-ui/react";
-=======
-import { signOut, useSession } from "next-auth/react";
-import styles from "./header.module.css";
-
-import React from "react";
->>>>>>> bbe3434f0494198e70ff02d026b3a69a489bd0d7
 
 //todo only show top bar when signed in
 

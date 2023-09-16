@@ -1,11 +1,8 @@
 import { List, ListItem, ListIcon } from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";
-<<<<<<< HEAD
 import { Spinner, Stack } from "@chakra-ui/react";
 import motion from "framer-motion";
 import Link from "next/link";
-=======
->>>>>>> bbe3434f0494198e70ff02d026b3a69a489bd0d7
 
 import React from "react";
 

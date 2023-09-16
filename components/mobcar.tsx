@@ -37,7 +37,6 @@ export default class NextJsCarousel extends React.Component {
           color="gray"
           // overflow='hidden'
           direction={{ base: "column", sm: "row" }}
-          maxW="xl"
           maxH="xl"
           height={"60%"}
           width={{ base: "100vw", sm: "100vw" }}
@@ -58,10 +57,7 @@ export default class NextJsCarousel extends React.Component {
               infiniteLoop={true}
               showStatus={true}
               interval={6000}
-<<<<<<< HEAD
-
-=======
->>>>>>> bbe3434f0494198e70ff02d026b3a69a489bd0d7
+              showIndicators={true}
               showThumbs={true}
               emulateTouch={true}
               className="carousel-container"

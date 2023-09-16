@@ -4,7 +4,6 @@ import {
   chakra,
   Container,
   Stack,
-<<<<<<< HEAD
   Tag,
   Tooltip,
   VisuallyHidden,
@@ -13,14 +12,6 @@ import {
 import { FaInstagram, FaFacebook, FaYoutube, FaPaw } from "react-icons/fa";
 import { ReactNode } from "react";
 console.log("Fooder loaded")
-=======
-  VisuallyHidden,
-  Flex,
-} from "@chakra-ui/react";
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-import { ReactNode } from "react";
-
->>>>>>> bbe3434f0494198e70ff02d026b3a69a489bd0d7
 const SocialButton = ({
   children,
   label,

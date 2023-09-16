@@ -4,11 +4,7 @@ import "@fontsource-variable/raleway";
 
 export default function FrontHead() {
   // const bg = "#4682b4 ";
-<<<<<<< HEAD
   const bg = "linear-gradient(180deg, #1A2B3C 100%, #1A2B3C 70%, #1A2B3C 40%)";
-=======
-  const bg = "linear-gradient(180deg, #2D1E5FD7 0%, #5C2E91DC 100%)";
->>>>>>> bbe3434f0494198e70ff02d026b3a69a489bd0d7
   const titleColor = "#FFFFFF";
   const subtitleColor = "#FFD700";
   const textColor = "#FFFFFF";
@@ -16,10 +12,7 @@ export default function FrontHead() {
   const buttonHoverBgColor = "#301475E3";
   const buttonTextColor = "#FFFFFF";
   const buttonBorderColor = "#3B5221";
-<<<<<<< HEAD
   const buttonHoverBorderColor = "#3B5221";
-=======
->>>>>>> bbe3434f0494198e70ff02d026b3a69a489bd0d7
   const subtitleOpacity = "1";
   const textShadow = "1px 1px 2px rgba(0,0,0,0.5)";
 

@@ -54,7 +54,7 @@ dependencies:
     specifier: ^2.4.4
     version: 2.4.4(react@18.2.0)
   framer-motion:
-    specifier: ^10.16.4
+    specifier: latest
     version: 10.16.4(react-dom@18.2.0)(react@18.2.0)
   graphql:
     specifier: ^16.8.0
@@ -77,14 +77,17 @@ dependencies:
   next-seo:
     specifier: ^6.1.0
     version: 6.1.0(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
+  popmotion:
+    specifier: ^11.0.5
+    version: 11.0.5
   prettier:
     specifier: ^3.0.3
     version: 3.0.3
   react:
-    specifier: ^18.2.0
+    specifier: latest
     version: 18.2.0
   react-dom:
-    specifier: ^18.2.0
+    specifier: latest
     version: 18.2.0(react@18.2.0)
   react-icons:
     specifier: ^4.11.0
@@ -98,6 +101,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.16.0
     version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
+  react-script:
+    specifier: latest
+    version: 2.0.5
   react-slick:
     specifier: ^0.29.0
     version: 0.29.0(react-dom@18.2.0)(react@18.2.0)
@@ -3518,6 +3524,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
 
+  /hey-listen@1.0.8:
+    resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
+    dev: false
+
   /hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
     dependencies:
@@ -4398,6 +4408,15 @@ packages:
     engines: {node: '>=12.13.0'}
     dev: false
 
+  /popmotion@11.0.5:
+    resolution: {integrity: sha512-la8gPM1WYeFznb/JqF4GiTkRRPZsfaj2+kCxqQgr2MJylMmIKUwBfWW8Wa5fml/8gmtlD5yI01MP1QCZPWmppA==}
+    dependencies:
+      framesync: 6.1.2
+      hey-listen: 1.0.8
+      style-value-types: 5.1.2
+      tslib: 2.4.0
+    dev: false
+
   /postcss@8.4.14:
     resolution: {integrity: sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==}
     engines: {node: ^10 || ^12 || >=14}
@@ -4594,6 +4613,10 @@ packages:
     dependencies:
       '@remix-run/router': 1.9.0
       react: 18.2.0
+    dev: false
+
+  /react-script@2.0.5:
+    resolution: {integrity: sha512-hLFLMFAH3Rr0VJisBz/bPyaJxMEimQGvuVOBXyn3t/nmlbV6mF+nghCPoY1V4dzIi+M1A8iyyXId1cgg8eS6XA==}
     dev: false
 
   /react-slick@0.29.0(react-dom@18.2.0)(react@18.2.0):
@@ -4914,6 +4937,13 @@ packages:
     dependencies:
       '@tokenizer/token': 0.3.0
       peek-readable: 4.1.0
+    dev: false
+
+  /style-value-types@5.1.2:
+    resolution: {integrity: sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q==}
+    dependencies:
+      hey-listen: 1.0.8
+      tslib: 2.4.0
     dev: false
 
   /styled-jsx@5.1.1(react@18.2.0):
