@@ -46,6 +46,7 @@ const CONFETTI_DARK = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
     >
       <TopMenu />
       <LeftNav />
+      {/* <Header /> */}
 
       <Flex flexGrow={1} alignItems="center" justifyContent="center">
         <Container

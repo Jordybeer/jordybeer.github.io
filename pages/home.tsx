@@ -24,7 +24,6 @@ export default function Home() {
         position="fixed"
         fontSize="80%"
       >
-         <Header />
 
          <FrontHead />
         {/* <Divider /> */}
