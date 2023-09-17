@@ -6,8 +6,11 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 
 console.log("_App rendered");
+// ...existing imports
+
 function App({ Component, pageProps }: any) {
   const [isMounted, setIsMounted] = useState(false);
+  const yourPagesDataHere = []; // Replace with your actual data
 
   useEffect(() => {
     setIsMounted(true);
@@ -23,7 +26,7 @@ function App({ Component, pageProps }: any) {
         <Head>
           <title>RB Lasprojecten</title>
         </Head>
-        <Layout>
+        <Layout pages={yourPagesDataHere}>
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>
