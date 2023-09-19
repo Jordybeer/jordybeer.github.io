@@ -25,10 +25,11 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
     infinite: true,
     slidesToShow: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    arrows: false,
+    autoplaySpeed: 6000,
     adaptiveHeight: true,
-    draggable: false,
-    pauseOnHover: false,
+    draggable: true,
+    pauseOnHover: true,
     swipeToSlide: true,
     variableWidth: false,
     swipe: true,
@@ -42,6 +43,11 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
     sliderRef.current.slickNext();
   };
 
+  const handleThumbnailClick = (index) => {
+    sliderRef.current.slickGoTo(index);
+    sliderRef.current.slickPause();
+  };
+
   return (
     <AnimatePresence>
       {data && (
@@ -49,14 +55,26 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
           layoutId={`${data.id}`}
           className="expanded-card"
           ref={cardRef}
-          style={{ backgroundColor: 'rgba(173, 216, 230, 0.7)' }}
+          style={{
+            maxWidth: '400px',
+            maxHeight: '700px',
+            backgroundColor: 'transparent',
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 9999,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 0.6 }}
         >
-          <Flex className="content-box">
-            <div className="top-half">
+          <Flex direction="column" className="content-box" h="100%">
+            <Box flex="0">
               <Slider ref={sliderRef} {...settings}>
                 {data.images.map((img, index) => (
                   <div key={index}>
@@ -66,11 +84,17 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
               </Slider>
               <CloseButton
                 size="lg"
-                color="whiteAlpha.700"
+                color="#1D2636"
                 onClick={() => setSelectedCard(null)}
-                style={{ position: 'absolute', top: '10px', right: '10px', zIndex: 1 }}
+                style={{
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  zIndex: 1,
+                  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.8)',
+                }}
               />
-              <div className="thumbnails">
+              <Box className="thumbnails">
                 <ChevronLeftIcon boxSize={6} onClick={handlePrevClick} />
                 {data.images.map((img, index) => (
                   <img
@@ -78,17 +102,41 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
                     src={img}
                     alt={`Thumbnail ${index + 1}`}
                     className="thumbnail-img"
-                    onClick={() => sliderRef.current.slickGoTo(index)}
+                    onClick={() => handleThumbnailClick(index)}
                   />
                 ))}
                 <ChevronRightIcon boxSize={6} onClick={handleNextClick} />
-              </div>
-            </div>
-            <Divider orientation="horizontal" />
-            <div className="bottom-half">
-              <h3>{data.title}</h3>
-              <p>{data.description}</p>
-            </div>
+              </Box>
+            </Box>
+
+            <Divider my={2} />
+
+            <Box
+  flex="1"
+  pt={2}
+  sx={{
+    overflowY: 'auto',
+    scrollbarWidth: 'thin',
+    scrollbarColor: 'gray.400 gray.700',
+    scrollBehavior: 'smooth',
+    '::-webkit-scrollbar': {
+      width: '12px',
+    },
+    '::-webkit-scrollbar-thumb': {
+      backgroundColor: 'gray.400',
+    },
+    '::-webkit-scrollbar-track': {
+      backgroundColor: 'gray.700',
+    },
+  }}
+>
+              <Box className="card-title card-title-large">
+                <h3>{data.title}</h3>
+              </Box>
+              <Box p={4} marginBottom={4}>
+                <p>{data.description}</p>
+              </Box>
+            </Box>
           </Flex>
         </motion.div>
       )}

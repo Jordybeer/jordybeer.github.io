@@ -2,10 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Card from './Card';
 import { LoremIpsum } from 'lorem-ipsum';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Grid } from '@chakra-ui/react';
 
 interface CardGridProps {
   setSelectedCard: React.Dispatch<React.SetStateAction<any>>;
+  data:any;
 }
 
 const CardGrid: React.FC<CardGridProps> = ({ setSelectedCard }) => {
@@ -27,7 +27,7 @@ const CardGrid: React.FC<CardGridProps> = ({ setSelectedCard }) => {
     const generatedData = [
       {
         img: 'https://source.unsplash.com/random/150x100?nature,1',
-        title: lorem.generateWords(1),
+        title: 'Werkbank met stalen frames',
         description: lorem.generateSentences(5),
         images: [
           'https://source.unsplash.com/random/300x200?nature,1',
@@ -38,7 +38,7 @@ const CardGrid: React.FC<CardGridProps> = ({ setSelectedCard }) => {
       {
         img: 'https://source.unsplash.com/random/150x100?city,1',
         title: lorem.generateWords(1),
-        description: lorem.generateSentences(5),
+        description: lorem.generateSentences(9),
         images: [
           'https://source.unsplash.com/random/300x200?city,1',
           'https://source.unsplash.com/random/300x200?city,2',
@@ -52,11 +52,13 @@ const CardGrid: React.FC<CardGridProps> = ({ setSelectedCard }) => {
   }, []);
 
   return (
-    <Grid templateColumns="repeat(auto-fill, minmax(150px, 1fr))" gap={4} p={4}>
+    <AnimatePresence>
+    <div className="grid">
       {data.map((item, index) => (
         <Card key={index} data={item} setSelectedCard={setSelectedCard} />
       ))}
-    </Grid>
+    </div>
+  </AnimatePresence>
   );
 };
 
