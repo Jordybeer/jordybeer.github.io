@@ -1,25 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Flex } from '@chakra-ui/react';
 import CardGrid from '../components/CardGrid';
 import ExpandedCard from '../components/ExpandedCard';
+import "@fontsource-variable/raleway";
 
 const Projects = () => {
   const [selectedCard, setSelectedCard] = useState(null);
+  useEffect(() => {
+    // Disable scrolling on body
+    document.body.style.overflow = 'hidden';
 
+    // Re-enable scrolling when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
   return (
     <Flex
-      direction="column"
-      justify="center"
-      align="center"
-      maxW={{ base: "100%", sm: "100%" }}
-      m={4}
-      pb={10}
-      width="100%"
-      height="100%"
-      position="relative"
-      fontSize="80%"
-      zIndex={1}
-    >
+    direction="column"
+    justify="center"
+    align="center"
+    maxW={{ base: "100%", sm: "100%" }}
+    width="100%"
+    height="100vh"  // Changed to viewport height
+    position="relative"
+    fontSize="80%"
+    zIndex={1}
+  >
     {/* Div for instant dimming and dark gray background */}
     {selectedCard && (
         <div

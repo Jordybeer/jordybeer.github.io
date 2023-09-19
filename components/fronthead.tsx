@@ -18,7 +18,7 @@ export default function FrontHead() {
 
   return (
     <Box
-    zIndex={-1}
+    zIndex={1}
       pos="relative"
       overflow="hidden"
       bg={bg}
@@ -28,6 +28,7 @@ export default function FrontHead() {
       shadow="dark-lg"
       transition={"background 0.3s ease"}
       width={{ base: "100vw", sm: "100vw" }}
+      maxH="80%"
       maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
     >
       <Box maxW="7xl" mx="auto">

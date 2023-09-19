@@ -15,22 +15,32 @@ const TopMenu: React.FC<TopMenuProps> = ({ pages = [] }) => { // Default value f
   );
 
   return (
-    <Flex bg={bg} w="full" px={{ base: 2, sm: 4 }} py={4} shadow="md" position="absolute">
+    <Flex bg={bg} w="full" px={{ base: 2, sm: 4 }} py={4} shadow="md" position="fixed" top={0} z-index="10000">
       <Flex alignItems="center" justifyContent="center" mx="auto">
-        <HStack spacing={1} mr={1} color="brand.500" display={{ base: "none", md: "inline-flex" }}>
-          {pages.length > 0 ? (
-            pages.map((page) => (
-              <NextLink key={page} href={`/${page}`} passHref>
-                <Button
-                  variant="ghost"
-                  color={router.pathname === `/${page}` ? 'blue' : 'whiteAlpha.900'}
-                >
-                  {page.charAt(0).toUpperCase() + page.slice(1)}
-                </Button>
-              </NextLink>
+        <HStack spacing={1} mr={1} color="brand.500" display={{ base: "inline-flex", md: "inline-flex" }}>
+        <NextLink href="/">
+                  <Button variant="ghost" color='whiteAlpha.900' aria-label="Menu" _hover={{ bg: "#FFD700" }} size={{ base: "sm", md: "md" }}>
+                    Home
+                  </Button>
+                </NextLink>
+                <NextLink href="/projects">
+                  <Button variant="ghost" color='whiteAlpha.900' aria-label="Menu" _hover={{ bg: "#FFD700" }} size={{ base: "sm", md: "md" }}>
+                    Projecten
+                  </Button>
+                </NextLink>
+                <NextLink href="/contact">
+                  <Button variant="ghost" color='whiteAlpha.900' aria-label="Menu" _hover={{ bg: "#FFD700" }} size={{ base: "sm", md: "md" }}>
+                    Contact
+                  </Button>
+                </NextLink>
+                <NextLink href="/slides">
+                  <Button variant="ghost" color='whiteAlpha.900' aria-label="Menu" _hover={{ bg: "#FFD700" }} size={{ base: "sm", md: "md" }}>
+                    Album
+                  </Button>
+                </NextLink>
             ))
           ) : (
-            <span>No pages available</span> // Handle the case when pages are not available
+
           )}
         </HStack>
       </Flex>

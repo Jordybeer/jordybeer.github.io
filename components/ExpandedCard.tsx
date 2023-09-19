@@ -130,10 +130,10 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
     },
   }}
 >
-              <Box className="card-title card-title-large">
+<Box className="card-title-large" >
                 <h3>{data.title}</h3>
               </Box>
-              <Box p={4} marginBottom={4}>
+              <Box p={4} marginBottom={4} className="card-description-large">
                 <p>{data.description}</p>
               </Box>
             </Box>
