@@ -12,30 +12,17 @@ export default function Home() {
         direction="column"
         justify="center"
         align="center"
-        // pt={10}
+        pt={10}
         maxW={{ base: "100%", sm: "100%" }}
-        // maxH={{base: '100%', sm:'100%'}}
-        // pr={2}
-        // pl={7}
         m={4}
         pb={10}
         width="100%"
         height="100%"
-        position="fixed"
+        position="relative"
         fontSize="80%"
       >
 
          <FrontHead />
-        {/* <Divider /> */}
-
-        {/* <NextJsCarousel /> */}
-
-        {/* <IconList /> */}
-
-        {/* <Divider /> */}
-
-        {/* <Model3D /> */}
-        {/* <Divider /> */}
       </Flex>
     </>
   );

@@ -1,40 +1,36 @@
 import React from "react";
-import { chakra, Box } from "@chakra-ui/react";
+import { chakra, Box, Button, Flex } from "@chakra-ui/react";
 import "@fontsource-variable/raleway";
 
 export default function FrontHead() {
-  // const bg = "#4682b4 ";
   const bg = "linear-gradient(180deg, #1A2B3C 100%, #1A2B3C 70%, #1A2B3C 40%)";
   const titleColor = "#FFFFFF";
   const subtitleColor = "#FFD700";
   const textColor = "#FFFFFF";
-  const buttonBgColor = "#471DA9E3";
-  const buttonHoverBgColor = "#301475E3";
-  const buttonTextColor = "#FFFFFF";
-  const buttonBorderColor = "#3B5221";
-  const buttonHoverBorderColor = "#3B5221";
   const subtitleOpacity = "1";
   const textShadow = "1px 1px 2px rgba(0,0,0,0.5)";
 
+  //buttons
+
+  const scheme = "yellow";  // Replace with your preferred color scheme
+  const step1 = "600";
+  const step2 = "500";
+  const step3 = "300";
+  const size = "lg"; // Keeping only the largest size
+
   return (
     <Box
-    zIndex={1}
-      pos="relative"
-      overflow="hidden"
-      bg={bg}
-      // mt={10}
+      zIndex={1}
       rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
       display="inline-block"
       shadow="dark-lg"
       transition={"background 0.3s ease"}
       width={{ base: "100vw", sm: "100vw" }}
-      maxH="80%"
       maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
     >
       <Box maxW="7xl" mx="auto">
         <Box
-          pos="relative"
-          pb={{ base: 8, sm: 16, md: 20, lg: 28, xl: 32 }}
+          pb={{ base: 4, sm: 8, md: 10, lg: 14, xl: 16 }}
           width={{ base: "100vw", sm: "100vw" }}
           maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
           zIndex={1}
@@ -52,10 +48,11 @@ export default function FrontHead() {
 
             <Box
               w="full"
-              display={{ base: "block", sm: "md", lg: "block" }}
+              display={{ base: "block",  lg: "block" }}
               justifyContent="center"
               alignItems="center"
               position="relative"
+              zIndex={0}
             >
               <Box
                 as="img"
@@ -63,7 +60,6 @@ export default function FrontHead() {
                 src="https://i.imgur.com/41sjJtw.png"
                 alt="RB logo"
                 position="absolute"
-                overflow="hidden"
                 zIndex={-1}
                 aspectRatio={1}
                 top={{ base: "auto", md: "auto" }}
@@ -101,10 +97,11 @@ export default function FrontHead() {
                 </chakra.span>
               </chakra.h1>
               <chakra.p
+                mx="auto"
+                my="auto"
                 mt={{ base: 3, sm: 5, md: 5 }}
                 fontSize={{ sm: "2xl", md: "2xl" }}
                 maxW={{ sm: "xl" }}
-                mx={{ sm: "auto", lg: 0 }}
                 color={textColor}
                 textAlign="left"
                 rounded="md"
@@ -118,63 +115,57 @@ export default function FrontHead() {
                 verhaal van ambacht en passie. Ontdek de harmonie van materialen
                 en de kracht van individualiteit bij RB Lasprojecten.
               </chakra.p>
-              <Box
-                mt={{ base: 5, sm: 8 }}
-                display="flex"
-                flexDirection={{ base: "column", md: "row" }}
-                justifyContent={{ sm: "center", md: "flex-start" }}
-                alignItems={{ sm: "center", md: "flex-start" }}
-                fontWeight="extrabold"
-                fontFamily="Raleway Variable"
+            {/* New Buttons */}
+            <Flex justifyContent="center" mt={5}>
+              <Button
+                bgColor={`${scheme}.${step1}`}
+                color="white"
+                fontWeight="large"
+                rounded="xl"
+                shadow="dark-lg"
+                size={size}
+                _focus={{ outline: "none" }}
+                transition="background 0.8s"
+                _hover={{
+                  bgColor: `${scheme}.${step2}`,
+                  bgGradient: `radial(circle, transparent 1%, ${scheme}.${step2} 1%)`,
+                  bgPos: "center",
+                  backgroundSize: "15000%",
+                }}
+                _active={{
+                  bgColor: `${scheme}.${step3}`,
+                  backgroundSize: "100%",
+                  transition: "background 0s",
+                }}
+                mr={4}
               >
-                <Box
-                  rounded="full"
-                  shadow="drop"
-                  mr={{ base: 0, md: 3 }}
-                  mb={{ base: 3, md: 0 }}
-                >
-                  <chakra.a
-                    w="full"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    border="solid 1px transparent"
-                    fontSize={{ base: "md", md: "lg" }}
-                    rounded="md"
-                    color={buttonTextColor}
-                    bg={buttonBgColor}
-                    _hover={{ buttonHoverBgColor }}
-                    px={{ base: 8, md: 10 }}
-                    py={{ base: 3, md: 4 }}
-                    cursor="pointer"
-                  >
-                    Projecten
-                  </chakra.a>
-                </Box>
-                <Box>
-                  <chakra.a
-                    w="full"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    px={{ base: 8, md: 10 }}
-                    py={{ base: 3, md: 4 }}
-                    border={buttonBorderColor}
-                    fontSize={{ base: "md", md: "lg" }}
-                    rounded="md"
-                    color="c7cdfc"
-                    bg="#535C91E3"
-                    _hover={{ bg: "#313557E3" }}
-                    cursor="pointer"
-                  >
-                    Contacteer ons
-                  </chakra.a>
-                </Box>
-              </Box>
-            </Box>
+Bekijk projecten              </Button>
+              <Button
+                bgColor={`${scheme}.${step1}`}
+                color="white"
+                fontWeight="large"
+                rounded="xl"
+                shadow="dark-lg"
+                size={size}
+                _focus={{ outline: "none" }}
+                transition="background 0.8s"
+                _hover={{
+                  bgColor: `${scheme}.${step2}`,
+                  bgGradient: `radial(circle, transparent 1%, ${scheme}.${step2} 1%)`,
+                  bgPos: "center",
+                  backgroundSize: "15000%",
+                }}
+                _active={{
+                  bgColor: `${scheme}.${step3}`,
+                  backgroundSize: "100%",
+                  transition: "background 0s",
+                }}>
+Neem contact op              </Button>
+            </Flex>
           </Box>
         </Box>
       </Box>
+    </Box>
     </Box>
   );
 }

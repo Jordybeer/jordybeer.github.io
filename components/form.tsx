@@ -47,6 +47,7 @@ export default function ContactFormulier() {
     shadow="dark-lg"
     transition={"background 0.3s ease"}
     width={{ base: "100vw", sm: "100vw" }}
+    maxH={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
     maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
       bg='gray.900'
       align="center"

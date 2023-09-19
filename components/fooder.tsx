@@ -9,9 +9,11 @@ import {
   VisuallyHidden,
   Flex,
 } from "@chakra-ui/react";
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaYoutube, FaPaw } from "react-icons/fa";
 import { ReactNode } from "react";
-console.log("Fooder loaded")
+
+console.log("Fooder loaded");
+
 const SocialButton = ({
   children,
   label,
@@ -46,34 +48,38 @@ const SocialButton = ({
 
 const Fooder = () => {
   return (
-    <Flex>
-      <Box bg="transparent" borderBottomColor="#232e4a">
-        <Container
-          position="fixed"
-          bottom="0"
-          width={"full"}
-          as={Stack}
-          maxW={"6xl"}
-          py={2}
-          pt={10}
-          direction={{ base: "column", md: "row" }}
-          spacing={4}
-          justify="center" // Set justify to 'center'
-          align="center" // Set align to 'center'
-        >
-          <Stack direction="row" spacing={"4"}>
-            <SocialButton label={"Instagram"} href={"#"}>
-              <FaInstagram />
-            </SocialButton>
-            <SocialButton label={"Facebook"} href={"#"}>
-              <FaFacebook />
-            </SocialButton>
-            <SocialButton label={"Youtube"} href={"#"}>
-              <FaYoutube />
-            </SocialButton>
-          </Stack>
-        </Container>
-      </Box>
+    <Flex
+      position="fixed"
+      bottom="0"
+      width="full"
+      justify="center"
+      align="center"
+      bg="transparent"
+      borderBottomColor="#232e4a"
+    >
+      <Container
+        as={Stack}
+        maxW={"100%"}
+        py="auto"
+        my="auto"
+        direction={{ base: "column", md: "row" }}
+        spacing={10}
+      >
+        <Stack direction="row" spacing={"4"}>
+          <SocialButton label={"Instagram"} href={"#"}>
+            <FaInstagram />
+          </SocialButton>
+          <SocialButton label={"Facebook"} href={"#"}>
+            <FaFacebook />
+          </SocialButton>
+          <SocialButton label={"Youtube"} href={"#"}>
+            <FaYoutube />
+          </SocialButton>
+          <SocialButton label={"Design by Jordybeer"} href={"http://www.jordy.beer"}>
+            <FaPaw />
+          </SocialButton>
+        </Stack>
+      </Container>
     </Flex>
   );
 };
