@@ -4,7 +4,9 @@ import theme from "../theme";
 import Layout from "../components/layout";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
-
+import '../styles/styles.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 console.log("_App rendered");
 // ...existing imports
 
