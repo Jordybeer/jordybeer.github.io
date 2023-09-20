@@ -51,17 +51,17 @@ const Fooder = () => {
     <Flex
       position="fixed"
       bottom="0"
-      width="full"
-      justify="center"
-      align="center"
+      width="100%"
+      justifyContent="center"
+      alignItems="center"
       bg="transparent"
       borderBottomColor="#232e4a"
+      visibility="visible"
+
     >
       <Container
         as={Stack}
         maxW={"100%"}
-        py="auto"
-        my="auto"
         direction={{ base: "column", md: "row" }}
         spacing={10}
       >

@@ -14,8 +14,8 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <h1 className='card-title'>{data.title}</h1>
       <img src={data.img} alt={data.title} />
-      <h3>{data.title}</h3>
     </motion.div>
   );
 };

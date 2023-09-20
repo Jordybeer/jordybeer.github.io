@@ -35,8 +35,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         backgroundAttachment: 'fixed',
       }}
     >
+        <LeftNav />
       <TopMenu />
-      <LeftNav />
       <Flex flexGrow={1} alignItems="center" justifyContent="center">
         <Container
           maxW="100%"
@@ -50,8 +50,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         >
           {children}
         </Container>
+
       </Flex>
-      <Fooder />
     </Flex>
   );
 }

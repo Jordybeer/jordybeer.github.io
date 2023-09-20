@@ -21,6 +21,7 @@
 
 .card:hover {
   transform: scale(1.15);
+  bottom: 100%;
 }
 
 .card img {
@@ -30,20 +31,20 @@
 }
 
 .card-title {
-  display:inline-block;
+  display: block;
   background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
-  overflow:hidden;
+  position: absolute;
   bottom: 0;
   left: 0;
   color: white;
   textShadow: "1px 1px 2px rgba(0,0,0,0.5)";
   border: '2px solid black';
-
   width: 100%;
   text-align: center;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rga(0, 0, 0, 0.1);
+  padding: 10px;
+  font-family: "Raleway";
+  font-size: 18px;
 }
 
 /* New CSS class for card-title element */
