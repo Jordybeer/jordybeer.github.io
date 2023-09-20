@@ -1,5 +1,5 @@
 import { SessionProvider } from "next-auth/react";
-import { ChakraProvider, Box } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../theme";
 import Layout from "../components/layout";
 import React, { useEffect, useState } from "react";
@@ -7,14 +7,10 @@ import Head from "next/head";
 import '../styles/styles.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-console.log("_App rendered");
-
-import Fooder from "../components/fooder";
-// ...existing imports
 
 function App({ Component, pageProps }: any) {
   const [isMounted, setIsMounted] = useState(false);
-  const yourPagesDataHere = []; // Replace with your actual data
+  const yourPagesDataHere = [];
 
   useEffect(() => {
     setIsMounted(true);
@@ -31,7 +27,7 @@ function App({ Component, pageProps }: any) {
           <title>RB Lasprojecten</title>
         </Head>
         <Layout pages={yourPagesDataHere}>
-            <Component {...pageProps} />
+          <Component {...pageProps} />
         </Layout>
       </ChakraProvider>
     </SessionProvider>

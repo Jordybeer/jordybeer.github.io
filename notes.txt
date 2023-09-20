@@ -1,0 +1,31 @@
+//TODO
+
+color pallete:
+
+background:
+#115f9e
+rgb(17, 95, 158)
+
+box:
+#2381cf
+rgb(35, 129, 207)
+
+ehhh
+button:
+#4682b4
+rgb(70, 130, 180)
+
+box
+rgb(255, 186, 73)
+
+box
+#00c49a
+rgb(0, 196, 154)
+
+#79c99e
+
+nav
+#052F5F
+
+background
+#06a77d
