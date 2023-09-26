@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 type CardProps = {
   data: any;
@@ -14,7 +14,7 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <h1 className='card-title'>{data.title}</h1>
+      <h1 className="card-title">{data.title}</h1>
       <img src={data.img} alt={data.title} />
     </motion.div>
   );

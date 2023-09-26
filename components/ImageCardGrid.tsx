@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Box, Flex, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Box, Flex, Text, Button, Image, AspectRatio } from "@chakra-ui/react";
 
 interface ImageCardProps {
   title: string;
@@ -14,24 +14,32 @@ const ImageCardGrid: React.FC = () => {
   // Dummy data for demonstration
   const cards: ImageCardProps[] = [
     {
-      title: 'Project 1',
-      images: ['/image1.jpg', '/image2.jpg'], // Make sure these paths are correct
-      description: 'This is project 1',
+      title: "Project 1",
+      images: ["/image1.jpg", "/image2.jpg"], // Make sure these paths are correct
+      description: "This is project 1",
     },
     // Add more cards here
   ];
 
   return (
-    <Flex wrap="wrap" justifyContent="center" rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
-    display="inline-block"
-    shadow="dark-lg"
-    transition={"background 0.3s ease"}
-    width={{ base: "100vw", sm: "100vw" }}
-    maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}>
+    <Flex
+      wrap="wrap"
+      justifyContent="center"
+      rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
+      display="inline-block"
+      shadow="dark-lg"
+      transition={"background 0.3s ease"}
+      width={{ base: "100vw", sm: "100vw" }}
+      maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
+    >
       <AnimatePresence>
         {selectedCard ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-             <Box /* Styles for the expanded card */>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Box /* Styles for the expanded card */>
               {/* Carousel */}
               <AspectRatio ratio={16 / 9}>
                 <Image src={selectedCard.images[0]} objectFit="cover" />
@@ -49,11 +57,16 @@ const ImageCardGrid: React.FC = () => {
                 <Text>{selectedCard.description}</Text>
               </Flex>
             </Box>
-            </motion.div>
+          </motion.div>
         ) : (
           cards.map((card, index) => (
-            <motion.div key={index} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-               <Box
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Box
                 bgImage={`url(${card.images[0]})`}
                 bgSize="cover"
                 bgPosition="center"
@@ -73,7 +86,7 @@ const ImageCardGrid: React.FC = () => {
                   <Text color="white">{card.title}</Text>
                 </Box>
               </Box>
-              </motion.div>
+            </motion.div>
           ))
         )}
       </AnimatePresence>

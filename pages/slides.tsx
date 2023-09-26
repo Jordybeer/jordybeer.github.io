@@ -1,9 +1,7 @@
-import Layout from '../components/layout';
+import Layout from "../components/layout";
 import NextJsCarousel from "../components/mobcar";
 const Contact = () => {
-  return (
- <NextJsCarousel />
-  );
+  return <NextJsCarousel />;
 };
 
 export default Contact;

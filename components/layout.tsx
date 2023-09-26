@@ -10,7 +10,6 @@ interface LayoutProps {
   pages: any;
 }
 
-
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Flex
@@ -20,9 +19,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       zIndex={99}
       position="relative"
       bgImage="url('/svg/prism.svg')"
-bgPosition="center"
-bgRepeat="no-repeat"
-bgSize="cover"
+      bgPosition="center"
+      bgRepeat="no-repeat"
+      bgSize="cover"
     >
       <LeftNav />
       <TopMenu />
@@ -37,11 +36,13 @@ bgSize="cover"
           borderRadius="xs"
           overflow="hidden"
           position="relative"
-          >
+        >
           {children}
         </Container>
       </Flex>
-      <Fooder style={{ position: 'fixed', bottom: 0, width: '100%', zIndex: 1000 }} />
+      <Fooder
+        style={{ position: "fixed", bottom: 0, width: "100%", zIndex: 1000 }}
+      />
     </Flex>
   );
 };

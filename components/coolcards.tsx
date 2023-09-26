@@ -1,7 +1,6 @@
+import React, { useState, useRef } from "react";
 
-import React, { useState, useRef } from 'react';
-
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 // An array of cards to display.
 
@@ -19,20 +18,17 @@ const CoolCards = () => {
   // Handles the end of a card pan.
 
   const handlePanEnd = (e: any, info: any, card: number) => {
-
     // If there is a card selected...
 
     if (selectedId) {
-
       // ... and the card was dragged a short distance...
 
       if (Math.abs(info.offset.x) < 5) {
-
         // ... get the timeout for the card.
 
         const styles = getComputedStyle(containerRefs.current[card]);
 
-        const timeout = parseFloat(styles.transform.split(',')[4]) * -.6;
+        const timeout = parseFloat(styles.transform.split(",")[4]) * -0.6;
 
         // Set the card to not be draggable.
 
@@ -41,80 +37,48 @@ const CoolCards = () => {
         // After the timeout, unselect the card.
 
         setTimeout(() => {
-
           setSelectedId(null);
-
         }, timeout);
-
       }
-
     } else {
-
       // If there is no card selected, set the card to be draggable.
 
       setCanDrag(true);
 
       setSelectedId(card);
-
     }
-
-  }
+  };
 
   return (
-
     <div className="layout-cards">
-
       {cards.map((card, i) => (
-
         <motion.div
-
-          className={selectedId === card ? 'opened-card' : 'card' }
-
+          className={selectedId === card ? "opened-card" : "card"}
           key={i}
-
           layout
-
-          drag={selectedId === card ? 'x' : false}
-
+          drag={selectedId === card ? "x" : false}
           dragConstraints={{ left: canDrag ? -850 : 0, right: 0 }}
-
-          dragElastic={.2}
-
+          dragElastic={0.2}
           onPanEnd={(e, info) => handlePanEnd(e, info, card)}
-
-          ref={el => containerRefs.current[card] = el}
-
+          ref={(el) => (containerRefs.current[card] = el)}
         >
-
           {selectedId === card && (
-
             <>
-
               <div />
 
               <div />
 
               <div />
-
             </>
-
           )}
-
         </motion.div>
-
       ))}
 
       <motion.div
-
         className="dim-layer"
-
-        animate={{ opacity: selectedId ? .3 : 0 }}
-
+        animate={{ opacity: selectedId ? 0.3 : 0 }}
       />
-
     </div>
-
-  )
-
-}
+  );
+};
 export default CoolCards;

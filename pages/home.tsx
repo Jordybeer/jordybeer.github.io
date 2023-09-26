@@ -22,9 +22,7 @@ export default function Home() {
         position="relative"
         fontSize="80%"
       >
-
-         <FrontHead />
-
+        <FrontHead />
       </Flex>
     </>
   );

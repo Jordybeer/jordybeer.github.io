@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import Slider from 'react-slick';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Box, Flex, Divider, CloseButton } from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import React, { useRef, useEffect } from "react";
+import Slider from "react-slick";
+import { motion, AnimatePresence } from "framer-motion";
+import { Box, Flex, Divider, CloseButton } from "@chakra-ui/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const ExpandedCard = ({ data, setSelectedCard }) => {
   const cardRef = useRef(null);
@@ -15,9 +15,9 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -56,17 +56,17 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
           className="expanded-card"
           ref={cardRef}
           style={{
-            maxWidth: '400px',
-            maxHeight: '700px',
-            backgroundColor: 'transparent',
-            position: 'fixed',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
+            maxWidth: "400px",
+            maxHeight: "700px",
+            backgroundColor: "transparent",
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
             zIndex: 9999,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -78,7 +78,11 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
               <Slider ref={sliderRef} {...settings}>
                 {data.images.map((img, index) => (
                   <div key={index}>
-                    <img src={img} alt={`Slide ${index + 1}`} className="carousel-img" />
+                    <img
+                      src={img}
+                      alt={`Slide ${index + 1}`}
+                      className="carousel-img"
+                    />
                   </div>
                 ))}
               </Slider>
@@ -87,11 +91,11 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
                 color="#1D2636"
                 onClick={() => setSelectedCard(null)}
                 style={{
-                  position: 'absolute',
-                  top: '10px',
-                  right: '10px',
+                  position: "absolute",
+                  top: "10px",
+                  right: "10px",
                   zIndex: 1,
-                  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.8)',
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
                 }}
               />
               <Box className="thumbnails">
@@ -112,25 +116,25 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
             <Divider my={2} />
 
             <Box
-  flex="1"
-  pt={2}
-  sx={{
-    overflowY: 'auto',
-    scrollbarWidth: 'thin',
-    scrollbarColor: 'gray.400 gray.700',
-    scrollBehavior: 'smooth',
-    '::-webkit-scrollbar': {
-      width: '12px',
-    },
-    '::-webkit-scrollbar-thumb': {
-      backgroundColor: 'gray.400',
-    },
-    '::-webkit-scrollbar-track': {
-      backgroundColor: 'gray.700',
-    },
-  }}
->
-<Box className="card-title-large" >
+              flex="1"
+              pt={2}
+              sx={{
+                overflowY: "auto",
+                scrollbarWidth: "thin",
+                scrollbarColor: "gray.400 gray.700",
+                scrollBehavior: "smooth",
+                "::-webkit-scrollbar": {
+                  width: "12px",
+                },
+                "::-webkit-scrollbar-thumb": {
+                  backgroundColor: "gray.400",
+                },
+                "::-webkit-scrollbar-track": {
+                  backgroundColor: "gray.700",
+                },
+              }}
+            >
+              <Box className="card-title-large">
                 <h3>{data.title}</h3>
               </Box>
               <Box p={4} marginBottom={4} className="card-description-large">

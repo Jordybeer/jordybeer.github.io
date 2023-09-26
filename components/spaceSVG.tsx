@@ -1,5 +1,5 @@
-import * as React from "react"
-import Svg, { SvgProps, Path, G, Circle } from "react-native-svg"
+import * as React from "react";
+import Svg, { SvgProps, Path, G, Circle } from "react-native-svg";
 
 const bgSPACE = (props: SvgProps) => (
   <Svg
@@ -34,5 +34,5 @@ const bgSPACE = (props: SvgProps) => (
       <Circle cx={390} cy={382} r={5} />
     </G>
   </Svg>
-)
-export default bgSPACE
+);
+export default bgSPACE;

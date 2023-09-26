@@ -1,7 +1,10 @@
 /* Grid Layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Changed from rows to columns and set min-width */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Changed from rows to columns and set min-width */
   gap: 16px;
   padding: 16px;
   width: 100%;
@@ -15,8 +18,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
-  min-width: 300px;  /* New: set a minimum width */
-  max-width: 400px;  /* New: set a maximum width */
+  min-width: 300px; /* New: set a minimum width */
+  max-width: 400px; /* New: set a maximum width */
 }
 
 .card:hover {
@@ -37,8 +40,8 @@
   bottom: 0;
   left: 0;
   color: white;
-  textShadow: "1px 1px 2px rgba(0,0,0,0.5)";
-  border: '2px solid black';
+  textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
+  border: "2px solid black";
   width: 100%;
   text-align: center;
   box-shadow: 0 4px 6px rga(0, 0, 0, 0.1);
@@ -49,52 +52,48 @@
 
 /* New CSS class for card-title element */
 .card-title-large {
-  display:block;
-  text-align:center;
+  display: block;
+  text-align: center;
   justify-content: center; /* Add this line to center the row horizontally */
   align-items: center; /* Add this line to center the row vertically */
   /*background-color: rgba(0, 0, 0, 0.2);*/
   background-color: rgb(15, 22, 35, 0.3);
   position: relative;
   font-size: 24px;
-  textShadow: "1px 1px 2px rgba(0,0,0,0.5)";
-  padding: 10px ;
+  textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
+  padding: 10px;
   font-family: "Raleway";
-
 }
 
 /* New CSS class for card-descr element */
 .card-description-large {
   font-size: 17px;
-  textShadow: "1px 1px 2px rgba(0,0,0,0.5)";
-  font-weight:"regular";
-  font-family: "Verdana"
+  textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
+  font-weight: "regular";
+  font-family: "Verdana";
 }
 /* Expanded Card Styles */
 .expanded-card {
   display: flex;
   position: relative;
-  textShadow: "1px 1px 2px rgba(0,0,0,0.5)";
+  textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
 
   align-items: center;
   justify-content: center;
-  overflow:hidden;
+  overflow: hidden;
   top: 0;
   left: 0;
-  right:0;
+  right: 0;
   width: 100%;
   height: 100%;
   z-index: 1000;
 }
-
-
 
 /* Carousel Styles */
 .carousel-img {
   max-width: 110%;
   width: 100%;
   border-radius: 5px;
-
 }
 
 /* Thumbnail Styles */
@@ -104,17 +103,14 @@
   border-radius: 6px;
   border: 1px solid white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1.4); /* Add this line to increase the shadow */
-
-
 }
 .thumbnails {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
   margin-top: 10px;
-
 }
 
 /* Top and Bottom Half */
@@ -132,7 +128,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  textShadow: "1px 1px 2px rgba(0,0,0,0.5)";
+  textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
   flex-direction: column;
 }
 

@@ -57,7 +57,6 @@ const Fooder = () => {
       bg="transparent"
       borderBottomColor="#232e4a"
       visibility="visible"
-
     >
       <Container
         as={Stack}
@@ -75,7 +74,10 @@ const Fooder = () => {
           <SocialButton label={"Youtube"} href={"#"}>
             <FaYoutube />
           </SocialButton>
-          <SocialButton label={"Design by Jordybeer"} href={"http://www.jordy.beer"}>
+          <SocialButton
+            label={"Design by Jordybeer"}
+            href={"http://www.jordy.beer"}
+          >
             <FaPaw />
           </SocialButton>
         </Stack>

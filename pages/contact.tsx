@@ -1,9 +1,7 @@
-import ContactFormulier from '../components/form'
+import ContactFormulier from "../components/form";
 
 const Contact = () => {
-  return (
- <ContactFormulier />
-  );
+  return <ContactFormulier />;
 };
 
 export default Contact;
