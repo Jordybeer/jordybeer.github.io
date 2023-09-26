@@ -2,7 +2,6 @@
   "build": {
     "env": {
       "CUSTOM_ENV": "value"
-    },
-    "command": "pnpm run build"
+    }
   }
 }
