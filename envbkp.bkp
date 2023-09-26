@@ -1,4 +1,5 @@
-NEXTAUTH_URL='https://alpha.jordy.lol'
+# NEXTAUTH_URL='https://alpha.jordy.lol'
+NEXTAUTH_URL='http://localhost:3000'
 secret=qwNQqS2U4BPZRQT5B2/k45FD/DHqUHtzSmWcQqj3bw4=
 
 GOOGLE_ID= '100489698610-e0kt37rfodb5m26ucq2to8r688kjjft5.apps.googleusercontent.com'

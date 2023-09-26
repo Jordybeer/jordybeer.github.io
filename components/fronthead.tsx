@@ -2,8 +2,16 @@ import React from "react";
 import { chakra, Box, Button, Flex } from "@chakra-ui/react";
 import "@fontsource-variable/raleway";
 
+
+
+
 export default function FrontHead() {
-  const bg = "linear-gradient(180deg, #1A2B3C 100%, #1A2B3C 70%, #1A2B3C 40%)";
+
+const bg= 'linear-gradient(55deg, #341395CE 75%, #0F2E77CE 25%)';
+
+
+
+  //  const bg = "linear-gradient(180deg, #225282 100%, #1A2B3C 70%, #1A2B3C 40%)";
   const titleColor = "#FFFFFF";
   const subtitleColor = "#FFD700";
   const textColor = "#FFFFFF";
@@ -19,30 +27,27 @@ export default function FrontHead() {
   const size = "lg"; // Keeping only the largest size
 
   return (
-    <Box
-      zIndex={1}
-      rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
-      display="inline-block"
-      shadow="dark-lg"
-      transition={"background 0.3s ease"}
-      width={{ base: "100vw", sm: "100vw" }}
-      maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
-    >
-      <Box maxW="7xl" mx="auto">
-        <Box
-          pb={{ base: 4, sm: 8, md: 10, lg: 14, xl: 16 }}
-          width={{ base: "100vw", sm: "100vw" }}
-          maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
-          zIndex={1}
-          bg={bg}
-          shadow="dark-lg"
-          border="solid 2px transparent"
-        >
+
+
           <Box
             mx="auto"
             maxW={{ base: "7xl" }}
+            width={{ base: "100vw", sm: "100vw" }}
+
+            transition={"background 0.3s ease"}
+
             px={{ base: 4, sm: 6, lg: 8 }}
             mt="10"
+            position="relative"
+            zIndex={1}
+            bg={bg}
+            rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
+            shadow="dark-lg"
+            border="solid 2px yellow"
+
+pb={{ base: 4, sm: 8, md: 10, lg: 14, xl: 16 }}
+width={{ base: "100vw", sm: "100vw" }}
+maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
           >
             {/* image in the middle */}
 
@@ -52,7 +57,10 @@ export default function FrontHead() {
               justifyContent="center"
               alignItems="center"
               position="relative"
+              overflow="hidden"
+              aspectRatio={1}
               zIndex={0}
+
             >
               <Box
                 as="img"
@@ -60,13 +68,15 @@ export default function FrontHead() {
                 src="https://i.imgur.com/41sjJtw.png"
                 alt="RB logo"
                 position="absolute"
+                top="50"
+                left="50"
+                bot="50"
                 zIndex={-1}
-                aspectRatio={1}
                 top={{ base: "auto", md: "auto" }}
                 left={{ base: "auto", md: "auto" }}
                 right={{ base: "auto", md: "auto" }}
-                bottom={{ base: "auto", md: "auto" }}
-                objectFit="cover"
+                bottom={{ base: "auto", md:"auto" }}
+                objectFit="scale-down"
               />
               <chakra.h1
                 letterSpacing="tight"
@@ -105,24 +115,28 @@ export default function FrontHead() {
                 color={textColor}
                 textAlign="left"
                 rounded="md"
-                backdropFilter="blur(0.5px)"
+                backdropFilter="blur(1.2px)"
                 shadow="dark-lg"
                 style={{ padding: "1rem" }}
+                rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
               >
                 Stap binnen in mijn wereld van solide vakmanschap, waar hout en
-                staal samenkomen om unieke meubelstukken te creëren. Van jouw
+                staal samenkomen om unieke meubelstukken te creëren.
+
+                Van jouw
                 ideeën tot tastbare kunstwerken, elke creatie vertelt een
                 verhaal van ambacht en passie. Ontdek de harmonie van materialen
                 en de kracht van individualiteit bij RB Lasprojecten.
               </chakra.p>
             {/* New Buttons */}
-            <Flex justifyContent="center" mt={5}>
+            <Flex justifyContent="center" bot="0" mt={5}>
               <Button
-                bgColor={`${scheme}.${step1}`}
+                bgColor="#115F9E"
                 color="white"
                 fontWeight="large"
                 rounded="xl"
                 shadow="dark-lg"
+                border="solid 2px black"
                 size={size}
                 _focus={{ outline: "none" }}
                 transition="background 0.8s"
@@ -146,6 +160,8 @@ Bekijk projecten              </Button>
                 fontWeight="large"
                 rounded="xl"
                 shadow="dark-lg"
+                border="solid 2px black"
+
                 size={size}
                 _focus={{ outline: "none" }}
                 transition="background 0.8s"
@@ -162,9 +178,6 @@ Bekijk projecten              </Button>
                 }}>
 Neem contact op              </Button>
             </Flex>
-          </Box>
-        </Box>
-      </Box>
     </Box>
     </Box>
   );

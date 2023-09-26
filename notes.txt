@@ -3,16 +3,16 @@
 color pallete:
 
 background:
-#115f9e
+#115F9E
 rgb(17, 95, 158)
-
+&
 box:
 #2381cf
 rgb(35, 129, 207)
 
 ehhh
 button:
-#4682b4
+#4682B4
 rgb(70, 130, 180)
 
 box
@@ -29,3 +29,7 @@ nav
 
 background
 #06a77d
+
+pnpm add pill-pity
+
+import PillPity from 'pill-pity';

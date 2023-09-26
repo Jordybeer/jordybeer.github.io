@@ -1,87 +1,69 @@
 import React from "react";
-import {
-  Box,
-  chakra,
-  Container,
-  Stack,
-  Tag,
-  Tooltip,
-  VisuallyHidden,
-  Flex,
-} from "@chakra-ui/react";
-import { FaInstagram, FaFacebook, FaYoutube, FaPaw } from "react-icons/fa";
-import { ReactNode } from "react";
+import { Link as ChakraLink, IconButton, Flex, chakra } from "@chakra-ui/react";
+import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 
-console.log("Fooder loaded");
-
-const SocialButton = ({
-  children,
-  label,
-  href,
-}: {
-  children: ReactNode;
-  label: string;
-  href: string;
-}) => {
-  return (
-    <chakra.button
-      bg="whiteAlpha.100"
-      rounded={"full"}
-      w={8}
-      h={8}
-      cursor={"pointer"}
-      as={"a"}
-      href={href}
-      display={"inline-flex"}
-      alignItems={"center"}
-      justifyContent={"center"}
-      transition={"background 0.3s ease"}
-      _hover={{
-        bg: "whiteAlpha.300",
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  );
-};
-
-const Fooder = () => {
+const Fooder: React.FC = () => {
   return (
     <Flex
-      position="fixed"
-      bottom="0"
-      width="100%"
-      justifyContent="center"
-      alignItems="center"
+      as="footer"
+      w="full"
+      p={10}
       bg="transparent"
-      borderBottomColor="#232e4a"
-      visibility="visible"
-
+      flexDir={{ base: "column", xl: "row" }}
+      align="center"
+      justify="space-between"
+      transition="background 0.3s ease"
     >
-      <Container
-        as={Stack}
-        maxW={"100%"}
-        direction={{ base: "column", md: "row" }}
-        spacing={10}
+      <chakra.a
+        href="/"
+        fontSize="3xl"
+        fontWeight="bold"
+        color="alphaWhite.800"
+        _hover={{ color: "alphaBlack.700" }}
       >
-        <Stack direction="row" spacing={"4"}>
-          <SocialButton label={"Instagram"} href={"#"}>
-            <FaInstagram />
-          </SocialButton>
-          <SocialButton label={"Facebook"} href={"#"}>
-            <FaFacebook />
-          </SocialButton>
-          <SocialButton label={"Youtube"} href={"#"}>
-            <FaYoutube />
-          </SocialButton>
-          <SocialButton label={"Design by Jordybeer"} href={"http://www.jordy.beer"}>
-            <FaPaw />
-          </SocialButton>
-        </Stack>
-      </Container>
+        RB Lasprojecten
+      </chakra.a>
+
+      <Flex>
+        <SocialButton
+          href="https://www.instagram.com/rblasprojecten/"
+          ariaLabel="Volg op Instagram"
+          icon={<FaInstagram fontSize="2rem" />}
+          colorScheme="Instagram"
+        />
+        <SocialButton
+          href="https://www.facebook.com/rblasprojecten/"
+          ariaLabel="Volg op Facebook"
+          icon={<FaFacebook fontSize="2rem" />}
+          colorScheme="Facebook"
+        />
+        <SocialButton
+          href="https://www.youtube.com/@rblasprojecten/"
+          ariaLabel="Volg op Youtube"
+          icon={<FaYoutube fontSize="2rem" />}
+          colorScheme="Youtube"
+        />
+      </Flex>
     </Flex>
   );
 };
+
+const SocialButton: React.FC<{
+  href: string;
+  ariaLabel: string;
+  icon: React.ReactNode;
+  colorScheme: string;
+}> = ({ href, ariaLabel, icon, colorScheme }) => (
+  <ChakraLink href={href} isExternal _hover={{ bgColor: "whiteAlpha.300" }}>
+    <IconButton
+      colorScheme={colorScheme}
+      icon={icon}
+      aria-label={ariaLabel}
+      isRound
+      variant="solid"
+      mx="2"
+    />
+  </ChakraLink>
+);
 
 export default Fooder;

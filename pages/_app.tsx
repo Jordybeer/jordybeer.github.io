@@ -8,6 +8,8 @@ import '../styles/styles.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+console.log('app loaded')
+
 function App({ Component, pageProps }: any) {
   const [isMounted, setIsMounted] = useState(false);
   const yourPagesDataHere = [];
