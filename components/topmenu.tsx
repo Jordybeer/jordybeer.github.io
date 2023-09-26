@@ -64,8 +64,9 @@ const TopMenu: React.FC<TopMenuProps> = () => {
             >
               Contact
             </Button>
+
           </NextLink>
-          <NextLink href="/slides">
+          <NextLink href="/robbert">
             <Button
               variant="ghost"
               color="whiteAlpha.900"
@@ -73,7 +74,7 @@ const TopMenu: React.FC<TopMenuProps> = () => {
               _hover={{ bg: "#FFD700" }}
               size={{ base: "sm", md: "md" }}
             >
-              Album
+              Over Robbert
             </Button>
           </NextLink>
         </HStack>

@@ -1,12 +1,25 @@
 import { SessionProvider } from "next-auth/react";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "/theme";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+
 import Layout from "../components/layout";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
+
 import "../styles/styles.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+const theme = extendTheme({
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+  styles: {
+    global: {
+      "*": {
+        textShadow: "1px 1px 2px rgba(0,0,0,1.5)",
+      },
+    },
+  },
+});
 
 console.log("app loaded");
 

@@ -1,15 +1,15 @@
 import React from "react";
 import { Link as ChakraLink, IconButton, Flex, chakra } from "@chakra-ui/react";
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaYoutube, FaPaw } from "react-icons/fa";
 
 const Fooder: React.FC = () => {
   return (
     <Flex
       as="footer"
       w="full"
-      p={10}
+      p={5}
       bg="transparent"
-      flexDir={{ base: "column", xl: "row" }}
+      flexDir={{ base: "column", xl: "column" }}
       align="center"
       justify="space-between"
       transition="background 0.3s ease"
@@ -43,6 +43,12 @@ const Fooder: React.FC = () => {
           icon={<FaYoutube fontSize="2rem" />}
           colorScheme="Youtube"
         />
+        <SocialButton
+        href="https://www.jordy.beer"
+        ariaLabel="Made by jordybeer"
+        icon={<FaPaw fontSize="2rem" />}
+        colorScheme="Twitter"
+      />
       </Flex>
     </Flex>
   );

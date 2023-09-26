@@ -21,20 +21,21 @@ export default function FrontHead() {
   const size = "lg"; // Keeping only the largest size
 
   return (
+    <Flex direction="column" align="center" justify="center" p={8}>
     <Box
       mx="auto"
+      display="flex"
       maxW={{ base: "7xl" }}
       width={{ base: "100vw", sm: "100vw" }}
       transition={"background 0.3s ease"}
       px={{ base: 4, sm: 6, lg: 8 }}
-      mt="10"
+      mt="auto"
       position="relative"
       zIndex={1}
       bg={bg}
-      rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
+      rounded={{base:"3xl", md:"3xl"}}
       shadow="dark-lg"
       border="solid 2px yellow"
-      pb={{ base: 4, sm: 8, md: 10, lg: 14, xl: 16 }}
       width={{ base: "100vw", sm: "100vw" }}
       maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
     >
@@ -42,11 +43,12 @@ export default function FrontHead() {
 
       <Box
         w="full"
-        display={{ base: "block", lg: "block" }}
+        display="flex"
+        flexDir="column"
+        height="full"
         justifyContent="center"
         alignItems="center"
         position="relative"
-        overflow="hidden"
         aspectRatio={1}
         zIndex={0}
       >
@@ -56,15 +58,17 @@ export default function FrontHead() {
           src="https://i.imgur.com/41sjJtw.png"
           alt="RB logo"
           position="absolute"
-          top="50"
+          width="100%"
+          height="100%"
+                    top="50"
           left="50"
           bot="50"
           zIndex={-1}
-          top={{ base: "auto", md: "auto" }}
-          left={{ base: "auto", md: "auto" }}
-          right={{ base: "auto", md: "auto" }}
-          bottom={{ base: "auto", md: "auto" }}
-          objectFit="scale-down"
+top="auto"
+bottom="auto"
+right="auto"
+left="auto"
+          objectFit="contain"
         />
         <chakra.h1
           letterSpacing="tight"
@@ -102,17 +106,9 @@ export default function FrontHead() {
           maxW={{ sm: "xl" }}
           color={textColor}
           textAlign="left"
-          rounded="md"
           backdropFilter="blur(1.2px)"
-          shadow="dark-lg"
-          style={{ padding: "1rem" }}
-          rounded={{
-            base: "none",
-            sm: "none",
-            md: "3xl",
-            lg: "3xl",
-            xl: "3xl",
-          }}
+          shadow="xl"
+        border="solid 5px transparent"
         >
           Stap binnen in mijn wereld van solide vakmanschap, waar hout en staal
           samenkomen om unieke meubelstukken te creëren. Van jouw ideeën tot
@@ -121,8 +117,10 @@ export default function FrontHead() {
           individualiteit bij RB Lasprojecten.
         </chakra.p>
         {/* New Buttons */}
-        <Flex justifyContent="center" bot="0" mt={5}>
+        {/* <Flex justifyContent="center" bot="0" mt={5}> */}
+        <Flex display="flex" flexDir="row" justifyContent="center" margin-top="auto">
           <Button
+            bot={20}
             bgColor="#115F9E"
             color="white"
             fontWeight="large"
@@ -148,7 +146,8 @@ export default function FrontHead() {
             Bekijk projecten{" "}
           </Button>
           <Button
-            bgColor={`${scheme}.${step1}`}
+                        bgColor="#115F9E"
+
             color="white"
             fontWeight="large"
             rounded="xl"
@@ -174,5 +173,6 @@ export default function FrontHead() {
         </Flex>
       </Box>
     </Box>
+    </Flex>
   );
 }
