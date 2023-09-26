@@ -44,11 +44,11 @@ const Fooder: React.FC = () => {
           colorScheme="Youtube"
         />
         <SocialButton
-        href="https://www.jordy.beer"
-        ariaLabel="Made by jordybeer"
-        icon={<FaPaw fontSize="2rem" />}
-        colorScheme="Twitter"
-      />
+          href="https://www.jordy.beer"
+          ariaLabel="Made by jordybeer"
+          icon={<FaPaw fontSize="2rem" />}
+          colorScheme="Twitter"
+        />
       </Flex>
     </Flex>
   );
