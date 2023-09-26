@@ -21,28 +21,6 @@ module.exports = {
     "plugin:react/recommended",
     "prettier",
   ],
-  rules: {
-    rules: [
-      {
-        test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-            plugins: [
-              // Add the react-refresh/babel plugin
-              require.resolve('react-refresh/babel'),
-            ],
-          },
-        },
-      },
-    ],
-  },
-  plugins: [
-    // Add the ReactRefreshWebpackPlugin
-    new ReactRefreshWebpackPlugin(),
-  ],
   settings: {
     react: {
       version: "detect",
