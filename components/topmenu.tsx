@@ -18,6 +18,7 @@ const TopMenu: React.FC<TopMenuProps> = () => {
     <Flex
       bg={bg}
       w="full"
+      h='10%'
       px={{ base: 2, sm: 4 }}
       py={4}
       shadow="md"
