@@ -16,7 +16,7 @@ const Fooder: React.FC = () => {
     >
       <chakra.a
         href="/"
-        fontSize="2xl"
+        fontSize="1.5rem"
         fontWeight="bold"
         color="alphaWhite.800"
         _hover={{ color: "alphaBlack.700" }}
@@ -28,25 +28,25 @@ const Fooder: React.FC = () => {
         <SocialButton
           href="https://www.instagram.com/rblasprojecten/"
           ariaLabel="Volg op Instagram"
-          icon={<FaInstagram fontSize="1rem" />}
+          icon={<FaInstagram fontSize="1.5rem" />}
           colorScheme="Instagram"
         />
         <SocialButton
           href="https://www.facebook.com/rblasprojecten/"
           ariaLabel="Volg op Facebook"
-          icon={<FaFacebook fontSize="1rem" />}
+          icon={<FaFacebook fontSize="1.5rem" />}
           colorScheme="Facebook"
         />
         <SocialButton
           href="https://www.youtube.com/@rblasprojecten/"
           ariaLabel="Volg op Youtube"
-          icon={<FaYoutube fontSize="1rem" />}
+          icon={<FaYoutube fontSize="1.5rem" />}
           colorScheme="Youtube"
         />
         <SocialButton
           href="https://www.jordy.beer"
           ariaLabel="Made by jordybeer"
-          icon={<FaPaw fontSize="2rem" />}
+          icon={<FaPaw fontSize="1.5rem" />}
           colorScheme="Twitter"
         />
       </Flex>
