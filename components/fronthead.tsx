@@ -33,9 +33,8 @@ export default function FrontHead() {
         position="relative"
         zIndex={1}
         bg={bg}
-        rounded={{ base: "3xl", md: "3xl" }}
+        rounded={{ base: "none", md: "3xl" }}
         shadow="dark-lg"
-        border="solid 2px yellow"
         width={{ base: "100vw", sm: "100vw" }}
         maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
       >
@@ -84,6 +83,7 @@ export default function FrontHead() {
             <chakra.span
               fontSize={{ base: "5xl", sm: "5xl", lg: "6xl" }}
               fontFamily="Raleway Variable"
+              pt="20"
               display={{ base: "block", sm: "md", lg: "block" }}
             >
               Waar dromen
@@ -122,7 +122,7 @@ export default function FrontHead() {
             display="flex"
             flexDir="row"
             justifyContent="center"
-            margin-top="auto"
+            p="30"
           >
             <Button
               bot={20}

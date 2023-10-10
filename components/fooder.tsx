@@ -19,6 +19,7 @@ const Fooder: React.FC = () => {
         fontSize="1.5rem"
         fontWeight="bold"
         color="alphaWhite.800"
+        pb="2"
         _hover={{ color: "alphaBlack.700" }}
       >
         RB Lasprojecten
