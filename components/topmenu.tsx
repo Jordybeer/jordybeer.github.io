@@ -1,5 +1,5 @@
 import React from "react";
-import { useColorModeValue, Flex, HStack, Button } from "@chakra-ui/react";
+import { useColorModeValue, Flex, HStack, Button, Menu, MenuButton, MenuList, MenuItem, MenuItemOption, MenuGroup, MenuOptionGroup, MenuDivider } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
@@ -19,7 +19,6 @@ const TopMenu: React.FC<TopMenuProps> = () => {
       py={4}
       shadow="md"
       position="fixed"
-      overflow="hidden"
       top={0}
       zIndex={10000}
     >
@@ -32,31 +31,51 @@ const TopMenu: React.FC<TopMenuProps> = () => {
         >
           <NextLink href="/">
             <Button
-              variant="ghost"
+              variant="roundleft"
               color="whiteAlpha.900"
-              aria-label="Menu"
+              aria-label="Home"
               _hover={{ bg: "#FFD700" }}
               size={{ base: "sm", md: "md" }}
             >
               Home
             </Button>
           </NextLink>
-          <NextLink href="/projects">
-            <Button
-              variant="ghost"
+
+           <Menu>
+            <MenuButton
+            bgColor="#262547"
+              as={Button}
+              variant="roundleft"
               color="whiteAlpha.900"
-              aria-label="Menu"
+              aria-label="Projecten"
               _hover={{ bg: "#FFD700" }}
               size={{ base: "sm", md: "md" }}
-            >
-              Projecten
-            </Button>
-          </NextLink>
+              isActive={{background: "#FFD700"}}
+
+            >Projecten</MenuButton>
+              <MenuList
+              bgColor="#262547">
+                <NextLink
+                href="/projects">
+                <MenuItem
+                bgColor="#262547"
+                _hover={{ bg: "#FFD700" }}
+                >Oude projecten</MenuItem>
+                </NextLink>
+                <NextLink href="/robbert">
+                <MenuItem
+                bgColor="#262547"
+                _hover={{ bg: "#FFD700" }}>Nieuwe projecten</MenuItem>
+                </NextLink>
+              </MenuList>
+          </Menu>
+
+
           <NextLink href="/contact">
             <Button
               variant="ghost"
               color="whiteAlpha.900"
-              aria-label="Menu"
+              aria-label="Contact"
               _hover={{ bg: "#FFD700" }}
               size={{ base: "sm", md: "md" }}
             >
@@ -67,7 +86,7 @@ const TopMenu: React.FC<TopMenuProps> = () => {
             <Button
               variant="ghost"
               color="whiteAlpha.900"
-              aria-label="Menu"
+              aria-label="Over"
               _hover={{ bg: "#FFD700" }}
               size={{ base: "sm", md: "md" }}
             >

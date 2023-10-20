@@ -16,20 +16,31 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 import { useToast } from "@chakra-ui/react";
 import { BsInstagram, BsYoutube, BsPerson, BsFacebook } from "react-icons/bs";
 import { MdEmail, MdPerson, MdFlag } from "react-icons/md";
 
+import NewButton from "../components/newbutton"
+
 const ContactForm: React.FC = () => {
 
-  const bg = "linear-gradient(55deg, #34139546 30%, #0F2E77CE 70%)";
+  const router = useRouter();
+
 
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [subject, setSubject] = useState('');
   const [name, setName] = useState('');
 
+  useEffect(() => {
+    if (router.query.productTitle) {
+      setSubject(`Aanvraag Offerte omtrent ${router.query.productTitle}`);
+    }
+  }, [router.query]);
+
+  const bg = "linear-gradient(55deg, #34139546 30%, #0F2E77CE 70%)";
 
   const toast = useToast();
 
@@ -99,14 +110,19 @@ const ContactForm: React.FC = () => {
         maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
 
         >
-          <VStack spacing={5} p={10}>
+          <VStack spacing={5} p={10} width="120%">
             <FormControl isRequired>
               <FormLabel>Naam</FormLabel>
               <InputGroup>
                 <InputLeftElement>
                   <MdPerson />
                 </InputLeftElement>
-                <Input type="text" placeholder="naam" value={name} onChange={(e) => setName(e.target.value)} />
+                <Input
+                type="text"
+                placeholder="naam"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                />
               </InputGroup>
             </FormControl>
 
@@ -136,24 +152,18 @@ const ContactForm: React.FC = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Vul hier je bericht in"
-                rows={6}
-                resize="none"
+                rows={4}
+                resize="vertical"
               />
             </FormControl>
 
 
-            <Button
-              colorScheme="blue"
-              bg="blue.700"
-              color="white"
-              _hover={{
-                bg: "blue.500",
-              }}
-              width="full"
-              onClick={handleSubmit}
-            >
-              Verstuur bericht
-            </Button>
+
+            <NewButton
+            label="Verstuur Bericht"
+            click={handleSubmit}
+            />
+
           </VStack>
         </Box>
       </VStack>

@@ -24,10 +24,10 @@ app.post('/sendEmail', async (req: Request, res: Response) => {
   });
 
   let mailOptions = {
-    from: 'athemoe@gmail.com',
+    from: 'noreply@rblasprojecten.nl',
     to: 'athemoe@gmail.com',
     subject: formData.subject,
-    text: `Klant: ${formData.name}\nEmail: ${formData.email}\n\nBericht:\n\n${formData.message}`,
+    text: `Klant: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`,
     replyTo: formData.email
   };
 
@@ -46,5 +46,5 @@ app.post('/sendEmail', async (req: Request, res: Response) => {
 });
 
 app.listen(3001, () => {
-  console.log('Server running on http://localhost:3001/');
+  console.log('Backend server running on http://localhost:3001/');
 });

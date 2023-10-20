@@ -2,53 +2,71 @@ import NextLink from 'next/link';
 import { Button } from '@chakra-ui/react';
 
 interface CustomButtonProps {
-  href: string;
+  href?: string;
   label: string;
   colorScheme?: string;
   size?: string;
-  // Add other optional custom props here
+  click?: () => void;
+  shadow?: string;
+  border?: string;
+  bgColor?: string;
+  color?: string;
+  fontWeight?: string;
+  rounded?: string;
+  transition?: string;
+  // add any other style props you'd like to be customizable
 }
 
 const NewButton: React.FC<CustomButtonProps> = ({
+  //default props
   href,
   label,
-  colorScheme = "yellow", // default color scheme
-  size = "lg", // default size
-  // other props
+  colorScheme = "yellow",
+  size = "lg",
+  click,
+  shadow = "dark-lg",
+  border = "solid 2px black",
+  bgColor = "#115F9E",
+  color = "white",
+  fontWeight = "large",
+  rounded = "xl",
+  transition = "background 0.8s",
+
 }) => {
-  const step1 = "600";
   const step2 = "500";
   const step3 = "300";
 
-  return (
-    <NextLink href={href}>
-      <Button
-        bot={20}
-        bgColor="#115F9E"
-        color="white"
-        fontWeight="large"
-        rounded="xl"
-        shadow="dark-lg"
-        border="solid 2px black"
-        size={size}
-        _focus={{ outline: "none" }}
-        transition="background 0.8s"
-        _hover={{
-          bgColor: `${colorScheme}.${step2}`,
-          bgGradient: `radial(circle, transparent 1%, ${colorScheme}.${step2} 1%)`,
-          bgPos: "center",
-          backgroundSize: "15000%",
-        }}
-        _active={{
-          bgColor: `${colorScheme}.${step3}`,
-          backgroundSize: "100%",
-          transition: "background 0s",
-        }}
-        mr={4}
-      >
-        {label}
-      </Button>
-    </NextLink>
+  const ButtonComponent = (
+    <Button
+      size={size}
+      onClick={click}
+      shadow={shadow}
+      border={border}
+      bgColor={bgColor}
+      color={color}
+      fontWeight={fontWeight}
+      rounded={rounded}
+      transition={transition}
+      _hover={{
+        bgColor: `${colorScheme}.${step2}`,
+        bgGradient: `radial(circle, transparent 1%, ${colorScheme}.${step2} 1%)`,
+        bgPos: "center",
+        backgroundSize: "15000%",
+      }}
+      _active={{
+        bgColor: `${colorScheme}.${step3}`,
+        backgroundSize: "100%",
+        transition: "background 0s",
+      }}
+    >
+      {label}
+    </Button>
+  );
+
+  return href ? (
+    <NextLink href={href}>{ButtonComponent}</NextLink>
+  ) : (
+    ButtonComponent
   );
 };
 
