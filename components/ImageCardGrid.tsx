@@ -11,19 +11,18 @@ interface ImageCardProps {
 const ImageCardGrid: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<ImageCardProps | null>(null);
 
-  // Dummy data for demonstration
   const cards: ImageCardProps[] = [
     {
       title: "Project 1",
-      images: ["/image1.jpg", "/image2.jpg"], // Make sure these paths are correct
+      images: ["/image1.jpg", "/image2.jpg"], //
       description: "This is project 1",
     },
-    // Add more cards here
   ];
 
   return (
     <Flex
       wrap="wrap"
+      pt="15"
       justifyContent="center"
       rounded={{ base: "none", sm: "none", md: "3xl", lg: "3xl", xl: "3xl" }}
       display="inline-block"

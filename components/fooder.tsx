@@ -45,7 +45,7 @@ const Fooder: React.FC = () => {
           colorScheme="Youtube"
         />
         <SocialButton
-          href="https://www.jordy.beer"
+          href="https://jordy.beer/"
           ariaLabel="Made by jordybeer"
           icon={<FaPaw fontSize="1.5rem" />}
           colorScheme="Twitter"

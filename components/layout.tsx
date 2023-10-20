@@ -5,6 +5,7 @@ import TopMenu from "../components/topmenu";
 import LeftNav from "./newnavbarleft";
 import Fooder from "../components/fooder";
 
+
 interface LayoutProps {
   children: any;
   pages: any;
@@ -23,7 +24,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       bgRepeat="no-repeat"
       bgSize="cover"
     >
-      <LeftNav />
       <TopMenu />
       <Flex flexGrow={1} alignItems="center" justifyContent="center">
         <Container

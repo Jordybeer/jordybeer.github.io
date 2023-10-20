@@ -9,20 +9,17 @@ interface TopMenuProps {
 
 const TopMenu: React.FC<TopMenuProps> = () => {
   const router = useRouter();
-  const bg = useColorModeValue(
-    "linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8))",
-    "linear-gradient(180deg, rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.8))",
-  );
+  const bg = "#262547";
 
   return (
     <Flex
       bg={bg}
       w="full"
-      h='10%'
       px={{ base: 2, sm: 4 }}
       py={4}
       shadow="md"
       position="fixed"
+      overflow="hidden"
       top={0}
       zIndex={10000}
     >
@@ -77,6 +74,20 @@ const TopMenu: React.FC<TopMenuProps> = () => {
               Over Robbert
             </Button>
           </NextLink>
+
+          <NextLink href="/test">
+            <Button
+              variant="ghost"
+              color="whiteAlpha.900"
+              aria-label="test"
+              _hover={{ bg: "#FFD700" }}
+              size={{ base: "sm", md: "md" }}
+            >
+              Test
+            </Button>
+          </NextLink>
+
+
         </HStack>
       </Flex>
     </Flex>

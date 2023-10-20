@@ -1,9 +1,13 @@
 import React from "react";
 import { chakra, Box, Button, Flex } from "@chakra-ui/react";
 import "@fontsource-variable/raleway";
+import { useRouter } from "next/router";
+import NextLink from "next/link";
+import NewButton from "../components/newbutton"
 
 export default function FrontHead() {
-  const bg = "linear-gradient(55deg, #341395CE 75%, #0F2E77CE 25%)";
+  const bg = "linear-gradient(55deg, #34139546 30%, #0F2E77CE 70%)";
+  const router = useRouter();
 
   //  const bg = "linear-gradient(180deg, #225282 100%, #1A2B3C 70%, #1A2B3C 40%)";
   const titleColor = "#FFFFFF";
@@ -21,6 +25,7 @@ export default function FrontHead() {
   const size = "lg"; // Keeping only the largest size
 
   return (
+
     <Flex direction="column" align="center" justify="center" p={8}>
       <Box
         mx="auto"
@@ -28,13 +33,14 @@ export default function FrontHead() {
         maxW={{ base: "7xl" }}
         width={{ base: "100vw", sm: "100vw" }}
         transition={"background 0.3s ease"}
-        px={{ base: 4, sm: 6, lg: 8 }}
+        px={{ base: 4, sm: 6, lg: 10 }}
         mt="auto"
         position="relative"
-        zIndex={1}
+        zIndex={2}
         bg={bg}
-        rounded={{ base: "none", md: "3xl" }}
-        shadow="dark-lg"
+        justifyContent="center"
+        shadow={{ base: "none", md: "dark-lg" }}
+        border='1mm ridge #3A80C56F'
         width={{ base: "100vw", sm: "100vw" }}
         maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
       >
@@ -124,56 +130,8 @@ export default function FrontHead() {
             justifyContent="center"
             p="30"
           >
-            <Button
-              bot={20}
-              bgColor="#115F9E"
-              color="white"
-              fontWeight="large"
-              rounded="xl"
-              shadow="dark-lg"
-              border="solid 2px black"
-              size={size}
-              _focus={{ outline: "none" }}
-              transition="background 0.8s"
-              _hover={{
-                bgColor: `${scheme}.${step2}`,
-                bgGradient: `radial(circle, transparent 1%, ${scheme}.${step2} 1%)`,
-                bgPos: "center",
-                backgroundSize: "15000%",
-              }}
-              _active={{
-                bgColor: `${scheme}.${step3}`,
-                backgroundSize: "100%",
-                transition: "background 0s",
-              }}
-              mr={4}
-            >
-              Bekijk projecten{" "}
-            </Button>
-            <Button
-              bgColor="#115F9E"
-              color="white"
-              fontWeight="large"
-              rounded="xl"
-              shadow="dark-lg"
-              border="solid 2px black"
-              size={size}
-              _focus={{ outline: "none" }}
-              transition="background 0.8s"
-              _hover={{
-                bgColor: `${scheme}.${step2}`,
-                bgGradient: `radial(circle, transparent 1%, ${scheme}.${step2} 1%)`,
-                bgPos: "center",
-                backgroundSize: "15000%",
-              }}
-              _active={{
-                bgColor: `${scheme}.${step3}`,
-                backgroundSize: "100%",
-                transition: "background 0s",
-              }}
-            >
-              Neem contact op{" "}
-            </Button>
+            <NewButton href="/projects" label="Bekijk mijn projecten" />
+            <NewButton href="/contact" label="Neem contact op" />
           </Flex>
         </Box>
       </Box>
