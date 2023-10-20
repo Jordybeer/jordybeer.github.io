@@ -17,6 +17,7 @@ const TopMenu: React.FC<TopMenuProps> = () => {
       w="full"
       px={{ base: 2, sm: 4 }}
       py={4}
+      pb={15}
       shadow="md"
       position="fixed"
       top={0}
