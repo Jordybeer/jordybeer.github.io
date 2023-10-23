@@ -1,4 +1,3 @@
-import { SessionProvider } from "next-auth/react";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import Layout from "../components/layout";
@@ -36,7 +35,6 @@ function App({ Component, pageProps }: any) {
   }
 
   return (
-    <SessionProvider session={pageProps.session}>
       <ChakraProvider theme={theme}>
         <Head>
           <title>RB Lasprojecten</title>
@@ -45,7 +43,6 @@ function App({ Component, pageProps }: any) {
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>
-    </SessionProvider>
   );
 }
 

@@ -9,6 +9,7 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
   return (
     <motion.div
       className="card"
+      p={20}
 /*       whileHover={{ scale: 1.05 }} */
       onClick={() => setSelectedCard(data)}
       initial={{ opacity: 0 }}

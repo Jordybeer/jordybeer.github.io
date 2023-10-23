@@ -133,7 +133,7 @@ const CardGrid: React.FC<CardGridProps> = ({ setSelectedCard }) => {
   return (
     <AnimatePresence>
       <div
-      className="grid"
+      className="grid" justifyContent="center"
 >        {data.map((item, index) => (
           <Card key={index} data={item} setSelectedCard={setSelectedCard} />
         ))}
