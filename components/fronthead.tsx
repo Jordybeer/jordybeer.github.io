@@ -29,6 +29,7 @@ export default function FrontHead() {
     <Flex direction="column" align="center" justify="center" p={8}>
       <Box
         mx="auto"
+        my="auto"
         display="flex"
         maxW={{ base: "7xl" }}
         width={{ base: "100vw", sm: "100vw" }}

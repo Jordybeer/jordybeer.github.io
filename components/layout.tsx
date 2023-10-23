@@ -27,8 +27,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <TopMenu />
       <Flex flexGrow={1} alignItems="center" justifyContent="center">
         <Container
+      border="2px solid red"
+
           maxW="100%"
-          height="100%"
+          pt="35"
           display="flex"
           justifyContent="center"
           alignItems="center"
