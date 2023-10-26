@@ -140,17 +140,18 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
               </Box>
               <Box p={4} marginBottom={4} className="card-description-large">
                 <p>{data.description}</p>
-
               </Box>
-              <Flex
-            display="flex"
-            flexDir="row"
-            justifyContent="center"
-            p="30"
-          >
-                <NewButton href={`/contact?productTitle=${encodeURIComponent(data.title)}`} label="Vraag offerte aan"
+              <Flex display="flex" flexDir="row" justifyContent="center" p="30">
+                <NewButton
+                  href={`/contact?productTitle=${encodeURIComponent(
+                    data.title,
+                  )}`}
+                  label="Vraag offerte aan"
                 />
-                <NewButton href="https://instagram.com" label="Bekijk op Instagram" />
+                <NewButton
+                  href="https://instagram.com"
+                  label="Bekijk op Instagram"
+                />
               </Flex>
             </Box>
           </Flex>

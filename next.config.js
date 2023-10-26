@@ -1,7 +1,10 @@
 const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+const nextConfig = {
+  output: "standalone",
+};
 
 module.exports = withSentryConfig(
   nextConfig,
@@ -32,5 +35,5 @@ module.exports = withSentryConfig(
 
     // Automatically tree-shake Sentry logger statements to reduce bundle size
     disableLogger: true,
-  }
+  },
 );

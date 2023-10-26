@@ -35,14 +35,14 @@ function App({ Component, pageProps }: any) {
   }
 
   return (
-      <ChakraProvider theme={theme}>
-        <Head>
-          <title>RB Lasprojecten</title>
-        </Head>
-        <Layout pages={yourPagesDataHere}>
-          <Component {...pageProps} />
-        </Layout>
-      </ChakraProvider>
+    <ChakraProvider theme={theme}>
+      <Head>
+        <title>RB Lasprojecten</title>
+      </Head>
+      <Layout pages={yourPagesDataHere}>
+        <Component {...pageProps} />
+      </Layout>
+    </ChakraProvider>
   );
 }
 

@@ -1,5 +1,5 @@
-import NextLink from 'next/link';
-import { Button } from '@chakra-ui/react';
+import NextLink from "next/link";
+import { Button } from "@chakra-ui/react";
 
 interface CustomButtonProps {
   href?: string;
@@ -31,7 +31,6 @@ const NewButton: React.FC<CustomButtonProps> = ({
   fontWeight = "large",
   rounded = "xl",
   transition = "background 0.8s",
-
 }) => {
   const step2 = "500";
   const step3 = "300";

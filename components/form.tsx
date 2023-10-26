@@ -16,23 +16,21 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import { useToast } from "@chakra-ui/react";
 import { BsInstagram, BsYoutube, BsPerson, BsFacebook } from "react-icons/bs";
 import { MdEmail, MdPerson, MdFlag } from "react-icons/md";
 
-import NewButton from "../components/newbutton"
+import NewButton from "../components/newbutton";
 
 const ContactForm: React.FC = () => {
-
   const router = useRouter();
 
-
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [subject, setSubject] = useState('');
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [subject, setSubject] = useState("");
+  const [name, setName] = useState("");
 
   useEffect(() => {
     if (router.query.productTitle) {
@@ -53,10 +51,10 @@ const ContactForm: React.FC = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3001/sendEmail', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3001/sendEmail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -93,22 +91,21 @@ const ContactForm: React.FC = () => {
     <Flex>
       <VStack spacing={{ base: 4, md: 8, lg: 20 }} width="100%">
         <Box
-        mx="auto"
-        display="flex"
-        maxW={{ base: "7xl" }}
-        width={{ base: "100vw", sm: "100vw" }}
-        transition={"background 0.3s ease"}
-        px={{ base: 4, sm: 6, lg: 10 }}
-        mt="auto"
-        position="relative"
-        zIndex={2}
-        bg={bg}
-        justifyContent="center"
-        shadow={{ base: "none", md: "dark-lg" }}
-        border='1mm ridge #3A80C56F'
-        width={{ base: "100vw", sm: "100vw" }}
-        maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
-
+          mx="auto"
+          display="flex"
+          maxW={{ base: "7xl" }}
+          width={{ base: "100vw", sm: "100vw" }}
+          transition={"background 0.3s ease"}
+          px={{ base: 4, sm: 6, lg: 10 }}
+          mt="auto"
+          position="relative"
+          zIndex={2}
+          bg={bg}
+          justifyContent="center"
+          shadow={{ base: "none", md: "dark-lg" }}
+          border="1mm ridge #3A80C56F"
+          width={{ base: "100vw", sm: "100vw" }}
+          maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
         >
           <VStack spacing={5} p={10} width="120%">
             <FormControl isRequired>
@@ -118,10 +115,10 @@ const ContactForm: React.FC = () => {
                   <MdPerson />
                 </InputLeftElement>
                 <Input
-                type="text"
-                placeholder="naam"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                  type="text"
+                  placeholder="naam"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </InputGroup>
             </FormControl>
@@ -132,17 +129,27 @@ const ContactForm: React.FC = () => {
                 <InputLeftElement>
                   <MdEmail />
                 </InputLeftElement>
-                <Input type="email" placeholder ="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Input
+                  type="email"
+                  placeholder="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </InputGroup>
             </FormControl>
 
             <FormControl isRequired>
               <FormLabel>Onderwerp</FormLabel>
               <InputGroup>
-                  <InputLeftElement>
-                    <MdFlag />
-                 </ InputLeftElement>
-               <Input type="text" placeholder="onderwerp"value={subject} onChange={(e) => setSubject(e.target.value)} />
+                <InputLeftElement>
+                  <MdFlag />
+                </InputLeftElement>
+                <Input
+                  type="text"
+                  placeholder="onderwerp"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                />
               </InputGroup>
             </FormControl>
 
@@ -157,13 +164,7 @@ const ContactForm: React.FC = () => {
               />
             </FormControl>
 
-
-
-            <NewButton
-            label="Verstuur Bericht"
-            click={handleSubmit}
-            />
-
+            <NewButton label="Verstuur Bericht" click={handleSubmit} />
           </VStack>
         </Box>
       </VStack>

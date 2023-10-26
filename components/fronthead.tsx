@@ -3,7 +3,7 @@ import { chakra, Box, Button, Flex } from "@chakra-ui/react";
 import "@fontsource-variable/raleway";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
-import NewButton from "../components/newbutton"
+import NewButton from "../components/newbutton";
 
 export default function FrontHead() {
   const bg = "linear-gradient(55deg, #34139546 30%, #0F2E77CE 70%)";
@@ -25,7 +25,6 @@ export default function FrontHead() {
   const size = "lg"; // Keeping only the largest size
 
   return (
-
     <Flex direction="column" align="center" justify="center" p={8}>
       <Box
         mx="auto"
@@ -41,7 +40,7 @@ export default function FrontHead() {
         bg={bg}
         justifyContent="center"
         shadow={{ base: "none", md: "dark-lg" }}
-        border='1mm ridge #3A80C56F'
+        border="1mm ridge #3A80C56F"
         width={{ base: "100vw", sm: "100vw" }}
         maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
       >
@@ -125,12 +124,7 @@ export default function FrontHead() {
           </chakra.p>
           {/* New Buttons */}
           {/* <Flex justifyContent="center" bot="0" mt={5}> */}
-          <Flex
-            display="flex"
-            flexDir="row"
-            justifyContent="center"
-            p="30"
-          >
+          <Flex display="flex" flexDir="row" justifyContent="center" p="30">
             <NewButton href="/projects" label="Bekijk mijn projecten" />
             <NewButton href="/contact" label="Neem contact op" />
           </Flex>

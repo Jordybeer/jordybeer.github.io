@@ -11,11 +11,9 @@ import {
 } from "@chakra-ui/react";
 //buttons
 import { useRouter } from "next/router";
-import NextLink from "next/link"
+import NextLink from "next/link";
 
 import NewButton from "../components/newbutton";
-
-
 
 const TestPage: React.FC = () => {
   const bg = "linear-gradient(55deg, #34139546 30%, #0F2E77CE 70%)";
@@ -51,22 +49,20 @@ const TestPage: React.FC = () => {
         rounded="3xl"
       >
         <Flex direction={{ base: "column", md: "column" }}>
+          {/*          experimentele inhoud */}
 
-{/*          experimentele inhoud */}
-
-<Flex
-            display="flex"
-            flexDir="row"
-            justifyContent="center"
-            p="30"
-          >
-<NewButton href="/" label="?" />
-<NewButton href="/projects" />
+          <Flex display="flex" flexDir="row" justifyContent="center" p="30">
+            <NewButton href="/" label="?" />
+            <NewButton href="/projects" />
           </Flex>
 
           <NewButton href="/projects" label="Bijzettafel metalen X frame" />
-<NewButton href="/" label="Another Button" colorScheme="blue" size="md" />
-
+          <NewButton
+            href="/"
+            label="Another Button"
+            colorScheme="blue"
+            size="md"
+          />
         </Flex>
       </Box>
     </Flex>

@@ -1,6 +1,6 @@
-import express, { Request, Response } from 'express';
-import cors from 'cors';
-import nodemailer from 'nodemailer';
+import express, { Request, Response } from "express";
+import cors from "cors";
+import nodemailer from "nodemailer";
 
 interface FormData {
   name: string;
@@ -13,38 +13,35 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post('/sendEmail', async (req: Request, res: Response) => {
+app.post("/sendEmail", async (req: Request, res: Response) => {
   const formData: FormData = req.body;
   let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
-      user: 'athemoe@gmail.com',  // Replace with your Gmail email
-      pass: 'qtkqfvazqcrjqvcz',  // Replace with your Gmail password
+      user: "athemoe@gmail.com", // Replace with your Gmail email
+      pass: "qtkqfvazqcrjqvcz", // Replace with your Gmail password
     },
   });
 
   let mailOptions = {
-    from: 'noreply@rblasprojecten.nl',
-    to: 'athemoe@gmail.com',
+    from: "noreply@rblasprojecten.nl",
+    to: "athemoe@gmail.com",
     subject: formData.subject,
     text: `Klant: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`,
-    replyTo: formData.email
+    replyTo: formData.email,
   };
-
-
-
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.status(500).send('Something went wrong.');
+      res.status(500).send("Something went wrong.");
     } else {
       console.log(`Email sent: ${info.response}`);
-      res.status(200).send('Email sent successfully.');
+      res.status(200).send("Email sent successfully.");
     }
   });
 });
 
 app.listen(3001, () => {
-  console.log('Backend server running on http://localhost:3001/');
+  console.log("Backend server running on http://localhost:3001/");
 });
