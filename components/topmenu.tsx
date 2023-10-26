@@ -13,11 +13,11 @@ const TopMenu: React.FC<TopMenuProps> = () => {
 
   return (
     <Flex
+      py={{ base: 4, md: 6 }}
+      pb={{ base: 15, md: 20 }}
       bg={bg}
       w="full"
       px={{ base: 2, sm: 4 }}
-      py={4}
-      pb={15}
       shadow="md"
       position="fixed"
       top={0}

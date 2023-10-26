@@ -8,6 +8,7 @@ const Fooder: React.FC = () => {
       as="footer"
       w="full"
       p={5}
+      maxH="20vh"
       bg="transparent"
       flexDir={{ base: "column", xl: "column" }}
       align="center"
