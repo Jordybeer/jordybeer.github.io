@@ -24,7 +24,6 @@
 
 .card:hover {
   transform: scale(1.15);
-  bottom: 100%;
 }
 
 .card img {
