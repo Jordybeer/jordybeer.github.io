@@ -9,13 +9,13 @@ import {
   Button,
   VStack,
 } from "@chakra-ui/react";
-//buttons
+import NewButton from "../components/newbutton"
 
-const RobbertComponent: React.FC = () => {
+const AboutMe: React.FC = () => {
   return (
     <Flex direction="column" align="center" justify="center" p={8}>
       <Box
-        maxW="xl"
+        maxW="3xl"
         borderWidth={1}
         borderRadius="lg"
         border="2px transparent"
@@ -52,29 +52,8 @@ const RobbertComponent: React.FC = () => {
               meubelen te creëren. Elk stuk is een stukje van mijzelf.
             </Text>
             <Spacer />
-            <Button
-              bgColor="#115F9E"
-              color="white"
-              fontWeight="large"
-              rounded="xl"
-              shadow="dark-lg"
-              border="solid 2px black"
-              size="lg"
-              _focus={{ outline: "none" }}
-              transition="background 0.8s"
-              _hover={{
-                bgColor: `yellow.500}`,
-                bgGradient: `radial(circle, transparent 1%, #4682B4 1%)`,
-                bgPos: "center",
-                backgroundSize: "15000%",
-              }}
-              _active={{
-                backgroundSize: "100%",
-                transition: "background 0s",
-              }}
-            >
-              Neem contact op
-            </Button>
+            <NewButton href="/showcase" label="Showcase" />
+            <NewButton href="/projecten" label="Catalogus" />
           </VStack>
         </Flex>
       </Box>
