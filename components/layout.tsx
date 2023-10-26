@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Flex
       flexDirection="column"
-      minHeight="100vh"
+      height="100vh"
       color="white"
       zIndex={99}
       position="relative"
@@ -24,7 +24,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       bgSize="cover"
     >
       <TopMenu />
-      <Flex flexGrow={1} alignItems="center" justifyContent="center">
+      <Flex flexGrow={1} alignItems="center" justifyContent="center"
+       marginTop="19"
+>
         <Container
           border="2px solid red"
           maxW="100%"

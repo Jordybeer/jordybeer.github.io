@@ -20,7 +20,10 @@
     "@fontsource/lato": "^5.0.17",
     "@fontsource/raleway": "^5.0.15",
     "@react-icons/all-files": "^4.1.0",
+<<<<<<< HEAD
     "@sentry/nextjs": "^7.75.1",
+=======
+>>>>>>> 22d7e4e (removing debugger)
     "@tabler/icons-react": "^2.39.0",
     "@tinymce/tinymce-react": "^4.3.0",
     "@tiptap/extension-link": "^2.1.12",

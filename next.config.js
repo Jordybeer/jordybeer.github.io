@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const { withSentryConfig } = require("@sentry/nextjs");
 
 /** @type {import('next').NextConfig} */
@@ -37,3 +38,5 @@ module.exports = withSentryConfig(
     disableLogger: true,
   },
 );
+=======
+>>>>>>> 22d7e4e (removing debugger)
