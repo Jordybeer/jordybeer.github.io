@@ -6,7 +6,6 @@ interface CustomButtonProps {
   label: string;
   colorScheme?: string;
   size?: string;
-  click?: () => void;
   shadow?: string;
   border?: string;
   bgColor?: string;
@@ -23,14 +22,13 @@ const NewButton: React.FC<CustomButtonProps> = ({
   label,
   colorScheme = "yellow",
   size = "lg",
-  click,
   shadow = "dark-lg",
   border = "solid 2px black",
   bgColor = "#115F9E",
   color = "white",
   fontWeight = "large",
   rounded = "xl",
-  transition = "background 0.8s",
+  transition = "background 0.3 ease",
 }) => {
   const step2 = "500";
   const step3 = "300";
@@ -38,7 +36,6 @@ const NewButton: React.FC<CustomButtonProps> = ({
   const ButtonComponent = (
     <Button
       size={size}
-      onClick={click}
       shadow={shadow}
       border={border}
       bgColor={bgColor}
@@ -55,7 +52,7 @@ const NewButton: React.FC<CustomButtonProps> = ({
       _active={{
         bgColor: `${colorScheme}.${step3}`,
         backgroundSize: "100%",
-        transition: "background 0s",
+        transition: "background 0.3 ease",
       }}
     >
       {label}

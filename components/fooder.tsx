@@ -7,10 +7,10 @@ const Fooder: React.FC = () => {
     <Flex
       as="footer"
       w="full"
-      p={5}
-      maxH="20vh"
+      pb={5}
+      maxH="30vh"
       bg="transparent"
-      flexDir={{ base: "column", xl: "column" }}
+      flexDir="column"
       align="center"
       justify="space-between"
       transition="background 0.3s ease"

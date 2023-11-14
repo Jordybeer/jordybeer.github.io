@@ -17,10 +17,11 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+     console.log(data.description);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [data]);
 
   const settings = {
     infinite: true,
@@ -49,6 +50,8 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
     sliderRef.current.slickPause();
   };
 
+
+
   return (
     <AnimatePresence>
       {data && (
@@ -58,13 +61,13 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
           ref={cardRef}
           style={{
             maxWidth: "400px",
-            maxHeight: "700px",
+            maxHeight: "650px",
             backgroundColor: "transparent",
             position: "fixed",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            zIndex: 9999,
+            zIndex: "999",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -72,7 +75,8 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={"background 0.3s ease"}
+
         >
           <Flex direction="column" className="content-box" h="100%">
             <Box flex="0">
@@ -141,7 +145,7 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
               <Box p={4} marginBottom={4} className="card-description-large">
                 <p>{data.description}</p>
               </Box>
-              <Flex display="flex" flexDir="row" justifyContent="center" p="30">
+              <Flex display="flex" flexDir="row" justifyContent="center" p="30" m="10" position="relative">
                 <NewButton
                   href={`/contact?productTitle=${encodeURIComponent(
                     data.title,
@@ -160,5 +164,4 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
     </AnimatePresence>
   );
 };
-
 export default ExpandedCard;

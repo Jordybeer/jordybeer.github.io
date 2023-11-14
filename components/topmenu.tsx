@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-
+import Layout from "../components/layout"
 interface TopMenuProps {
   // Removed unused 'pages' prop
 }
@@ -27,24 +27,28 @@ const TopMenu: React.FC<TopMenuProps> = () => {
   return (
     <Flex
       py={{ base: 4, md: 6 }}
-      pb={{ base: 15, md: 20 }}
+      pb={{ base: 5, md: 7 }}
       bg={bg}
       w="full"
+      zIndex={3}
+      shadow={{ base: "dark-lg", md: "dark-lg" }}
+      borderBottom="4px solid #08053A54"
       px={{ base: 2, sm: 4 }}
       shadow="md"
       position="fixed"
-      top={0}
-      zIndex={10000}
-    >
-      <Flex alignItems="center" justifyContent="center" mx="auto">
+      >
+      <Flex my="auto" mx="auto">
         <HStack
-          spacing={1}
+          spacing={3}
           mr={1}
+          borderBottom="4px dash #088CF8"
+          shadow="xl"
           color="brand.500"
           display={{ base: "inline-flex", md: "inline-flex" }}
         >
           <NextLink href="/">
             <Button
+              borderBottom="1px solid #088CF8"
               variant="roundleft"
               color="whiteAlpha.900"
               aria-label="Home"
@@ -58,6 +62,7 @@ const TopMenu: React.FC<TopMenuProps> = () => {
           <Menu>
             <MenuButton
               bgColor="#262547"
+              borderBottom="1px solid #088CF8"
               as={Button}
               variant="roundleft"
               color="whiteAlpha.900"
@@ -71,12 +76,12 @@ const TopMenu: React.FC<TopMenuProps> = () => {
             <MenuList bgColor="#262547">
               <NextLink href="/projects">
                 <MenuItem bgColor="#262547" _hover={{ bg: "#FFD700" }}>
-                  Oude projecten
+                  Showcase
                 </MenuItem>
               </NextLink>
-              <NextLink href="/robbert">
+              <NextLink href="/about">
                 <MenuItem bgColor="#262547" _hover={{ bg: "#FFD700" }}>
-                  Nieuwe projecten
+                  Catalogus
                 </MenuItem>
               </NextLink>
             </MenuList>
@@ -84,6 +89,7 @@ const TopMenu: React.FC<TopMenuProps> = () => {
 
           <NextLink href="/contact">
             <Button
+              borderBottom="1px solid #088CF8"
               variant="ghost"
               color="whiteAlpha.900"
               aria-label="Contact"
@@ -93,29 +99,19 @@ const TopMenu: React.FC<TopMenuProps> = () => {
               Contact
             </Button>
           </NextLink>
-          <NextLink href="/robbert">
+          <NextLink href="/about">
             <Button
               variant="ghost"
+              borderBottom="1px solid #088CF8"
               color="whiteAlpha.900"
               aria-label="Over"
               _hover={{ bg: "#FFD700" }}
               size={{ base: "sm", md: "md" }}
             >
-              Over Robbert
+              Over mij
             </Button>
           </NextLink>
 
-          <NextLink href="/test">
-            <Button
-              variant="ghost"
-              color="whiteAlpha.900"
-              aria-label="test"
-              _hover={{ bg: "#FFD700" }}
-              size={{ base: "sm", md: "md" }}
-            >
-              Test
-            </Button>
-          </NextLink>
         </HStack>
       </Flex>
     </Flex>

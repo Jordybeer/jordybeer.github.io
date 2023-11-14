@@ -61,4 +61,4 @@ const AboutMe: React.FC = () => {
   );
 };
 
-export default RobbertComponent;
+export default AboutMe;
