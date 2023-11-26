@@ -10,5 +10,10 @@
   "files.insertFinalNewline": true, // optional but recommended,
   "files.trimFinalNewlines": true, // optional but recommended,
   "files.trimTrailingWhitespace": true,
-  "githubPullRequests.ignoredPullRequestBranches": ["main"] // optional but recommended,
+  "githubPullRequests.ignoredPullRequestBranches": [
+    "main"
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  } // optional but recommended,
 }
