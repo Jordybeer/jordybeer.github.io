@@ -27,6 +27,9 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
     };
   }, [data]);
 
+  /**
+   * Settings for the carousel component.
+   */
   const settings = {
     infinite: true,
     slidesToShow: 1,
@@ -38,6 +41,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
     pauseOnHover: true,
     swipeToSlide: true,
     variableWidth: false,
+    lazyLoad: "progressive",
     swipe: true,
   };
 

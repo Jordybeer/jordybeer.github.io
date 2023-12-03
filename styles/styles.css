@@ -1,13 +1,14 @@
 /* Grid Layout */
 .grid {
-  display: grid;
+  display: flex;
+  flex-direction: row;  /* Changed from column to row */
   grid-template-columns: repeat(
     auto-fit,
     minmax(300px, 1fr)
   ); /* Changed from rows to columns and set min-width */
   gap: 16px;
   padding: 16px;
-  width: 100%;
+  width: 80%;
 }
 
 /* Card Styles */
