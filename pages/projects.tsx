@@ -31,7 +31,7 @@ const Projects = () => {
         img: `${imageBase}a.jpg`,
         title: title,
         description: descriptions[i],
-        images: [`${imageBase}a.jpg`, `${imageBase}b.png`, `${imageBase}c.png`],
+        images: [`${imageBase}a.jpg`, `${imageBase}b.jpg`, `${imageBase}c.jpg`],
       };
     });
 
