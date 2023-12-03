@@ -6,11 +6,16 @@ type CardProps = {
 };
 
 const Card = ({ data, setSelectedCard }: CardProps) => {
+  const handleClick = () => {
+    console.log("Card clicked:", data); // Log de data bij klikken
+    setSelectedCard(data);
+  };
+
   return (
     <motion.div
       className="card"
       p={20}
-      onClick={() => setSelectedCard(data)}
+      onClick={handleClick} // Gebruik de handleClick functie hier
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >

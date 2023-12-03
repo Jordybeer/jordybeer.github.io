@@ -48,7 +48,6 @@ const TopMenu: React.FC<TopMenuProps> = () => {
         >
           <NextLink href="/">
             <Button
-              borderBottom="1px solid #088CF8"
               variant="roundleft"
               color="whiteAlpha.900"
               aria-label="Home"
@@ -62,7 +61,6 @@ const TopMenu: React.FC<TopMenuProps> = () => {
           <Menu>
             <MenuButton
               bgColor="#262547"
-              borderBottom="1px solid #088CF8"
               as={Button}
               variant="roundleft"
               color="whiteAlpha.900"
@@ -89,7 +87,6 @@ const TopMenu: React.FC<TopMenuProps> = () => {
 
           <NextLink href="/contact">
             <Button
-              borderBottom="1px solid #088CF8"
               variant="ghost"
               color="whiteAlpha.900"
               aria-label="Contact"
@@ -102,7 +99,6 @@ const TopMenu: React.FC<TopMenuProps> = () => {
           <NextLink href="/about">
             <Button
               variant="ghost"
-              borderBottom="1px solid #088CF8"
               color="whiteAlpha.900"
               aria-label="Over"
               _hover={{ bg: "#FFD700" }}
