@@ -9,21 +9,15 @@ const Projects = () => {
 
   const titles = [
     'Driepoot standbeeld',
-
     'Ouglas Loungeset',
-
     'Eiken boomschijf bijzettafel',
-
     'Z-frame bureau en kruk',
   ];
 
   const descriptions = [
     'Een prachtige minimalistische oplossing voor het hoger plaatsen van een standbeeld. Voor de klant een mooie driepoot op maat gemaakt voor specifiek dit standbeeld.',
-
     'Robuuste Loungeset van dikke douglas houten balken. Speciaal op maat gemaakt voor de plek waar hij staat. Door de combinatie van behandeld stalen frame met gebeitste houten balken is deze set erg slijtvast en zat hij lang mooi blijven.',
-
     'Dit leuke eiken bijzettafeltje is ideaal om het gevoel van natuur naar binnen te halen. Door de combinatie met een subtiel stalen frame wordt de aandacht gevestigd op het mooie natuurlijke eikenhouten blad.',
-
     'Speciaal bij de rest van het interieur en precies passend in de ruimte dit stalen Z-frame bureau gemaakt met een dik eiken blad. De perfecte oplossing voor een werkplek die in deze hoek past en prachtig staat bij de rest van de inrichting',
   ];
 
@@ -32,9 +26,7 @@ const Projects = () => {
   useEffect(() => {
     const projects = titles.map((title, i) => {
       const projectNumber = i + 1;
-
       const imageBase = `/images/projects/p${projectNumber}`;
-
       return {
         img: `${imageBase}a.jpg`,
         title: title,
@@ -64,7 +56,7 @@ const Projects = () => {
         <div
           onClick={() => setSelectedCard(null)}
           style={{
-            position: 'relative',
+            position: 'fixed',
             top: 0,
             left: 0,
             width: '100%',
@@ -76,7 +68,7 @@ const Projects = () => {
         ></div>
       )}
 
-      <CardGrid setSelectedCard={setSelectedCard} data={data} />
+      <CardGrid setCardSelection={setSelectedCard} data={data} />
 
       {selectedCard && (
         <ExpandedCard data={selectedCard} setSelectedCard={setSelectedCard} />
@@ -86,4 +78,3 @@ const Projects = () => {
 };
 
 export default Projects;
-;
