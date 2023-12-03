@@ -19,6 +19,14 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
 >>>>>>> 7b4128ca0cf235e6658c4bc98bfdc6e1df467064
   };
 
+  const handleClick = () => {
+    if (setSelectedCard && typeof setSelectedCard === 'function') {
+      setSelectedCard(data);
+    } else {
+      console.error('setSelectedCard is not a function');
+    }
+  };
+
   return (
     <motion.div
       className="card"
