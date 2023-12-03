@@ -3650,7 +3650,11 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+<<<<<<< HEAD
       tinymce: 6.8.1
+=======
+      tinymce: 6.7.3
+>>>>>>> 7b4128ca0cf235e6658c4bc98bfdc6e1df467064
     dev: false
 
   /@tiptap/core@2.1.13(@tiptap/pm@2.1.13):
@@ -8781,8 +8785,13 @@ packages:
     resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
     dev: false
 
+<<<<<<< HEAD
   /tinymce@6.8.1:
     resolution: {integrity: sha512-WYPvMXIjBrXM/oBiqGCbT2a8ptiO3TWXm/xxPWDCl8SxRKMW7Rfp0Lk190E9fXmX6uh9lJMRCnmKHzvryz0ftA==}
+=======
+  /tinymce@6.7.3:
+    resolution: {integrity: sha512-J7WmYIi/gt1RvZ6Ap2oQiUjzAoiS9pfV+d4GnKuZuPu8agmlAEAInNmMvMjfCNBzHv4JnZXY7qlHUAI0IuYQVA==}
+>>>>>>> 7b4128ca0cf235e6658c4bc98bfdc6e1df467064
     dev: false
 
   /tippy.js@6.3.7:

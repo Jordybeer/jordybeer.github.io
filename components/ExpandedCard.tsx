@@ -5,19 +5,23 @@ import { Box, Flex, Divider, CloseButton } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import NewButton from "../components/newbutton";
 
-const ExpandedCard = ({ data, setSelectedCard }) => {
-  const cardRef = useRef(null);
-  const sliderRef = useRef(null);
+type ExpandedCardProps = {
+  data: any; // Ideally, you should define a more specific type or interface for data
+  setSelectedCard: React.Dispatch<React.SetStateAction<any>>; // Ensure the type matches the expected function
+};
 
-  const handleClickOutside = (e) => {
-    if (cardRef.current && !cardRef.current.contains(e.target)) {
+const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const sliderRef = useRef<Slider>(null);
+
+  const handleClickOutside = (e: MouseEvent) => {
+    if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
       setSelectedCard(null);
     }
   };
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-     console.log(data.description);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -38,19 +42,17 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
   };
 
   const handlePrevClick = () => {
-    sliderRef.current.slickPrev();
+    sliderRef.current?.slickPrev();
   };
 
   const handleNextClick = () => {
-    sliderRef.current.slickNext();
+    sliderRef.current?.slickNext();
   };
 
-  const handleThumbnailClick = (index) => {
-    sliderRef.current.slickGoTo(index);
-    sliderRef.current.slickPause();
+  const handleThumbnailClick = (index: number) => {
+    sliderRef.current?.slickGoTo(index);
+    sliderRef.current?.slickPause();
   };
-
-
 
   return (
     <AnimatePresence>
@@ -75,8 +77,6 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={"background 0.3s ease"}
-
         >
           <Flex direction="column" className="content-box" h="100%">
             <Box flex="0">
@@ -96,11 +96,11 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
                 color="#1D2636"
                 onClick={() => setSelectedCard(null)}
                 style={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
                   zIndex: 1,
-                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
+                  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.8)',
                 }}
               />
               <Box className="thumbnails">
@@ -124,18 +124,18 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
               flex="1"
               pt={2}
               sx={{
-                overflowY: "auto",
-                scrollbarWidth: "thin",
-                scrollbarColor: "gray.400 gray.700",
-                scrollBehavior: "smooth",
-                "::-webkit-scrollbar": {
-                  width: "12px",
+                overflowY: 'auto',
+                scrollbarWidth: 'thin',
+                scrollbarColor: 'gray.400 gray.700',
+                scrollBehavior: 'smooth',
+                '::-webkit-scrollbar': {
+                  width: '12px',
                 },
-                "::-webkit-scrollbar-thumb": {
-                  backgroundColor: "gray.400",
+                '::-webkit-scrollbar-thumb': {
+                  backgroundColor: 'gray.400',
                 },
-                "::-webkit-scrollbar-track": {
-                  backgroundColor: "gray.700",
+                '::-webkit-scrollbar-track': {
+                  backgroundColor: 'gray.700',
                 },
               }}
             >
@@ -145,10 +145,17 @@ const ExpandedCard = ({ data, setSelectedCard }) => {
               <Box p={4} marginBottom={4} className="card-description-large">
                 <p>{data.description}</p>
               </Box>
-              <Flex display="flex" flexDir="row" justifyContent="center" p="30" m="10" position="relative">
+              <Flex
+                display="flex"
+                flexDir="row"
+                justifyContent="center"
+                p="30"
+                m="10"
+                position="relative"
+              >
                 <NewButton
                   href={`/contact?productTitle=${encodeURIComponent(
-                    data.title,
+                    data.title
                   )}`}
                   label="Vraag offerte aan"
                 />

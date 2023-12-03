@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import { AnimatePresence, motion } from "framer-motion";
@@ -39,7 +40,20 @@ const CardGrid: React.FC<CardGridProps> = ({ setCardSelection }) => {
 
     setData(projects);
   }, []);
+=======
+import React from 'react';
+import Card from './Card';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Flex } from '@chakra-ui/react';
 
+type CardGridProps = {
+  data: any[]; // Array of card data
+
+  setCardSelection: React.Dispatch<React.SetStateAction<any>>;
+};
+>>>>>>> 7b4128ca0cf235e6658c4bc98bfdc6e1df467064
+
+const CardGrid: React.FC<CardGridProps> = ({ data, setCardSelection }) => {
   return (
     <AnimatePresence>
       <Flex className="grid" justifyContent="center">
