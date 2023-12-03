@@ -65,7 +65,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
           className="expanded-card"
           ref={cardRef}
           style={{
-            maxWidth: "65vw",
+            maxWidth: "100%",
             maxHeight: "65vh",
             backgroundColor: "transparent",
             position: "fixed",
@@ -117,10 +117,11 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
                 {data.images.map((img, index) => (
                   <Box
                     key={index}
-                    w="8"
-                    h="8"
-                    bg="rgba(255, 255, 255, 0.5)"
-                    borderRadius="full"
+                    w="16"
+                    h="16"
+                    bg="rgba(255, 255, 255, 0.2)"
+                    borderRadius="2xl"
+                    border = "2px solid black"
                     mx="1"
                     opacity={index === 0 ? 1 : 0.5}
                     cursor="pointer"
@@ -147,20 +148,23 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
 
             <Divider my={2} />
 
-            <Box flex="1" overflowY="auto">
-              <Box p={4} className="card-title-large">
+            <Box flex="1" overflowY="auto" position="relative">
+              <Box p={{ base: 2, sm: 4 }} className="card-title-large">
                 <h3>{data.title}</h3>
               </Box>
-              <Box p={4} className="card-description-large">
+              <Box p={{ base: 2, sm: 4 }} className="card-description-large">
                 <p>{data.description}</p>
               </Box>
               <Flex
                 display="flex"
                 flexDir="row"
                 justifyContent="center"
-                p="30"
-                m="10"
-                position="fixed"
+                p={{ base: 2, sm: 4 }}
+                m={{ base: 2, sm: 10 }}
+                position="relative"
+                bottom="0"
+                left="0"
+                right="0"
               >
                 <NewButton
                   href={`/contact?productTitle=${encodeURIComponent(
