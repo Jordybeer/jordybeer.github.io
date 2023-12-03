@@ -41,7 +41,6 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
     pauseOnHover: true,
     swipeToSlide: true,
     variableWidth: false,
-    lazyLoad: "progressive",
     swipe: true,
   };
 
@@ -66,8 +65,8 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
           className="expanded-card"
           ref={cardRef}
           style={{
-            maxWidth: "400px",
-            maxHeight: "650px",
+            maxWidth: "65vw",
+            maxHeight: "65vh",
             backgroundColor: "transparent",
             position: "fixed",
             top: "50%",
@@ -83,7 +82,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
           exit={{ opacity: 0 }}
         >
           <Flex direction="column" className="content-box" h="100%">
-            <Box flex="0">
+            <Box flex="1" overflow="hidden" position="relative">
               <Slider ref={sliderRef} {...settings}>
                 {data.images.map((img, index) => (
                   <div key={index}>
@@ -107,46 +106,52 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
                   boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.8)',
                 }}
               />
-              <Box className="thumbnails">
-                <ChevronLeftIcon boxSize={6} onClick={handlePrevClick} />
+              <Flex
+                position="absolute"
+                bottom="0"
+                left="0"
+                right="0"
+                justifyContent="center"
+                p="2"
+              >
                 {data.images.map((img, index) => (
-                  <img
+                  <Box
                     key={index}
-                    src={img}
-                    alt={`Thumbnail ${index + 1}`}
-                    className="thumbnail-img"
+                    w="8"
+                    h="8"
+                    bg="rgba(255, 255, 255, 0.5)"
+                    borderRadius="full"
+                    mx="1"
+                    opacity={index === 0 ? 1 : 0.5}
+                    cursor="pointer"
                     onClick={() => handleThumbnailClick(index)}
-                  />
+                    style={{
+                      position: "relative",
+                      zIndex: 2,
+                    }}
+                  >
+                    <img
+                      src={img}
+                      alt={`Thumbnail ${index + 1}`}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </Box>
                 ))}
-                <ChevronRightIcon boxSize={6} onClick={handleNextClick} />
-              </Box>
+              </Flex>
             </Box>
 
             <Divider my={2} />
 
-            <Box
-              flex="1"
-              pt={2}
-              sx={{
-                overflowY: 'auto',
-                scrollbarWidth: 'thin',
-                scrollbarColor: 'gray.400 gray.700',
-                scrollBehavior: 'smooth',
-                '::-webkit-scrollbar': {
-                  width: '12px',
-                },
-                '::-webkit-scrollbar-thumb': {
-                  backgroundColor: 'gray.400',
-                },
-                '::-webkit-scrollbar-track': {
-                  backgroundColor: 'gray.700',
-                },
-              }}
-            >
-              <Box className="card-title-large">
+            <Box flex="1" overflowY="auto">
+              <Box p={4} className="card-title-large">
                 <h3>{data.title}</h3>
               </Box>
-              <Box p={4} marginBottom={4} className="card-description-large">
+              <Box p={4} className="card-description-large">
                 <p>{data.description}</p>
               </Box>
               <Flex
@@ -155,7 +160,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
                 justifyContent="center"
                 p="30"
                 m="10"
-                position="relative"
+                position="fixed"
               >
                 <NewButton
                   href={`/contact?productTitle=${encodeURIComponent(
