@@ -10,7 +10,10 @@ type ExpandedCardProps = {
   setSelectedCard: React.Dispatch<React.SetStateAction<any>>; // Ensure the type matches the expected function
 };
 
-const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) => {
+const ExpandedCard: React.FC<ExpandedCardProps> = ({
+  data,
+  setSelectedCard,
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<Slider>(null);
 
@@ -66,7 +69,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
           ref={cardRef}
           style={{
             width: "80%", // 65vw on smaller screens, 85vw on larger screens
-            height:"80%", // 65vh on smaller screens, 85vh on larger screens
+            height: "80%", // 65vh on smaller screens, 85vh on larger screens
             backgroundColor: "transparent",
             position: "fixed",
             top: "50%",
@@ -84,32 +87,32 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
           <Flex direction="column" className="content-box" h="100%">
             <Box flex="1" overflow="hidden" position="relative">
               <Slider ref={sliderRef} {...settings}>
-              {data.images.map((img, index) => (
-  <div key={index}>
-    <img
-      src={img}
-      alt={`Slide ${index + 1}`}
-      className="carousel-img"
-      style={{
-        width: '100%',
-        height: '100%',
-        objectFit: 'contain',
-        objectPosition: 'center',
-      }}
-    />
-  </div>
-))}
+                {data.images.map((img, index) => (
+                  <div key={index}>
+                    <img
+                      src={img}
+                      alt={`Slide ${index + 1}`}
+                      className="carousel-img"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        objectPosition: "center",
+                      }}
+                    />
+                  </div>
+                ))}
               </Slider>
               <CloseButton
                 size="lg"
                 color="#1D2636"
                 onClick={() => setSelectedCard(null)}
                 style={{
-                  position: 'absolute',
-                  top: '10px',
-                  right: '10px',
+                  position: "absolute",
+                  top: "10px",
+                  right: "10px",
                   zIndex: 1,
-                  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.8)',
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
                 }}
               />
               <Flex
@@ -127,7 +130,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
                     h="16"
                     bg="rgba(255, 255, 255, 0.2)"
                     borderRadius="2xl"
-                    border = "2px solid black"
+                    border="2px solid black"
                     mx="1"
                     opacity={index === 0 ? 1 : 0.5}
                     cursor="pointer"
@@ -174,7 +177,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
               >
                 <NewButton
                   href={`/contact?productTitle=${encodeURIComponent(
-                    data.title
+                    data.title,
                   )}`}
                   label="Vraag een offerte aan"
                   width="100%"
