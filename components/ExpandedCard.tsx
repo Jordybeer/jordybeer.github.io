@@ -10,10 +10,7 @@ type ExpandedCardProps = {
   setSelectedCard: React.Dispatch<React.SetStateAction<any>>; // Ensure the type matches the expected function
 };
 
-const ExpandedCard: React.FC<ExpandedCardProps> = ({
-  data,
-  setSelectedCard,
-}) => {
+const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<Slider>(null);
 
@@ -39,7 +36,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
     autoplay: true,
     arrows: false,
     autoplaySpeed: 6000,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
     draggable: true,
     pauseOnHover: true,
     swipeToSlide: true,
@@ -68,8 +65,8 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
           className="expanded-card"
           ref={cardRef}
           style={{
-            maxWidth: "100%",
-            maxHeight: "65vh",
+            width: "80%", // 65vw on smaller screens, 85vw on larger screens
+            height:"80%", // 65vh on smaller screens, 85vh on larger screens
             backgroundColor: "transparent",
             position: "fixed",
             top: "50%",
@@ -87,26 +84,32 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
           <Flex direction="column" className="content-box" h="100%">
             <Box flex="1" overflow="hidden" position="relative">
               <Slider ref={sliderRef} {...settings}>
-                {data.images.map((img, index) => (
-                  <div key={index}>
-                    <img
-                      src={img}
-                      alt={`Slide ${index + 1}`}
-                      className="carousel-img"
-                    />
-                  </div>
-                ))}
+              {data.images.map((img, index) => (
+  <div key={index}>
+    <img
+      src={img}
+      alt={`Slide ${index + 1}`}
+      className="carousel-img"
+      style={{
+        width: '100%',
+        height: '100%',
+        objectFit: 'contain',
+        objectPosition: 'center',
+      }}
+    />
+  </div>
+))}
               </Slider>
               <CloseButton
                 size="lg"
                 color="#1D2636"
                 onClick={() => setSelectedCard(null)}
                 style={{
-                  position: "absolute",
-                  top: "10px",
-                  right: "10px",
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
                   zIndex: 1,
-                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
+                  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.8)',
                 }}
               />
               <Flex
@@ -151,26 +154,6 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
 
             <Divider my={2} />
 
-            <Box
-              flex="1"
-              pt={2}
-              sx={{
-                overflowY: "auto",
-                scrollbarWidth: "thin",
-                scrollbarColor: "gray.400 gray.700",
-                scrollBehavior: "smooth",
-                "::-webkit-scrollbar": {
-                  width: "12px",
-                },
-                "::-webkit-scrollbar-thumb": {
-                  backgroundColor: "gray.400",
-                },
-                "::-webkit-scrollbar-track": {
-                  backgroundColor: "gray.700",
-                },
-              }}
-            >
-              <Box className="card-title-large">
             <Box flex="1" overflowY="auto" position="relative">
               <Box p={{ base: 2, sm: 4 }} className="card-title-large">
                 <h3>{data.title}</h3>
@@ -180,24 +163,27 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
               </Box>
               <Flex
                 display="flex"
-                flexDir="row"
+                flexDir="column"
                 justifyContent="center"
                 p={{ base: 2, sm: 4 }}
                 m={{ base: 2, sm: 10 }}
-                position="relative"
+                position="absolute"
                 bottom="0"
                 left="0"
                 right="0"
               >
                 <NewButton
                   href={`/contact?productTitle=${encodeURIComponent(
-                    data.title,
+                    data.title
                   )}`}
-                  label="Vraag offerte aan"
+                  label="Vraag een offerte aan"
+                  width="100%"
+                  mb="15"
                 />
                 <NewButton
                   href="https://instagram.com"
                   label="Bekijk op Instagram"
+                  width="100%"
                 />
               </Flex>
             </Box>
