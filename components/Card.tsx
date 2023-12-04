@@ -8,10 +8,10 @@ type CardProps = {
 const Card = ({ data, setSelectedCard }: CardProps) => {
   const handleClick = () => {
     console.log("Card clicked:", data); // Log de data bij klikken
-    if (setSelectedCard && typeof setSelectedCard === 'function') {
+    if (setSelectedCard && typeof setSelectedCard === "function") {
       setSelectedCard(data);
     } else {
-      console.error('setSelectedCard is not a function');
+      console.error("setSelectedCard is not a function");
     }
   };
 

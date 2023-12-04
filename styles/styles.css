@@ -1,7 +1,7 @@
 /* Grid Layout */
 .grid {
   display: flex;
-  flex-direction: row;  /* Changed from column to row */
+  flex-direction: row; /* Changed from column to row */
   grid-template-columns: repeat(
     auto-fit,
     minmax(300px, 1fr)

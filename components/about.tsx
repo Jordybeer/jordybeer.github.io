@@ -9,7 +9,7 @@ import {
   Button,
   VStack,
 } from "@chakra-ui/react";
-import NewButton from "../components/newbutton"
+import NewButton from "../components/newbutton";
 
 const AboutMe: React.FC = () => {
   return (

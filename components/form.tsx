@@ -23,7 +23,6 @@ import { BsInstagram, BsYoutube, BsPerson, BsFacebook } from "react-icons/bs";
 import { MdEmail, MdPerson, MdFlag } from "react-icons/md";
 import Layout from "../components/layout";
 
-
 import NewButton from "../components/newbutton";
 
 const ContactForm: React.FC = () => {

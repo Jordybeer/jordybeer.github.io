@@ -10,7 +10,10 @@ type ExpandedCardProps = {
   setSelectedCard: React.Dispatch<React.SetStateAction<any>>; // Ensure the type matches the expected function
 };
 
-const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) => {
+const ExpandedCard: React.FC<ExpandedCardProps> = ({
+  data,
+  setSelectedCard,
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<Slider>(null);
 
@@ -100,11 +103,11 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
                 color="#1D2636"
                 onClick={() => setSelectedCard(null)}
                 style={{
-                  position: 'absolute',
-                  top: '10px',
-                  right: '10px',
+                  position: "absolute",
+                  top: "10px",
+                  right: "10px",
                   zIndex: 1,
-                  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.8)',
+                  boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
                 }}
               />
               <Box className="thumbnails">
@@ -128,18 +131,18 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
               flex="1"
               pt={2}
               sx={{
-                overflowY: 'auto',
-                scrollbarWidth: 'thin',
-                scrollbarColor: 'gray.400 gray.700',
-                scrollBehavior: 'smooth',
-                '::-webkit-scrollbar': {
-                  width: '12px',
+                overflowY: "auto",
+                scrollbarWidth: "thin",
+                scrollbarColor: "gray.400 gray.700",
+                scrollBehavior: "smooth",
+                "::-webkit-scrollbar": {
+                  width: "12px",
                 },
-                '::-webkit-scrollbar-thumb': {
-                  backgroundColor: 'gray.400',
+                "::-webkit-scrollbar-thumb": {
+                  backgroundColor: "gray.400",
                 },
-                '::-webkit-scrollbar-track': {
-                  backgroundColor: 'gray.700',
+                "::-webkit-scrollbar-track": {
+                  backgroundColor: "gray.700",
                 },
               }}
             >
@@ -159,7 +162,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({ data, setSelectedCard }) =>
               >
                 <NewButton
                   href={`/contact?productTitle=${encodeURIComponent(
-                    data.title
+                    data.title,
                   )}`}
                   label="Vraag offerte aan"
                 />

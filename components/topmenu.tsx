@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 interface TopMenuProps {
   // Removed unused 'pages' prop
 }
@@ -36,7 +36,7 @@ const TopMenu: React.FC<TopMenuProps> = () => {
       px={{ base: 2, sm: 4 }}
       shadow="md"
       position="fixed"
-      >
+    >
       <Flex my="auto" mx="auto">
         <HStack
           spacing={3}
@@ -107,7 +107,6 @@ const TopMenu: React.FC<TopMenuProps> = () => {
               Over mij
             </Button>
           </NextLink>
-
         </HStack>
       </Flex>
     </Flex>

@@ -25,25 +25,29 @@ export default function FrontHead() {
   const size = "lg"; // Keeping only the largest size
 
   return (
-    <Flex direction="column" align="center" justify="center"
-pt= "40px" maxH="90vh"
->      <Box
-      maxW="3xl"
-      p="20%"
+    <Flex
+      direction="column"
+      align="center"
+      justify="center"
+      pt="40px"
+      maxH="90vh"
+    >
+      {" "}
+      <Box
+        maxW="3xl"
+        p="20%"
         display="flex"
         width={{ base: "100vw", sm: "100vw" }}
         transition={"background 0.3s ease"}
         px={{ base: 4, sm: 6, lg: 10 }}
         mt="auto"
-
         bg={bg}
         justifyContent="center"
         alignItems="center"
         shadow={{ base: "none", md: "dark-lg" }}
         border="1mm ridge #3A80C56F"
-        rounded={{md:"2xl"}}
+        rounded={{ md: "2xl" }}
         width={{ base: "100vw", sm: "100vw" }}
-
         maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
       >
         {/* image in the middle */}
