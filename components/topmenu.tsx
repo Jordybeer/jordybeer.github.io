@@ -36,6 +36,7 @@ const TopMenu: React.FC<TopMenuProps> = () => {
       px={{ base: 2, sm: 4 }}
       shadow="md"
       position="fixed"
+      height="10vh"
     >
       <Flex my="auto" mx="auto">
         <HStack

@@ -11,12 +11,13 @@ type CardGridProps = {
 const CardGrid: React.FC<CardGridProps> = ({ setCardSelection, data }) => {
   return (
     <AnimatePresence>
-      <Flex className="grid" justifyContent="center">
+      <Flex className="grid" justifyContent="center" flexWrap="wrap" p={4}>
         {data.map((item, index) => (
           <motion.div
             key={index}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
+            m={2}
           >
             <Card data={item} setSelectedCard={setCardSelection} />
           </motion.div>

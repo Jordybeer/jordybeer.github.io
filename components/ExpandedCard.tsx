@@ -5,6 +5,8 @@ import { Box, Flex, Divider, CloseButton } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import NewButton from "../components/newbutton";
 
+
+
 type ExpandedCardProps = {
   data: any; // Ideally, you should define a more specific type or interface for data
   setSelectedCard: React.Dispatch<React.SetStateAction<any>>; // Ensure the type matches the expected function
@@ -38,13 +40,12 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
     slidesToShow: 1,
     autoplay: true,
     arrows: false,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 3000,
     adaptiveHeight: false,
     draggable: true,
     pauseOnHover: true,
     swipeToSlide: true,
     variableWidth: false,
-    swipe: true,
   };
 
   const handlePrevClick = () => {
@@ -59,6 +60,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
     sliderRef.current?.slickGoTo(index);
     sliderRef.current?.slickPause();
   };
+
 
   return (
     <AnimatePresence>
@@ -146,7 +148,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
                       style={{
                         width: "100%",
                         height: "100%",
-                        objectFit: "cover",
+                        objectFit: "contain",
                         borderRadius: "50%",
                       }}
                     />
@@ -155,40 +157,50 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
               </Flex>
             </Box>
 
-            <Divider my={2} />
 
-            <Box flex="1" overflowY="auto" position="relative">
+            <Box flex="1" overflowY="auto" mt="2" position="relative">
               <Box p={{ base: 2, sm: 4 }} className="card-title-large">
                 <h3>{data.title}</h3>
               </Box>
+            <Divider my={2} />
+
+
               <Box p={{ base: 2, sm: 4 }} className="card-description-large">
                 <p>{data.description}</p>
               </Box>
-              <Flex
-                display="flex"
-                flexDir="column"
-                justifyContent="center"
-                p={{ base: 2, sm: 4 }}
-                m={{ base: 2, sm: 10 }}
-                position="absolute"
-                bottom="0"
-                left="0"
-                right="0"
-              >
-                <NewButton
-                  href={`/contact?productTitle=${encodeURIComponent(
-                    data.title,
-                  )}`}
-                  label="Vraag een offerte aan"
-                  width="100%"
-                  mb="15"
-                />
-                <NewButton
-                  href="https://instagram.com"
-                  label="Bekijk op Instagram"
-                  width="100%"
-                />
-              </Flex>
+
+            <Divider my={2} />
+
+            <Flex
+  display="flex"
+  flexDir="row"
+  justifyContent="space-between" // Change this line
+  p={{ base: 2, sm: 4 }}
+  mx={{ base: 2, sm: 10 }}
+  position="absolute"
+  alignItems="center"
+  left="0"
+  right="0"
+>
+  <NewButton
+    href={`/contact?productTitle=${encodeURIComponent(
+      data.title,
+    )}`}
+    label="Vraag offerte"
+    width="100%"
+    mb="5"
+    mr="4"
+    size="md"
+    _hover={{ bgColor: "blue.500", color: "white" }}
+  />
+  <NewButton
+    href="https://instagram.com"
+    label="Bekijk meer"
+    width="100%"
+    size="md"
+    _hover={{ bgColor: "blue.500", color: "white" }}
+  />
+</Flex>
             </Box>
           </Flex>
         </motion.div>

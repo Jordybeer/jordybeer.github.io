@@ -1,6 +1,5 @@
 import React from "react";
-import { Container } from "@chakra-ui/react";
-import { Flex } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 import TopMenu from "../components/topmenu";
 import Fooder from "../components/fooder";
 
@@ -13,31 +12,33 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Flex
       flexDirection="column"
-      height="100vh"
+      minHeight="100vh"
       color="white"
-      zIndex={99}
+      zIndex={2}
       position="relative"
       bgImage="url('/svg/prism.svg')"
       bgPosition="center"
       bgRepeat="no-repeat"
       bgSize="cover"
-      zIndex="2"
     >
       <TopMenu />
 
-      <Container
-        maxW="100%"
-        maxH="90vh"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        borderRight="solid #03435f"
-        borderRadius="xs"
-        overflow="hidden"
-        position="relative"
-      >
-        {children}
-      </Container>
+
+        <Container
+          maxW="100%"
+          maxH="calc(100vh - 10vh)"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          borderRight="solid #03435f"
+          borderRadius="xs"
+          overflow="hidden"
+          position="relative"
+        >
+          {children}
+        </Container>
+
+
       <Flex
         flexGrow={1}
         alignItems="center"
@@ -45,6 +46,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         mx="auto"
         my="auto"
       ></Flex>
+
       <Fooder
         style={{
           position: "relative",

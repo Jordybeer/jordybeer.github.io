@@ -29,13 +29,9 @@ export default function FrontHead() {
       direction="column"
       align="center"
       justify="center"
-      pt="40px"
-      maxH="90vh"
     >
-      {" "}
       <Box
-        maxW="3xl"
-        p="20%"
+        p="80%"
         display="flex"
         width={{ base: "100vw", sm: "100vw" }}
         transition={"background 0.3s ease"}

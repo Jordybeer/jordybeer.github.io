@@ -7,8 +7,8 @@ const Fooder: React.FC = () => {
     <Flex
       as="footer"
       w="full"
-      pb={5}
-      maxH="30vh"
+      pb={2}
+      maxH="20vh"
       bg="transparent"
       flexDir="column"
       align="center"
@@ -17,7 +17,7 @@ const Fooder: React.FC = () => {
     >
       <chakra.a
         href="/"
-        fontSize="1.5rem"
+        fontSize="1rem"
         fontWeight="bold"
         color="alphaWhite.800"
         pb="2"
@@ -30,25 +30,25 @@ const Fooder: React.FC = () => {
         <SocialButton
           href="https://www.instagram.com/rblasprojecten/"
           ariaLabel="Volg op Instagram"
-          icon={<FaInstagram fontSize="1.5rem" />}
+          icon={<FaInstagram fontSize="1rem" />}
           colorScheme="Instagram"
         />
         <SocialButton
           href="https://www.facebook.com/rblasprojecten/"
           ariaLabel="Volg op Facebook"
-          icon={<FaFacebook fontSize="1.5rem" />}
+          icon={<FaFacebook fontSize="1rem" />}
           colorScheme="Facebook"
         />
         <SocialButton
           href="https://www.youtube.com/@rblasprojecten/"
           ariaLabel="Volg op Youtube"
-          icon={<FaYoutube fontSize="1.5rem" />}
+          icon={<FaYoutube fontSize="1rem" />}
           colorScheme="Youtube"
         />
         <SocialButton
           href="https://jordy.beer/"
           ariaLabel="Made by jordybeer"
-          icon={<FaPaw fontSize="1.5rem" />}
+          icon={<FaPaw fontSize="1rem" />}
           colorScheme="Twitter"
         />
       </Flex>
@@ -69,7 +69,7 @@ const SocialButton: React.FC<{
       aria-label={ariaLabel}
       isRound
       variant="solid"
-      mx="2"
+      mx="1"
     />
   </ChakraLink>
 );
