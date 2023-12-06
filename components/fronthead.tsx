@@ -26,13 +26,11 @@ export default function FrontHead() {
 
   return (
 
-<Flex direction="column" align={{ base: "flex-start", md: "center" }} justify={{ base: "flex-start", md: "center" }} p={{ base: 4, md: 8 }} minHeight={{ base: "auto", md: "90vh" }}>
-
+<Flex direction="column" align="center" justify="center" p={{ base: 4, md: 8 }} minHeight={{ base: "auto", md: "90vh" }}>
 
 
 
       <Box
-        p="auto"
         display="flex"
         transition={"background 0.3s ease"}
         px={{ base: 4, sm: 6, lg: 10 }}
@@ -41,8 +39,9 @@ export default function FrontHead() {
         justifyContent="center"
         alignItems="center"
         shadow={{ base: "none", md: "dark-lg" }}
-        border="1mm ridge #3A80C56F"
-        rounded={{ md: "2xl" }}
+        borderRadius="lg"
+        border="2px solid #1C1B43"
+        rounded= "3xl"
         width={{ base: "100vw", sm: "100vw" }}
         maxW={{ base: "sm", sm: "80vw", md: "2xl", lg: "3xl", xl: "2xl" }}
       >
@@ -130,8 +129,8 @@ export default function FrontHead() {
           <Flex display="flex" flexDir="row" justifyContent="center" p="30">
           <HStack spacing={4}  my ={5} mt={5}>
 
-            <NewButton href="/projects" label="Bekijk mijn projecten" />
-            <NewButton href="/contact" label="Neem contact op" />
+            <NewButton size={{ base: "md", md: "md", lg: "lg" }} href="/projects" label="Bekijk mijn projecten" />
+            <NewButton size={{ base: "md", md: "md", lg: "lg" }} href="/contact" label="Neem contact op" />
           </HStack>
           </Flex>
         </Box>
