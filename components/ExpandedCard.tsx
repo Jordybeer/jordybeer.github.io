@@ -39,13 +39,14 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
     infinite: true,
     slidesToShow: 1,
     autoplay: true,
-    arrows: false,
+    arrows: true,
     autoplaySpeed: 3000,
     adaptiveHeight: false,
     draggable: true,
     pauseOnHover: true,
     swipeToSlide: true,
     variableWidth: false,
+    dots:true,
   };
 
   const handlePrevClick = () => {
@@ -88,14 +89,16 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
         >
           <Flex direction="column" className="content-box" h="100%">
             <Box flex="1" overflow="hidden" position="relative">
-              <Slider ref={sliderRef} {...settings}>
+            <Slider className="carousel-slider" ref={sliderRef} {...settings}>
                 {data.images.map((img, index) => (
                   <div key={index}>
  <Image
                     src={img}
                     alt={`Slide ${index + 1}`}
-                    objectFit="contain"
+                    objectFit="cover"
                     objectPosition="center"
+                    height="100%"
+
                   />
                 </div>
                 ))}
@@ -112,40 +115,6 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
                   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
                 }}
               />
-              <Flex
-                position="absolute"
-                bottom="0"
-                left="0"
-                right="0"
-                justifyContent="center"
-                p="2"
-              >
-                {data.images.map((img, index) => (
-                  <Box
-                    key={index}
-                    w="16"
-                    h="16"
-                    bg="rgba(255, 255, 255, 0.2)"
-                    borderRadius="2xl"
-                    border="2px solid black"
-                    mx="1"
-                    opacity={index === 0 ? 1 : 0.5}
-                    cursor="pointer"
-                    onClick={() => handleThumbnailClick(index)}
-                    style={{
-                      position: "relative",
-                      zIndex: 2,
-                    }}
-                  >
-<Image
-                    src={img}
-                    alt={`Thumbnail ${index + 1}`}
-                    objectFit="contain"
-                    borderRadius="50%"
-                  />
-                  </Box>
-                ))}
-              </Flex>
             </Box>
 
 
