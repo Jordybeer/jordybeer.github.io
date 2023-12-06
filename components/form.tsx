@@ -89,22 +89,27 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <Flex>
+    <Flex direction="column" align="center" justify="center" p={8} marginTop="10vh" minHeight="90vh">
       <VStack spacing={{ base: 4, md: 8, lg: 20 }} width="100%">
+
         <Box
           mx="auto"
+        borderRadius="lg"
+          rounded="3xl"
           display="flex"
           maxW={{ base: "7xl" }}
           width={{ base: "100vw", sm: "100vw" }}
           transition={"background 0.3s ease"}
           px={{ base: 4, sm: 6, lg: 10 }}
           mt="auto"
+          boxShadow="lg"
           position="relative"
           zIndex={2}
+          p={6}
           bg={bg}
           justifyContent="center"
           shadow={{ base: "none", md: "dark-lg" }}
-          border="1mm ridge #3A80C56F"
+          border="solid 2px black"
           width={{ base: "100vw", sm: "100vw" }}
           maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
         >

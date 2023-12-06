@@ -13,7 +13,8 @@ import NewButton from "../components/newbutton";
 
 const AboutMe: React.FC = () => {
   return (
-    <Flex direction="column" align="center" justify="center" p={8}>
+    <Flex direction="column" align="center" justify="center" p={8} marginTop="10vh" minHeight="90vh">
+
       <Box
         maxW="3xl"
         borderWidth={1}

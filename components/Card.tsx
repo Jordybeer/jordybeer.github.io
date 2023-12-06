@@ -16,6 +16,7 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
   };
 
   return (
+
     <motion.div
       className="card"
       p={20}

@@ -1,13 +1,12 @@
-/* Grid Layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); /* Changed from rows to columns and set min-width */
+  grid-template-columns: repeat(2, 1fr); /* Modify this line */
   gap: 16px;
   padding: 16px;
   width: 80%;
+  margin: auto;
+  height: calc(100vh - 200px);
+  overflow: auto;
 }
 
 /* Card Styles */

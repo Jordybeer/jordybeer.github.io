@@ -23,21 +23,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     >
       <TopMenu />
 
-
-        <Container
-          maxW="100%"
-          maxH="calc(100vh - 10vh)"
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          borderRight="solid #03435f"
-          borderRadius="xs"
-          overflow="hidden"
-          position="relative"
-        >
-          {children}
-        </Container>
-
+<Container
+  maxW="100%"
+  maxH="calc(90vh)"
+  display="flex"
+  justifyContent="center"
+  alignItems="center"
+  borderRight="solid #03435f"
+  borderRadius="xs"
+  overflow="hidden"
+  position="relative"
+>
+  {children}
+</Container>
 
       <Flex
         flexGrow={1}

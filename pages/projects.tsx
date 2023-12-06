@@ -39,6 +39,7 @@ const Projects = () => {
   }, []);
 
   return (
+
     <Flex
       direction="column"
       justify="center"
