@@ -92,27 +92,28 @@ const ContactForm: React.FC = () => {
     <Flex direction="column" align="center" justify="center" p={8} marginTop="10vh" minHeight="90vh">
       <VStack spacing={{ base: 4, md: 8, lg: 20 }} width="100%">
 
-        <Box
-          mx="auto"
-        borderRadius="lg"
-          rounded="3xl"
-          display="flex"
-          maxW={{ base: "7xl" }}
-          width={{ base: "100vw", sm: "100vw" }}
-          transition={"background 0.3s ease"}
-          px={{ base: 4, sm: 6, lg: 10 }}
-          mt="auto"
-          boxShadow="lg"
-          position="relative"
-          zIndex={2}
-          p={6}
-          bg={bg}
-          justifyContent="center"
-          shadow={{ base: "none", md: "dark-lg" }}
-          border="solid 2px black"
-          width={{ base: "100vw", sm: "100vw" }}
-          maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
-        >
+      <Box
+  mx="auto"
+  borderRadius="lg"
+  rounded={{ base: "none", md: "3xl" }} // Updated this line
+  display="flex"
+  maxW={{ base: "7xl" }}
+  width={{ base: "100vw", sm: "100vw" }}
+  transition={"background 0.3s ease"}
+  px={{ base: 4, sm: 6, lg: 10 }}
+  mt="auto"
+  boxShadow="lg"
+  position="relative"
+  zIndex={2}
+  backdropFilter="blur(1.2px)"
+  p={6}
+  bg={bg}
+  justifyContent="center"
+  shadow={{ base: "none", md: "dark-lg" }}
+  border="solid 2px black"
+  width={{ base: "100vw", sm: "100vw" }}
+  maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
+>
           <VStack spacing={5} p={10} width="120%">
             <FormControl isRequired>
               <FormLabel>Naam</FormLabel>
@@ -170,7 +171,7 @@ const ContactForm: React.FC = () => {
               />
             </FormControl>
 
-            <NewButton label="Verstuur Bericht" click={handleSubmit} />
+            <NewButton label="Verstuur bericht" click={handleSubmit} />
           </VStack>
         </Box>
       </VStack>

@@ -3,6 +3,8 @@ import { Flex } from "@chakra-ui/react";
 import CardGrid from "../components/CardGrid";
 import ExpandedCard from "../components/ExpandedCard";
 import "@fontsource-variable/raleway";
+import styles from './Projects.module.css'; // Import the CSS module
+
 
 const Projects = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -39,7 +41,6 @@ const Projects = () => {
   }, []);
 
   return (
-
     <Flex
       direction="column"
       justify="center"
@@ -52,20 +53,12 @@ const Projects = () => {
       fontSize="80%"
       zIndex={1}
       overflow="auto"
+      className={styles.container} // Use the class from the CSS module
     >
-      {selectedCard && (
+{selectedCard && (
         <div
           onClick={() => setSelectedCard(null)}
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(50, 50, 50, 0.8)",
-            zIndex: 998,
-            transition: "background-color 1s ease",
-          }}
+          className={styles.overlay} // Use the class from the CSS module
         ></div>
       )}
 

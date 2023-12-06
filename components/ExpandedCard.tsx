@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Slider from "react-slick";
 import { motion, AnimatePresence } from "framer-motion";
-import { Box, Flex, Divider, CloseButton } from "@chakra-ui/react";
+import { Box, Flex, Divider, Image, CloseButton } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import NewButton from "../components/newbutton";
 
@@ -91,18 +91,13 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
               <Slider ref={sliderRef} {...settings}>
                 {data.images.map((img, index) => (
                   <div key={index}>
-                    <img
-                      src={img}
-                      alt={`Slide ${index + 1}`}
-                      className="carousel-img"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        objectPosition: "center",
-                      }}
-                    />
-                  </div>
+ <Image
+                    src={img}
+                    alt={`Slide ${index + 1}`}
+                    objectFit="contain"
+                    objectPosition="center"
+                  />
+                </div>
                 ))}
               </Slider>
               <CloseButton
@@ -142,16 +137,12 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
                       zIndex: 2,
                     }}
                   >
-                    <img
-                      src={img}
-                      alt={`Thumbnail ${index + 1}`}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        borderRadius: "50%",
-                      }}
-                    />
+<Image
+                    src={img}
+                    alt={`Thumbnail ${index + 1}`}
+                    objectFit="contain"
+                    borderRadius="50%"
+                  />
                   </Box>
                 ))}
               </Flex>
@@ -188,8 +179,6 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
     )}`}
     label="Vraag offerte"
     width="100%"
-    mb="5"
-    mr="4"
     size="md"
     _hover={{ bgColor: "blue.500", color: "white" }}
   />

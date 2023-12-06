@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Image } from "@chakra-ui/react";
 
 type CardProps = {
   data: any; // Je kunt hier een meer gedetailleerd type voor de data specificeren
@@ -16,7 +17,6 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
   };
 
   return (
-
     <motion.div
       className="card"
       p={20}
@@ -25,7 +25,7 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
       animate={{ opacity: 1 }}
     >
       <h1 className="card-title">{data.title}</h1>
-      <img src={data.img} alt={data.title} />
+      <Image src={data.img} alt={data.title} objectFit="contain" />
     </motion.div>
   );
 };

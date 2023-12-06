@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import { AnimatePresence, motion } from "framer-motion";
-import { Flex } from "@chakra-ui/react";
+import { Grid, useBreakpointValue } from "@chakra-ui/react";
 
 type CardGridProps = {
   setCardSelection: React.Dispatch<React.SetStateAction<any>>;
@@ -9,20 +9,21 @@ type CardGridProps = {
 };
 
 const CardGrid: React.FC<CardGridProps> = ({ setCardSelection, data }) => {
+  const columns = useBreakpointValue({ base: 2, md: 2, lg: 3 });
+
   return (
     <AnimatePresence>
-      <Flex className="grid" justifyContent="center" flexWrap="wrap" p={4}>
+      <Grid templateColumns={`repeat(${columns}, 1fr)`} gap={6}>
         {data.map((item, index) => (
           <motion.div
             key={index}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            m={2}
           >
             <Card data={item} setSelectedCard={setCardSelection} />
           </motion.div>
         ))}
-      </Flex>
+      </Grid>
     </AnimatePresence>
   );
 };

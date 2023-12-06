@@ -25,20 +25,21 @@ const TopMenu: React.FC<TopMenuProps> = () => {
   const bg = "#262547";
 
   return (
-<Flex
-  py={{ base: 4, md: 6 }}
-  pb={{ base: 5, md: 7 }}
-  bg={bg}
-  w="full"
-  zIndex={3}
-  shadow={{ base: "dark-lg", md: "dark-lg" }}
-  borderBottom="4px solid #08053A54"
-  px={{ base: 2, sm: 4 }}
-  shadow="md"
-  position="fixed"
-  top={0} // Add this line
-  width="100%" // Add this line
-  height="10vh">
+    <Flex
+    py={{ base: 4, md: 6 }}
+    pb={{ base: 5, md: 7 }}
+    bg={bg}
+    w="full"
+    zIndex={3}
+    shadow={{ base: "dark-lg", md: "dark-lg" }}
+    borderBottom="4px solid #08053A54"
+    px={{ base: 2, sm: 4 }}
+    shadow="md"
+    position="fixed"
+    top={0} // Add this line
+    width="100%" // Add this line
+    alignItems="center" // Add this line
+  >
       <Flex my="auto" mx="auto">
         <HStack
           spacing={3}
