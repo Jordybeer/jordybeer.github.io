@@ -1,5 +1,5 @@
 import React from "react";
-import { chakra, Box, Button, Flex } from "@chakra-ui/react";
+import { chakra, Box, Button, Flex, HStack } from "@chakra-ui/react";
 import "@fontsource-variable/raleway";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
@@ -26,13 +26,14 @@ export default function FrontHead() {
 
   return (
 
-    <Flex direction="column" align="center" justify="center" p={8} minHeight="90vh">
+<Flex direction="column" align={{ base: "flex-start", md: "center" }} justify={{ base: "flex-start", md: "center" }} p={{ base: 4, md: 8 }} minHeight={{ base: "auto", md: "90vh" }}>
+
+
 
 
       <Box
-        p="5%"
+        p="auto"
         display="flex"
-        width={{ base: "80vw", sm: "80vw" }}
         transition={"background 0.3s ease"}
         px={{ base: 4, sm: 6, lg: 10 }}
         mt="auto"
@@ -43,7 +44,7 @@ export default function FrontHead() {
         border="1mm ridge #3A80C56F"
         rounded={{ md: "2xl" }}
         width={{ base: "100vw", sm: "100vw" }}
-        maxW={{ base: "80vw", sm: "80vw", md: "2xl", lg: "3xl", xl: "2xl" }}
+        maxW={{ base: "sm", sm: "80vw", md: "2xl", lg: "3xl", xl: "2xl" }}
       >
         {/* image in the middle */}
 
@@ -54,7 +55,6 @@ export default function FrontHead() {
           justifyContent="center"
           alignItems="center"
           position="relative"
-          overflow="hidden"
           aspectRatio={1}
           zIndex={0}
         >
@@ -86,6 +86,7 @@ export default function FrontHead() {
             opacity={subtitleOpacity}
             textShadow={textShadow}
             textAlign="center"
+            fontSize={{ base: "3xl", sm: "5xl", lg: "6xl" }}
           >
             <chakra.span
               fontSize={{ base: "5xl", sm: "5xl", lg: "6xl" }}
@@ -113,9 +114,10 @@ export default function FrontHead() {
             maxW={{ sm: "xl" }}
             color={textColor}
             textAlign="left"
-            backdropFilter="blur(1.2px)"
             shadow="xl"
             border="solid 5px transparent"
+            fontSize={{ base: "lg", sm: "2xl", md: "2xl" }}
+
           >
             Stap binnen in mijn wereld van solide vakmanschap, waar hout en
             staal samenkomen om unieke meubelstukken te creëren. Van jouw ideeën
@@ -126,8 +128,11 @@ export default function FrontHead() {
           {/* New Buttons */}
           {/* <Flex justifyContent="center" bot="0" mt={5}> */}
           <Flex display="flex" flexDir="row" justifyContent="center" p="30">
+          <HStack spacing={4}  my ={5} mt={5}>
+
             <NewButton href="/projects" label="Bekijk mijn projecten" />
             <NewButton href="/contact" label="Neem contact op" />
+          </HStack>
           </Flex>
         </Box>
       </Box>
