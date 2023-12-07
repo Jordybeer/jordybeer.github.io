@@ -1,3 +1,14 @@
+.fronthead {
+  /* existing styles */
+}
+
+@media screen and (min-width: 1024px) { /* adjust this value based on your needs */
+  .fronthead {
+    height: 80%; /* adjust this value based on your needs */
+    /* other styles */
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Modify this line */

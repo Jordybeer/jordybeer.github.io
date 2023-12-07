@@ -8,7 +8,8 @@ const Fooder: React.FC = () => {
       as="footer"
       w="full"
       pb={2}
-      maxH="20vh"
+      mt="5vh" // add this line
+      maxH="10vh"
       bg="transparent"
       flexDir="column"
       align="center"

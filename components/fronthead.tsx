@@ -9,42 +9,40 @@ export default function FrontHead() {
   const bg = "linear-gradient(55deg, #34139546 30%, #0F2E77CE 70%)";
   const router = useRouter();
 
-  //  const bg = "linear-gradient(180deg, #225282 100%, #1A2B3C 70%, #1A2B3C 40%)";
   const titleColor = "#FFFFFF";
   const subtitleColor = "#FFD700";
   const textColor = "#FFFFFF";
   const subtitleOpacity = "1";
   const textShadow = "1px 1px 2px rgba(0,0,0,0.5)";
 
-  //buttons
-
   const scheme = "yellow"; // Replace with your preferred color scheme
   const step1 = "600";
   const step2 = "500";
-  const step3 = "300";
-  const size = "lg"; // Keeping only the largest size
 
   return (
-
-<Flex direction="column" align="center" justify="center" pt={8} p={{ base: 4, md: 8 }} minHeight={{ base: "auto", md: "90vh" }}>
-
+<Flex>
 
 
-      <Box
-        display="flex"
-        transition={"background 0.3s ease"}
-        px={{ base: 4, sm: 6, lg: 10 }}
-        mt="auto"
-        bg={bg}
-        justifyContent="center"
-        alignItems="center"
-        shadow={{ base: "none", md: "dark-lg" }}
-        borderRadius="lg"
-        border="2px solid #1C1B43"
-        rounded= "3xl"
-        width={{ base: "100vw", sm: "100vw" }}
-        maxW={{ base: "sm", sm: "80vw", md: "2xl", lg: "3xl", xl: "2xl" }}
-      >
+<Box
+  // other props
+  p="auto"
+  display="flex"
+  transition={"background 0.3s ease"}
+  px={{ base: 4, sm: 6, lg: 10 }}
+  mt="10vh"
+  bg={bg}
+  h="fit-content" // set height to auto
+  justifyContent="center"
+  alignItems="center"
+  shadow={{ base: "none", md: "dark-lg" }}
+  borderRadius="lg"
+  border="2px solid #1C1B43"
+  rounded= {{base: "none", md: "3xl"}}
+  width={{ base: "100vw", sm: "100vw" }}
+  maxW={{ base: "sm", sm: "60vw", md: "xl", lg: "2xl", xl: "xl" }} // Reduced maxW values
+  overflow="hidden"
+>
+  {/* .
         {/* image in the middle */}
 
         <Box
