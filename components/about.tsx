@@ -29,10 +29,10 @@ const AboutMe: React.FC = () => {
         position="relative"
         zIndex={2}
         shadow={{ base: "none", md: "dark-lg" }}
+
         borderRadius="lg"
         rounded={{ base: "none", md: "3xl" }}
-        border="2px solid #1C1B43"
-        backdropFilter="blur(1.4px)"
+        border="2px solid #1C1B43"        backdropFilter="blur(1.4px)"
         width={{ base: "100vw", sm: "100vw" }}
         maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
         height={{ base: "auto", sm: "auto", md: "auto", lg: "auto", xl: "auto" }}
@@ -42,7 +42,7 @@ const AboutMe: React.FC = () => {
   <Box flexShrink={0} position="fixed" top={5} right={2} zIndex={-1}>
     <Image
       borderRadius="full"
-      boxSize={{ base: "100px", md: "150px" }}
+      boxSize={{ base: "150", md: "225px" }}
       src="https://i.imgur.com/KMI4fpo.png"
       alt="Profielfoto"
       border="2px solid black"
@@ -50,19 +50,19 @@ const AboutMe: React.FC = () => {
   </Box>
   <VStack align="start" ml={{ base: 0, md: 6 }} mt={{ base: 4, md: 0 }}>
     <Heading as="h3" size="xl">
-      Hey, ik ben Robbert!
+      Ik ben Robbert
     </Heading>
     <Text
       fontSize="lg"
       color="alphaWhite.600"
       textDecoration="underline "
     >
-      Zelfstandig Lasser & Meubelmaker
+      Zelfstandig Lasser <br/>& Meubelmaker
     </Text>
-    <Text mt={4} textShadow="" py="7">
-      Lassen heeft me altijd al gefascineerd. Wat begon als een hobby,
-      is nu mijn beroep. Ik combineer zwart metaal met hout om unieke
-      meubelen te creëren. Elk stuk is een stukje van mijzelf.
+    <Text mt={10} textShadow="" py={19} pb="5">
+      Lassen heeft me altijd al gefascineerd. <br/>Wat begon als een hobby,
+      is nu mijn beroep.<br/> Ik combineer zwart metaal met hout om unieke
+      meubelen te creëren.<br/> Elk stuk is een stukje van mijzelf.
     </Text>
     <Spacer />
     <HStack spacing={8}>

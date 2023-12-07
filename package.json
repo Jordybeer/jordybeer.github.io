@@ -15,10 +15,10 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@fontsource-variable/raleway": "^5.0.16",
+    "@fontsource-variable/raleway": "^5.0.17",
     "@fontsource/fredoka-one": "^5.0.5",
-    "@fontsource/lato": "^5.0.17",
-    "@fontsource/raleway": "^5.0.15",
+    "@fontsource/lato": "^5.0.18",
+    "@fontsource/raleway": "^5.0.16",
     "@react-icons/all-files": "^4.1.0",
     "@tabler/icons-react": "^2.42.0",
     "@tinymce/tinymce-react": "^4.3.2",
@@ -92,7 +92,7 @@
     "react-refresh": "^0.14.0",
     "react-refresh-webpack-plugin": "^0.1.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.3"
   },
   "pnpm": {
     "overrides": {

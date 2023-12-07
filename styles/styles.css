@@ -63,7 +63,7 @@
 
 /* New CSS class for card-descr element */
 .card-description-large {
-  font-size: 17px;
+  font-size: 14px;
   textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
   font-weight: "regular";
   font-family: "Verdana";
@@ -71,17 +71,34 @@
 /* Expanded Card Styles */
 .expanded-card {
   display: flex;
-  position: relative;
-  textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  top: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   height: 100%;
   z-index: 1000;
+}
+
+.arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  z-index: 2;
+}
+
+
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
 }
 
 /* Carousel Styles */
@@ -89,6 +106,7 @@
   max-width: 110%;
   width: 100%;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 /* Thumbnail Styles */
@@ -96,7 +114,7 @@
   width: 100%; /* Zorgt ervoor dat afbeeldingen de volledige breedte van de container innemen */
   height: auto;
   object-fit: cover; /* Past de afbeelding netjes in de container */
-  border-radius: 6px;
+  border-radius: 612x;
   border: 1px solid white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1.4); /* Add this line to increase the shadow */
 }
