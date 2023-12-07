@@ -9,6 +9,7 @@ const Fooder: React.FC = () => {
   w="full"
   pb={2}
   mt="5vh"
+  bottom="0"
   bg="transparent"
   flexDir="column"
   align="center"

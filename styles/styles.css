@@ -142,7 +142,7 @@ body {
 .thumbnail-img {
   width: 100%; /* Zorgt ervoor dat afbeeldingen de volledige breedte van de container innemen */
   height: auto;
-  object-fit: cover; /* Past de afbeelding netjes in de container */
+  object-fit: contain; /* Past de afbeelding netjes in de container */
   border-radius: 612x;
   border: 1px solid white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1.4); /* Add this line to increase the shadow */
@@ -189,7 +189,11 @@ background: #2f2c79;
     width: 90%;
   }
 }
-
+@media (min-width: 1200px) {
+  .expanded-card {
+    width: 80%; /* adjust this value based on your needs */
+  }
+}
 
 @media screen and (min-width: 768px) {
   .card {

@@ -97,8 +97,6 @@ const ContactForm: React.FC = () => {
   borderRadius="lg"
   rounded={{ base: "none", md: "3xl" }} // Updated this line
   display="flex"
-  maxW={{ base: "7xl" }}
-  width={{ base: "100vw", sm: "100vw" }}
   transition={"background 0.3s ease"}
   px={{ base: 4, sm: 6, lg: 10 }}
   mt="auto"
@@ -110,9 +108,7 @@ const ContactForm: React.FC = () => {
   bg={bg}
   justifyContent="center"
   shadow={{ base: "none", md: "dark-lg" }}
-  border="solid 2px black"
-  width={{ base: "100vw", sm: "100vw" }}
-  maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
+  border={{base: "none", md: "2px solid #1C1B43"}}
 >
           <VStack spacing={5} p={10} width="120%">
             <FormControl isRequired>

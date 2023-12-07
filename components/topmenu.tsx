@@ -61,32 +61,17 @@ return (
             </Button>
           </NextLink>
 
-          <Menu>
-            <MenuButton
-              bgColor="#262547"
-              as={Button}
+          <NextLink href="/projects">
+            <Button
               variant="roundleft"
               color="whiteAlpha.900"
-              aria-label="Projecten"
+              aria-label="Home"
               _hover={{ bg: "#FFD700" }}
               size={{ base: "sm", md: "md" }}
-              isActive={{ background: "#FFD700" }}
             >
-              Projecten
-            </MenuButton>
-            <MenuList bgColor="#262547">
-              <NextLink href="/projects">
-                <MenuItem bgColor="#262547" _hover={{ bg: "#FFD700" }}>
-                  Showcase
-                </MenuItem>
-              </NextLink>
-              <NextLink href="/about">
-                <MenuItem bgColor="#262547" _hover={{ bg: "#FFD700" }}>
-                  Catalogus
-                </MenuItem>
-              </NextLink>
-            </MenuList>
-          </Menu>
+              Showcase
+            </Button>
+          </NextLink>
 
           <NextLink href="/contact">
             <Button

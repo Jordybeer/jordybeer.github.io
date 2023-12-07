@@ -21,20 +21,21 @@ const AboutMe: React.FC = () => {
         display="flex"
         height="50vh"
         maxW={{ base: "7xl" }}
-        width={{ base: "100vw", sm: "100vw" }}
+        width={{ base: "100%", sm: "100%" }}
         transition={"background 0.3s ease"}
         px={{ base: 4, sm: 6, lg: 10 }}
         py={{ base: 4, sm: 6, lg: 10 }}
         boxShadow="lg"
-        position="relative"
+        position="absolute"
         zIndex={2}
         shadow={{ base: "none", md: "dark-lg" }}
 
         borderRadius="lg"
         rounded={{ base: "none", md: "3xl" }}
-        border="2px solid #1C1B43"        backdropFilter="blur(1.4px)"
-        width={{ base: "100vw", sm: "100vw" }}
-        maxW={{ base: "100vw", sm: "100vw", md: "xl", lg: "2xl", xl: "3xl" }}
+        border={{base:"none", md:"2px solid #1C1B43"}}
+        backdropFilter="blur(1.4px)"
+        width={{ base: "100%", sm: "100%" }}
+        maxW={{ base: "none", md: "xl", lg: "2xl", xl: "3xl" }}
         height={{ base: "auto", sm: "auto", md: "auto", lg: "auto", xl: "auto" }}
       >
 
@@ -45,7 +46,8 @@ const AboutMe: React.FC = () => {
       boxSize={{ base: "150", md: "225px" }}
       src="https://i.imgur.com/KMI4fpo.png"
       alt="Profielfoto"
-      border="2px solid black"
+      border="4px solid black"
+      shadow = "dark-lg"
     />
   </Box>
   <VStack align="start" ml={{ base: 0, md: 6 }} mt={{ base: 4, md: 0 }}>
@@ -67,7 +69,7 @@ const AboutMe: React.FC = () => {
     <Spacer />
     <HStack spacing={8}>
     <NewButton size={{ base: "lg", md: "md", lg: "lg" }} href="/showcase" label="Showcase" />
-    <NewButton size={{ base: "lg", md: "md", lg: "lg" }} href="/projecten" label="Catalogus" />
+    <NewButton size={{ base: "lg", md: "md", lg: "lg" }} href="/contact" label="Neem contact op" />
     </HStack>
   </VStack>
 </Flex>

@@ -51,7 +51,6 @@ const Projects = () => {
   position="relative"
   fontSize="80%"
   zIndex={20}
-  overflow="auto" // add this line
   className={styles.container} // Use the class from the CSS module
 >
 {selectedCard && (

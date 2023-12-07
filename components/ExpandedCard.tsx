@@ -63,7 +63,6 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
 
 // Styling
 const width = "auto";
-const height = "80%";
 const maxWidth = useBreakpointValue({ base: "90%", sm: "80%", md: "90%", lg: "60%", xl: "50%" });
 const minWidth = useBreakpointValue({ base: "80%", sm: "50%" });
 
@@ -75,13 +74,11 @@ return (
         className="expanded-card"
         ref={cardRef}
         style={{
-          width: "auto",
           maxWidth: maxWidth,
-          height: height,
-          maxHeight: "80%",
+          height: "70vh",
           minWidth: minWidth,
           backgroundColor: "transparent",
-          position: "absolute",
+          position: "fixed",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
@@ -132,11 +129,8 @@ return (
     {data.images.map((img, index) => (
       <Box
         key={index}
-        w="8" // kleinere breedte
-        h="8" // kleinere hoogte
-        bg="rgba(255, 255, 255, 0.2)"
-        borderRadius="2xl"
-        border="2px solid black"
+        w="10" // kleinere breedte
+        h="10" // kleinere hoogte
         mx="1"
         opacity={index === 0 ? 1 : 0.5}
         cursor="pointer"
@@ -145,7 +139,7 @@ return (
         <Image
           src={img}
           alt={`Thumbnail ${index + 1}`}
-          objectFit="cover"
+          objectFit="contain"
         />
       </Box>
     ))}

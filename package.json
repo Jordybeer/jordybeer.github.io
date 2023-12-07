@@ -8,6 +8,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
+  "type": "module",
   "dependencies": {
     "@apollo/client": "^3.8.8",
     "@chakra-ui/icons": "^2.1.1",
@@ -66,7 +67,8 @@
     "slick": "^1.12.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.1",
-    "three": "^0.155.0"
+    "three": "^0.155.0",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
     "@babel/standalone": "^7.23.5",

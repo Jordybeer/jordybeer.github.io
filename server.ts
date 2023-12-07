@@ -1,6 +1,7 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
-import nodemailer from "nodemailer";
+import express from "express";
+import cors from 'cors';
+import * as nodemailer from "nodemailer";
+import { Request, Response } from "express";
 
 interface FormData {
   name: string;

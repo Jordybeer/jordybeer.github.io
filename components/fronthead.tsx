@@ -35,7 +35,7 @@ export default function FrontHead() {
   alignItems="center"
   shadow={{ base: "none", md: "dark-lg" }}
   borderRadius="lg"
-  border="2px solid #1C1B43"
+  border={{ base: "none", md: "2px solid #1C1B43"}}
   rounded= {{base: "none", md: "3xl"}}
   width={{ base: "100vw", sm: "100vw" }}
   maxW={{ base: "sm", sm: "60vw", md: "xl", lg: "2xl", xl: "3xl" }} // Reduced maxW values
