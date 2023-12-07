@@ -1,13 +1,16 @@
-.fronthead {
-  /* existing styles */
+body {
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (min-width: 1024px) { /* adjust this value based on your needs */
   .fronthead {
-    height: 80%; /* adjust this value based on your needs */
+    max-height: 60%; /* adjust this value based on your needs */
+    overflow: auto; /* add this line */
     /* other styles */
   }
 }
+
 
 .grid {
   display: grid;

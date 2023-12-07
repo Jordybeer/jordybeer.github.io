@@ -40,15 +40,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
 
 
+        </Container>
         <Fooder
           style={{
-            position: "fixed",
-            overflow: "hidden",
+            position: "absolute",
+            overflow: "auto",
             width: "100%",
-            zIndex: 5,
+            zIndex: 1,
           }}
         />
-        </Container>
 
     </Flex>
   );

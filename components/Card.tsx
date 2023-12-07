@@ -25,7 +25,7 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
       animate={{ opacity: 1 }}
     >
       <h1 className="card-title">{data.title}</h1>
-      <Box borderRadius="xl" overflow="hidden">
+      <Box borderRadius="xl" >
   <Image src={data.img} alt={data.title} objectFit="contain" />
 </Box>
     </motion.div>

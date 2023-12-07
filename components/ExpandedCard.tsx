@@ -66,6 +66,7 @@ const width = "auto";
 const height = "80%";
 const maxWidth = useBreakpointValue({ base: "90%", sm: "80%", md: "90%", lg: "60%", xl: "50%" });
 const minWidth = useBreakpointValue({ base: "80%", sm: "50%" });
+const position = useBreakpointValue({ base: "absolute", md: "absolute" });
 
 return (
   <AnimatePresence>
@@ -80,7 +81,7 @@ return (
           maxWidth: maxWidth,
           minWidth: minWidth,
           backgroundColor: "transparent",
-          position: "fixed",
+          position: {position},
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",

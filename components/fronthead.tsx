@@ -29,7 +29,6 @@ export default function FrontHead() {
   display="flex"
   transition={"background 0.3s ease"}
   px={{ base: 4, sm: 6, lg: 10 }}
-  mt="10vh"
   bg={bg}
   h="fit-content" // set height to auto
   justifyContent="center"
@@ -39,8 +38,9 @@ export default function FrontHead() {
   border="2px solid #1C1B43"
   rounded= {{base: "none", md: "3xl"}}
   width={{ base: "100vw", sm: "100vw" }}
-  maxW={{ base: "sm", sm: "60vw", md: "xl", lg: "2xl", xl: "xl" }} // Reduced maxW values
+  maxW={{ base: "sm", sm: "60vw", md: "xl", lg: "2xl", xl: "3xl" }} // Reduced maxW values
   overflow="hidden"
+  maxH= {{xl:"2xl"}}
 >
   {/* .
         {/* image in the middle */}

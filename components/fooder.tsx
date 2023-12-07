@@ -4,24 +4,22 @@ import { FaInstagram, FaFacebook, FaYoutube, FaPaw } from "react-icons/fa";
 
 const Fooder: React.FC = () => {
   return (
-    <Flex
-      as="footer"
-      w="full"
-      pb={2}
-      mt="5vh" // add this line
-      maxH="10vh"
-      bg="transparent"
-      flexDir="column"
-      align="center"
-      justify="space-between"
-      transition="background 0.3s ease"
-    >
+<Flex
+  as="footer"
+  w="full"
+  pb={2}
+  mt="5vh"
+  bg="transparent"
+  flexDir="column"
+  align="center"
+  justify="space-between"
+  transition="background 0.3s ease"
+>
       <chakra.a
         href="/"
         fontSize="1rem"
         fontWeight="bold"
         color="alphaWhite.800"
-        pb="2"
         _hover={{ color: "alphaBlack.700" }}
       >
         RB Lasprojecten
