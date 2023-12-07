@@ -66,7 +66,6 @@ const width = "auto";
 const height = "80%";
 const maxWidth = useBreakpointValue({ base: "90%", sm: "80%", md: "90%", lg: "60%", xl: "50%" });
 const minWidth = useBreakpointValue({ base: "80%", sm: "50%" });
-const position = useBreakpointValue({ base: "absolute", md: "absolute" });
 
 return (
   <AnimatePresence>
@@ -76,12 +75,13 @@ return (
         className="expanded-card"
         ref={cardRef}
         style={{
-          width: width,
-          height: height,
+          width: "auto",
           maxWidth: maxWidth,
+          height: height,
+          maxHeight: "80%",
           minWidth: minWidth,
           backgroundColor: "transparent",
-          position: {position},
+          position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
@@ -89,9 +89,8 @@ return (
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          borderRadius: "0.5rem",
+          borderRadius: "30px",
           boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
-          rounded: "3xl",
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.7 } }}

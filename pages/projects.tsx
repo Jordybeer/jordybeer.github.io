@@ -41,20 +41,19 @@ const Projects = () => {
   }, []);
 
   return (
-    <Flex
-      direction="column"
-      justify="center"
-      align="center"
-      paddingTop="10px"
-      maxW={{ base: "100%", sm: "100%" }}
-      width="100%"
-      minHeight="100vh"
-      position="relative"
-      fontSize="80%"
-      zIndex={1}
-      overflow="auto"
-      className={styles.container} // Use the class from the CSS module
-    >
+<Flex
+  direction="column"
+  justify="center"
+  align="center"
+  paddingTop="10px"
+  maxW={{ base: "100%", sm: "100%" }}
+  width="100%"
+  position="relative"
+  fontSize="80%"
+  zIndex={20}
+  overflow="auto" // add this line
+  className={styles.container} // Use the class from the CSS module
+>
 {selectedCard && (
         <div
           onClick={() => setSelectedCard(null)}

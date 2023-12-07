@@ -23,9 +23,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       bgRepeat="no-repeat"
       bgSize="cover"
       justifyContent="center"
-    >
+    > <TopMenu />
       <Container
-        maxW="100%"
+        maxW="100%;"
         maxH="100%"
         display="flex"
         flexDirection="column" // Add this property
@@ -36,7 +36,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         overflow="visible"
         position="relative"
       >
-        <TopMenu />
+
         {children}
 
 

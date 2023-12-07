@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { Image, Box } from "@chakra-ui/react";
 
 type CardProps = {
-  data: any; // Je kunt hier een meer gedetailleerd type voor de data specificeren
-  setSelectedCard: React.Dispatch<React.SetStateAction<any>> | null; // Toestaan van null waarde
+  data: any;
+  setSelectedCard: React.Dispatch<React.SetStateAction<any>> | null;
 };
 
 const Card = ({ data, setSelectedCard }: CardProps) => {
   const handleClick = () => {
-    console.log("Card clicked:", data); // Log de data bij klikken
+    console.log("Card clicked:", data);
     if (setSelectedCard && typeof setSelectedCard === "function") {
       setSelectedCard(data);
     } else {
@@ -20,14 +20,16 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
     <motion.div
       className="card"
       p={20}
-      onClick={handleClick} // Gebruik de handleClick functie hier
+      onClick={handleClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 1 }}
     >
       <h1 className="card-title">{data.title}</h1>
-      <Box borderRadius="xl" >
-  <Image src={data.img} alt={data.title} objectFit="contain" />
-</Box>
+      <Image src={data.img} alt={data.title} objectFit="cover" borderRadius="24px"
+      box-shadow= "0px 4px 10px rgba(0, 0, 0, 0.1)"
+      />
     </motion.div>
   );
 };
