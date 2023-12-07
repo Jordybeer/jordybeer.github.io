@@ -20,7 +20,7 @@ export default function FrontHead() {
   const step2 = "500";
 
   return (
-<Flex pt="10vh">
+<Flex pt="auto">
 
 
 <Box
