@@ -75,7 +75,7 @@ return (
         ref={cardRef}
         style={{
           maxWidth: maxWidth,
-          height: "70vh",
+          height: "80vh",
           minWidth: minWidth,
           backgroundColor: "transparent",
           position: "fixed",

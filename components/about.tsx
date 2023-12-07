@@ -68,7 +68,7 @@ const AboutMe: React.FC = () => {
     </Text>
     <Spacer />
     <HStack spacing={8}>
-    <NewButton size={{ base: "lg", md: "md", lg: "lg" }} href="/showcase" label="Showcase" />
+    <NewButton size={{ base: "lg", md: "md", lg: "lg" }} href="/projects" label="Showcase" />
     <NewButton size={{ base: "lg", md: "md", lg: "lg" }} href="/contact" label="Neem contact op" />
     </HStack>
   </VStack>
