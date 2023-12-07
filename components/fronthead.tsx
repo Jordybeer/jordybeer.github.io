@@ -26,7 +26,7 @@ export default function FrontHead() {
 
   return (
 
-<Flex direction="column" align="center" justify="center" p={{ base: 4, md: 8 }} minHeight={{ base: "auto", md: "90vh" }}>
+<Flex direction="column" align="center" justify="center" pt={8} p={{ base: 4, md: 8 }} minHeight={{ base: "auto", md: "90vh" }}>
 
 
 

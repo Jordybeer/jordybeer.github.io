@@ -39,7 +39,7 @@ const AboutMe: React.FC = () => {
       >
 
 <Flex direction="row" alignItems="start">
-  <Box flexShrink={0} position="fixed" top={5} right={2} zIndex={-1}>
+  <Box flexShrink={0} position="absolute" top={5} right={2} zIndex={-1}>
     <Image
       borderRadius="full"
       boxSize={{ base: "150", md: "225px" }}

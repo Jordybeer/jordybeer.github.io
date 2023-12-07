@@ -37,17 +37,17 @@ dependencies:
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.42)(react@18.2.0)
   '@fontsource-variable/raleway':
-    specifier: ^5.0.17
-    version: 5.0.17
+    specifier: ^5.0.16
+    version: 5.0.16
   '@fontsource/fredoka-one':
     specifier: ^5.0.5
     version: 5.0.5
   '@fontsource/lato':
-    specifier: ^5.0.18
-    version: 5.0.18
+    specifier: ^5.0.17
+    version: 5.0.17
   '@fontsource/raleway':
-    specifier: ^5.0.16
-    version: 5.0.16
+    specifier: ^5.0.15
+    version: 5.0.15
   '@react-icons/all-files':
     specifier: ^4.1.0
     version: 4.1.0(react@18.2.0)
@@ -215,8 +215,10 @@ devDependencies:
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.13.2
     version: 6.13.2(@typescript-eslint/parser@6.13.2)(eslint@8.55.0)(typescript@5.3.3)
+    version: 6.13.2(@typescript-eslint/parser@6.13.2)(eslint@8.55.0)(typescript@5.3.3)
   '@typescript-eslint/parser':
     specifier: ^6.13.2
+    version: 6.13.2(eslint@8.55.0)(typescript@5.3.3)
     version: 6.13.2(eslint@8.55.0)(typescript@5.3.3)
   add:
     specifier: ^2.0.6
@@ -260,10 +262,14 @@ devDependencies:
   react-refresh-webpack-plugin:
     specifier: ^0.1.0
     version: 0.1.0(eslint@8.55.0)(react-refresh@0.14.0)(typescript@5.3.3)(webpack@5.89.0)
+    version: 0.1.0(eslint@8.55.0)(react-refresh@0.14.0)(typescript@5.3.3)(webpack@5.89.0)
   ts-node:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@17.0.45)(typescript@5.3.3)
+    version: 10.9.1(@types/node@17.0.45)(typescript@5.3.3)
   typescript:
+    specifier: ^5.3.3
+    version: 5.3.3
     specifier: ^5.3.3
     version: 5.3.3
 

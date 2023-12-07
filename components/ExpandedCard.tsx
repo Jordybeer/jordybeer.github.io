@@ -38,13 +38,14 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
     infinite: true,
     slidesToShow: 1,
     autoplay: true,
-    arrows: false,
+    arrows: true,
     autoplaySpeed: 3000,
     adaptiveHeight: false,
     draggable: true,
     pauseOnHover: true,
     swipeToSlide: true,
     variableWidth: false,
+    dots:true,
   };
 
   const handlePrevClick = () => {
