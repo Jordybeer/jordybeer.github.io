@@ -20,12 +20,11 @@ export default function FrontHead() {
   const step2 = "500";
 
   return (
-<Flex pt="auto">
+<Flex justifyContent="center" alignItems="center" pt="20">
 
 
 <Box
   // other props
-  p="auto"
   display="flex"
   transition={"background 0.3s ease"}
   px={{ base: 4, sm: 6, lg: 10 }}

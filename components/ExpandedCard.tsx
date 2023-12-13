@@ -67,6 +67,16 @@ const maxWidth = useBreakpointValue({ base: "90%", sm: "80%", md: "90%", lg: "60
 const minWidth = useBreakpointValue({ base: "80%", sm: "50%" });
 
 return (
+<Box
+  position="fixed"
+  top={{base:"50%", md:"50%", lg:"50%", xl:"10%"}}
+  left={{base:"50%", md:"50%", lg:"50%", xl:"35%"}}
+  transform="translate(-50%, -50%)"
+  maxW={{ base: "90vw", md: "80vw", lg: "50vw", xl: "60vw" }}
+  h= {{base: "80%", xl:"90%"}}
+  w="100%"
+  zIndex="1000"
+>
   <AnimatePresence>
     {data && (
       <motion.div
@@ -195,6 +205,7 @@ return (
         </motion.div>
       )}
     </AnimatePresence>
-  );
+    </Box>
+      );
 };
 export default ExpandedCard;
