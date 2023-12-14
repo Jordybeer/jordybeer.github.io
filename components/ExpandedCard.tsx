@@ -72,7 +72,7 @@ return (
   top={{base:"50%", md:"50%", lg:"50%", xl:"10%"}}
   left={{base:"50%", md:"50%", lg:"50%", xl:"35%"}}
   transform="translate(-50%, -50%)"
-  maxW={{ base: "90vw", md: "80vw", lg: "50vw", xl: "60vw" }}
+  maxW={{ base: "90vw", md: "50vw", lg: "50vw", xl: "60vw" }}
   h= {{base: "80%", xl:"90%"}}
   w="100%"
   zIndex="1000"

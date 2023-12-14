@@ -2,7 +2,8 @@
 .container {
     position: relative;
     z-index: 1;
-    overflow: auto;
+    overflow: hidden;
+    padding: 20px;
   }
 
   .overlay {

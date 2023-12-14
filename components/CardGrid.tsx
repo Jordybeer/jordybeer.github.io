@@ -17,6 +17,7 @@ const CardGrid: React.FC<CardGridProps> = ({ setCardSelection, data }) => {
       templateColumns={`repeat(${columns}, 1fr)`}
       gap={6}
       box-shadow="0px 4px 10px rgba(0, 0, 0, 0.1)"
+      overflow="hidden"
       p={4}
       >
         {data.map((item, index) => (

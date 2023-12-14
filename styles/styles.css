@@ -4,8 +4,6 @@ body {
 }
 
 
-
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Modify this line */
@@ -20,8 +18,6 @@ body {
 /* Card Styles */
 .card {
   position: relative;
-  border-radius: 24px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* adjust this value based on your needs */
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   max-width: 90%; /* New: set a maximum width */
@@ -115,7 +111,7 @@ body {
   max-width: 110%;
   width: 100%;
   border-radius: 5px;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 
@@ -133,10 +129,10 @@ body {
 
 /* Thumbnail Styles */
 .thumbnail-img {
-  width: 100%; /* Zorgt ervoor dat afbeeldingen de volledige breedte van de container innemen */
+  width: auto; /* Zorgt ervoor dat afbeeldingen de volledige breedte van de container innemen */
   height: auto;
   object-fit: contain; /* Past de afbeelding netjes in de container */
-  border-radius: 612x;
+  border-radius: 12x;
   border: 1px solid white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 1.4); /* Add this line to increase the shadow */
 }
@@ -163,10 +159,11 @@ background: #2f2c79;
   border: 4px solid black;
   border-radius: 12px;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
   flex-direction: column;
+  padding: 12px;
 }
 
 .bottom-half {
@@ -177,6 +174,8 @@ background: #2f2c79;
   justify-content: space-between;
 }
 
+/* responsive styles media queries screen sizes*/
+
 @media (max-width: 768px) {
   .expanded-card {
     width: 90%;
@@ -186,10 +185,17 @@ background: #2f2c79;
   .expanded-card {
     width: 80%; /* adjust this value based on your needs */
   }
+
 }
 
 @media screen and (min-width: 768px) {
   .card {
     max-width: 200px; /* set a maximum width for larger screens */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    padding-top: 100px; /* adjust this value based on your needs */
   }
 }

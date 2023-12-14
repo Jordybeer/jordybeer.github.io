@@ -3,8 +3,7 @@ import { Flex } from "@chakra-ui/react";
 import CardGrid from "../components/CardGrid";
 import ExpandedCard from "../components/ExpandedCard";
 import "@fontsource-variable/raleway";
-import styles from './Projects.module.css'; // Import the CSS module
-
+import styles from './Projects.module.css';
 
 const Projects = () => {
   const [selectedCard, setSelectedCard] = useState(null);
