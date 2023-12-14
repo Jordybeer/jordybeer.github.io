@@ -10,7 +10,7 @@ const Projects = () => {
 
   const titles = [
     "Driepoot standbeeld",
-    "Ouglas Loungeset",
+    "Douglas Loungeset",
     "Eiken boomschijf bijzettafel",
     "Z-frame bureau en kruk",
   ];
