@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState} from "react";
 import Slider from "react-slick";
+import ReactDOM from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Box, Flex, Divider, Image, CloseButton, useBreakpointValue } from "@chakra-ui/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { Box, Flex, Divider, Image, CloseButton,Button, useBreakpointValue, HStack, IconButton } from "@chakra-ui/react";
+import { ChevronLeftIcon, ChevronRightIcon, ExternalLinkIcon, MinusIcon, CloseIcon, UpDownIcon} from "@chakra-ui/icons";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import NewButton from "../components/newbutton";
 
@@ -11,12 +12,22 @@ type ExpandedCardProps = {
   setSelectedCard: React.Dispatch<React.SetStateAction<any>>;
 };
 
+
+
 const ExpandedCard: React.FC<ExpandedCardProps> = ({
   data,
   setSelectedCard,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<Slider>(null);
+
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const [selectedThumbnail, setSelectedThumbnail] = useState(0);
+
+  const handleSlideChange = (current: number) => {
+    setSelectedThumbnail(current);
+  };
 
   const handleClickOutside = (e: MouseEvent) => {
     if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
@@ -46,6 +57,7 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
     swipeToSlide: true,
     variableWidth: false,
     dots:true,
+    afterChange: handleSlideChange,
   };
 
   const handlePrevClick = () => {
@@ -59,7 +71,44 @@ const ExpandedCard: React.FC<ExpandedCardProps> = ({
   const handleThumbnailClick = (index: number) => {
     sliderRef.current?.slickGoTo(index);
     sliderRef.current?.slickPause();
+    setSelectedThumbnail(index);
   };
+
+
+  const boxRef = React.useRef(null);
+
+  const enterFullscreen = (element: HTMLElement) => {
+    element.style.position = 'absolute';
+    element.style.top = '0';
+    element.style.left = '0';
+    element.style.width = '100vw';
+    element.style.height = '100vh';
+    element.style.zIndex = '9999';
+
+    const images = element.querySelectorAll('.img');
+    images.forEach((image: any) => {
+      image.style.backgroundSize = 'cover';
+    });
+
+    setIsFullscreen(true);
+  };
+
+  const exitFullscreen = (element: HTMLElement) => {
+    element.style.position = '';
+    element.style.top = '';
+    element.style.left = '';
+    element.style.width = '';
+    element.style.height = '';
+    element.style.zIndex = '';
+
+    const images = element.querySelectorAll('.img');
+    images.forEach((image: any) => {
+      image.style.backgroundSize = 'contain';
+    });
+
+    setIsFullscreen(false);
+  };
+
 
 // Styling
 const width = "auto";
@@ -72,7 +121,7 @@ return (
   top={{base:"50%", md:"50%", lg:"50%", xl:"10%"}}
   left={{base:"50%", md:"50%", lg:"50%", xl:"35%"}}
   transform="translate(-50%, -50%)"
-  maxW={{ base: "90vw", md: "50vw", lg: "50vw", xl: "60vw" }}
+  maxW={{ base: "90vw", md: "50vw", lg: "50vw", xl: "50vw" }}
   h= {{base: "80%", xl:"90%"}}
   w="100%"
   zIndex="1000"
@@ -104,8 +153,8 @@ return (
         exit={{ opacity: 0, transition: { duration: 1.5 } }}
       >
 <Flex direction="column" className="content-box" h="100%">
-  <Box flex="1" overflow="hidden" position="relative">
-    <Slider ref={sliderRef} {...settings}>
+  <Box ref={boxRef} flex="1" overflow="hidden" position="relative">
+    <Slider ref={sliderRef} {...settings} autoplay={!isFullscreen}>
       {data.images.map((img, index) => (
         <div key={index}>
           <Image
@@ -117,18 +166,29 @@ return (
         </div>
       ))}
     </Slider>
-    <CloseButton
-      size="lg"
-      color="#1D2636"
-      onClick={() => setSelectedCard(null)}
-      style={{
-        position: "absolute",
-        top: "10px",
-        right: "10px",
-        zIndex: 1,
-        boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
-      }}
-    />
+
+    <HStack
+  position="absolute"
+  top="10px"
+  right="10px"
+  zIndex="1"
+  spacing={4}
+>
+<IconButton
+  size="sm"
+  colorScheme="blackAlpha"
+  icon={isFullscreen ? <MinusIcon /> : <UpDownIcon />}
+  onClick={() => isFullscreen ? exitFullscreen(boxRef.current) : enterFullscreen(boxRef.current)}
+  boxShadow="0px 0px 10px rgba(0, 0, 0, 0.8)"
+/>
+  <IconButton
+    size="sm"
+    colorScheme="blackAlpha" // semi-transparent white color
+    icon={<CloseIcon />}
+    onClick={() => setSelectedCard(null)}
+    boxShadow="0px 0px 10px rgba(0, 0, 0, 0.8)"
+  />
+</HStack>
   </Box>
 
   {/* Thumbnails onder de slider */}
@@ -137,15 +197,16 @@ return (
     <FaArrowLeft />
   </div>
     {data.images.map((img, index) => (
-      <Box
-        key={index}
-        w="10" // kleinere breedte
-        h="10" // kleinere hoogte
-        mx="1"
-        opacity={index === 0 ? 1 : 0.5}
-        cursor="pointer"
-        onClick={() => handleThumbnailClick(index)}
-      >
+  <Box
+  key={index}
+  w="10"
+  h="10"
+  mx="1"
+  opacity={index === selectedThumbnail ? 1 : 0.5}
+  cursor="pointer"
+  onClick={() => handleThumbnailClick(index)}
+  transition="opacity 0.3s ease"
+>
         <Image
           src={img}
           alt={`Thumbnail ${index + 1}`}
@@ -175,13 +236,13 @@ return (
             <Flex
   display="flex"
   flexDir="row"
-  justifyContent="space-between" // Change this line
-  p={{ base: 2, sm: 4 }}
-  mx={{ base: 2, sm: 10 }}
+  justifyContent="space-evenly" // Change this line
+  pt={{ base: 2, sm: 4 }}
   position="absolute"
   alignItems="center"
   left="0"
   right="0"
+  bot="0"
 >
   <NewButton
     href={`/contact?productTitle=${encodeURIComponent(
@@ -189,14 +250,14 @@ return (
     )}`}
     label="Vraag offerte"
     width="100%"
-    size="md"
+    size={{ base: "md", md: "lg" }}
     _hover={{ bgColor: "blue.500", color: "white" }}
   />
   <NewButton
     href="https://instagram.com"
     label="Bekijk meer"
     width="100%"
-    size="md"
+    size={{ base: "md", md: "lg" }}
     _hover={{ bgColor: "blue.500", color: "white" }}
   />
 </Flex>

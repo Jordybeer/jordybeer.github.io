@@ -39,7 +39,7 @@ export default function FrontHead() {
   width={{ base: "100vw", sm: "100vw" }}
   maxW={{ base: "sm", sm: "60vw", md: "xl", lg: "2xl", xl: "3xl" }} // Reduced maxW values
   overflow="hidden"
-  maxH= {{xl:"2xl"}}
+  maxH= {{xl:"xl"}}
 >
   {/* .
         {/* image in the middle */}

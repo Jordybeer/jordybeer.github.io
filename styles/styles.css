@@ -3,11 +3,19 @@ body {
   padding: 0;
 }
 
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99991;
+}
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Modify this line */
-  gap: 16px;
+  gap: 20px;
   padding: 16px;
   width: 80%;
   margin: auto;
@@ -30,7 +38,7 @@ body {
 .card img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .card-title {
@@ -121,10 +129,10 @@ body {
 
 .carousel-slider .slick-dots {
   position: absolute;
-  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  bottom: -25px; /* Adjust the distance from the bottom as needed */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 10000;
 }
 
 /* Thumbnail Styles */
@@ -159,7 +167,7 @@ background: #2f2c79;
   border: 4px solid black;
   border-radius: 12px;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   textshadow: "1px 1px 2px rgba(0,0,0,0.5)";
   flex-direction: column;

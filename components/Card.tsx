@@ -27,7 +27,7 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
       transition={{ duration: 1 }}
     >
       <h1 className="card-title">{data.title}</h1>
-      <Image src={data.img} alt={data.title} objectFit="cover" borderRadius="24px"
+      <Image src={data.img} alt={data.title} objectFit="contain" borderRadius="24px"
       box-shadow= "0px 4px 10px rgba(0, 0, 0, 0.1)"
       />
     </motion.div>

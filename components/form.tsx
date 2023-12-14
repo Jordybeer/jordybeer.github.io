@@ -95,11 +95,12 @@ const ContactForm: React.FC = () => {
       <Box
   mx="auto"
   borderRadius="lg"
-  rounded={{ base: "none", md: "3xl" }} // Updated this line
+  rounded= "3xl"
   display="flex"
   transition={"background 0.3s ease"}
   px={{ base: 4, sm: 6, lg: 10 }}
   mt="auto"
+  width={{ base: "85", sm: "80vw", md: "80vw", lg: "80vw", xl: "50vw" }}
   boxShadow="lg"
   position="relative"
   zIndex={2}
@@ -110,7 +111,7 @@ const ContactForm: React.FC = () => {
   shadow={{ base: "none", md: "dark-lg" }}
   border={{base: "none", md: "2px solid #1C1B43"}}
 >
-          <VStack spacing={5} p={10} width="120%">
+          <VStack spacing={5} p={10} width="100%">
             <FormControl isRequired>
               <FormLabel>Naam</FormLabel>
               <InputGroup>
