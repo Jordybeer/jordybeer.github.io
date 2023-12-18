@@ -15,7 +15,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Modify this line */
-  gap: 20px;
+  gap: 16;
   padding: 16px;
   width: 80%;
   margin: auto;

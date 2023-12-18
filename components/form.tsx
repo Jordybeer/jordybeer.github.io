@@ -22,6 +22,8 @@ import { useToast } from "@chakra-ui/react";
 import { BsInstagram, BsYoutube, BsPerson, BsFacebook } from "react-icons/bs";
 import { MdEmail, MdPerson, MdFlag } from "react-icons/md";
 import Layout from "../components/layout";
+import { useForm } from "react-hook-form";
+
 
 import NewButton from "../components/newbutton";
 
@@ -43,6 +45,8 @@ const ContactForm: React.FC = () => {
 
   const toast = useToast();
 
+
+
   const handleSubmit = async () => {
     const formData = {
       name,
@@ -52,7 +56,7 @@ const ContactForm: React.FC = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3001/sendEmail", {
+      const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,6 +72,12 @@ const ContactForm: React.FC = () => {
           duration: 5000,
           isClosable: true,
         });
+
+        // Clear the form fields
+        setName("");
+        setEmail("");
+        setMessage("");
+        setSubject("");
       } else {
         toast({
           title: "Bericht niet verstuurd.",
@@ -86,7 +96,7 @@ const ContactForm: React.FC = () => {
         isClosable: true,
       });
     }
-  };
+  };;
 
   return (
     <Flex direction="column" align="center" justify="center" p={8} marginTop="10vh" minHeight="90vh">
@@ -168,7 +178,7 @@ const ContactForm: React.FC = () => {
               />
             </FormControl>
 
-            <NewButton label="Verstuur bericht" click={handleSubmit} />
+            <NewButton label="Verstuur bericht" onClick={handleSubmit} />
           </VStack>
         </Box>
       </VStack>

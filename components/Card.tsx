@@ -19,7 +19,6 @@ const Card = ({ data, setSelectedCard }: CardProps) => {
   return (
     <motion.div
       className="card"
-      p={20}
       onClick={handleClick}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

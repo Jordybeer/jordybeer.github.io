@@ -4,6 +4,7 @@ import { Button } from "@chakra-ui/react";
 interface CustomButtonProps {
   href?: string;
   label: string;
+  onClick?: () => void; // Add this line
   colorScheme?: string;
   size?: string;
   shadow?: string;
@@ -13,13 +14,12 @@ interface CustomButtonProps {
   fontWeight?: string;
   rounded?: string;
   transition?: string;
-  // add any other style props you'd like to be customizable
 }
 
 const NewButton: React.FC<CustomButtonProps> = ({
-  //default props
   href,
   label,
+  onClick, // Add this line
   colorScheme = "yellow",
   size = "lg",
   shadow = "dark-lg",
@@ -43,6 +43,7 @@ const NewButton: React.FC<CustomButtonProps> = ({
       fontWeight={fontWeight}
       rounded={rounded}
       transition={transition}
+      onClick={onClick} // Add this line
       _hover={{
         bgColor: `${colorScheme}.${step2}`,
         bgGradient: `radial(circle, transparent 1%, ${colorScheme}.${step2} 1%)`,
