@@ -1,4 +1,4 @@
-Live deployment can be found at https://live.jordy.beer
+Live deployment can be found at https://alpha.jordy.beer
 
 #notes
 
