@@ -1,11 +1,4 @@
-#freelance website from scratch
-
-- React.js
-- Next.js
-- TypeScript
-- Chakra UI
-- Framer Motion
-- React Hook Form
+Live deployment can be found at https://live.jordy.beer
 
 #notes
 
